@@ -16,7 +16,7 @@ export const useDemo = () => useContext(DemoCtx);
  * The booking widget suppresses its own logo/title header when it detects it's running
  * inside an iframe (it assumes the host page provides branding), so we render the heading
  * ourselves above the embed. The banner above the heading reuses the site's own hero
- * background (bg-hero gradient + faint logo watermark) so the drawer opens with the same
+ * background (bg-hero gradient + logo watermark) so the drawer opens with the same
  * look as the homepage hero instead of a plain white gap or an oversized logo mark.
  *
  * The iframe is NOT loaded up front (it would compete with the main page for bandwidth).
@@ -96,12 +96,12 @@ export default function DemoDrawerProvider({ children }: { children: React.React
       {/* Drawer */}
       <aside role="dialog" aria-modal="true" aria-label={`See ${site.name} in action`} aria-hidden={!isOpen}
         className={`fixed inset-y-0 left-0 z-[80] flex w-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ease-out sm:w-[420px] ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        {/* Hero-style banner: same bg-hero gradient + faint logo watermark as the homepage hero,
-            filling the same amount of space the drawer's old logo mark used to occupy. */}
-        <div className="relative h-28 w-full shrink-0 overflow-hidden bg-hero">
+        {/* Hero-style banner: same bg-hero gradient + logo watermark as the homepage hero, kept
+            short so the heading/description below it is fully visible without scrolling. */}
+        <div className="relative h-14 w-full shrink-0 overflow-hidden bg-hero">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/mcd-icon.svg" alt="" className="pointer-events-none absolute -right-6 top-1/2 h-44 w-44 -translate-y-1/2 opacity-20" />
-          <button type="button" onClick={close} aria-label="Close" className="tap absolute right-3 top-3 inline-flex items-center justify-center rounded-full text-white/90 hover:bg-white/10 hover:text-white">
+          <img src="/brand/mcd-icon.svg" alt="" className="pointer-events-none absolute -right-3 top-1/2 h-28 w-28 -translate-y-1/2 opacity-30" />
+          <button type="button" onClick={close} aria-label="Close" className="tap absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full text-white/90 hover:bg-white/10 hover:text-white">
             <Icon name="x" className="h-5 w-5" />
           </button>
         </div>
