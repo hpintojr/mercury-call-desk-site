@@ -121,13 +121,13 @@ export default function PrivacyPage() {
           ]} />
 
           <H>Your Data Protection Rights</H>
-          <H3>GDPR (EU/EEA residents)</H>
+          <H3>GDPR (EU/EEA residents)</H3>
           <P>
             You have the right to access, correct, delete, or restrict the use of your personal data, to object to
             our processing of it, to receive a copy in a portable format, and to withdraw consent at any time. To
             exercise these rights, email us at <a href={`mailto:${site.email}`} className="text-mcd-blue hover:underline">{site.email}</a>.
           </P>
-          <H3>CCPA (California residents)</H>
+          <H3>CCPA (California residents)</H3>
           <P>
             You have the right to know what personal information we collect about you, to request deletion of that
             information, and to opt out of any "sale" or "sharing" of personal information as defined under
