@@ -23,7 +23,7 @@ export const site = {
 };
 
 export const links = {
-  demo: "#", // TODO: Sulus CRM booking-calendar widget URL (crm.sulus.ai → Calendars → share link)
+  demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
   demoCall: "tel:+19092767631", // TODO: number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
   partner: "#", // TODO: Sales Partner signup (CRM)
