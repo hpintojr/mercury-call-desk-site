@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function FaqPage() {
   return (
     <>
-      <PageHero crumb="Help" title={`Get the most from your ${site.name} assistant`} body="Everything you need to know about your AI phone assistant, from setup to optimization. FAQs, quick fixes, and official info on every feature." />
+      <PageHero crumb="FAQ's" title={`Get the most from your ${site.name} assistant`} body="Everything you need to know about your AI phone assistant, from setup to optimization. FAQs, quick fixes, and official info on every feature." />
 
       {/* Section jump nav — horizontal chips on mobile, sticky sidebar on desktop */}
       <section className="py-10 sm:py-16">
