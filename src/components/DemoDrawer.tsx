@@ -13,6 +13,10 @@ export const useDemo = () => useContext(DemoCtx);
  * Any <a href={links.demo}> anywhere on the site opens the drawer instead of navigating
  * (click delegation), so the plain URL remains the no-JS / crawler fallback.
  *
+ * The booking widget suppresses its own logo/title header when it detects it's running
+ * inside an iframe (it assumes the host page provides branding), so we render the MCD
+ * logo + heading ourselves above the embed to match sulus.ai's own drawer layout.
+ *
  * The iframe is NOT loaded up front (it would compete with the main page for bandwidth).
  * Instead we wait until the main page has finished loading, then quietly preload the iframe
  * in the background (hidden) during idle time, so by the time someone actually clicks
@@ -90,14 +94,14 @@ export default function DemoDrawerProvider({ children }: { children: React.React
       {/* Drawer */}
       <aside role="dialog" aria-modal="true" aria-label={`See ${site.name} in action`} aria-hidden={!isOpen}
         className={`fixed inset-y-0 left-0 z-[80] flex w-full flex-col bg-white shadow-2xl transition-transform duration-300 ease-out sm:w-[420px] ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <header className="flex items-center justify-between gap-3 border-b border-mcd-line px-5 py-4">
-          <div>
-            <p className="eyebrow">Live demo</p>
-            <h2 className="text-lg font-extrabold text-mcd-navy">See {site.name} in Action</h2>
-          </div>
-          <button type="button" onClick={close} aria-label="Close" className="tap inline-flex items-center justify-center rounded-full text-mcd-muted hover:bg-mcd-surface hover:text-mcd-navy">
+        <header className="relative flex flex-col items-center gap-1 border-b border-mcd-line px-5 pb-4 pt-6 text-center">
+          <button type="button" onClick={close} aria-label="Close" className="tap absolute right-3 top-3 inline-flex items-center justify-center rounded-full text-mcd-muted hover:bg-mcd-surface hover:text-mcd-navy">
             <Icon name="x" className="h-5 w-5" />
           </button>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/mcd-icon.svg" alt="" className="h-9 w-9" />
+          <p className="eyebrow mt-1">Live demo</p>
+          <h2 className="text-lg font-extrabold text-mcd-navy">See {site.name} in Action</h2>
         </header>
         <div className="relative flex-1 bg-mcd-surface">
           {mounted && (
