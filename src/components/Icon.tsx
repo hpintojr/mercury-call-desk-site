@@ -1,7 +1,7 @@
 type Name =
   | "check" | "x" | "chevron" | "phone" | "menu" | "globe" | "chat" | "bolt"
   | "calendar" | "card" | "mail" | "zap" | "shield" | "chart" | "users" | "clock"
-  | "star" | "arrow" | "quote" | "plug" | "mic" | "pin";
+  | "star" | "arrow" | "quote" | "plug" | "mic" | "pin" | "paragraph";
 
 const paths: Record<Name, React.ReactNode> = {
   check: <path d="M20 6 9 17l-5-5" />,
@@ -26,6 +26,7 @@ const paths: Record<Name, React.ReactNode> = {
   plug: <path d="M12 22v-5M9 8V2M15 8V2M6 8h12v4a6 6 0 0 1-12 0z" />,
   mic: <><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10a7 7 0 0 0 14 0M12 19v3" /></>,
   pin: <><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></>,
+  paragraph: <path d="M3 6h18M3 12h18M3 18h11" />,
 };
 
 export default function Icon({ name, className = "h-5 w-5" }: { name: Name; className?: string }) {
