@@ -59,7 +59,7 @@ export default function PricingCards({ showEnterprise = false, compact = false }
               </ul>
 
               <div className="mt-auto pt-6">
-                <Button href={checkout} full variant={t.popular ? "primary" : "outline"}>{t.cta}</Button>
+                <Button href={checkout} full variant={t.popular ? "primary" : "outline"}>{compact && t.ctaShort ? t.ctaShort : t.cta}</Button>
               </div>
             </article>
           );

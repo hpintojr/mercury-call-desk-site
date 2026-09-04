@@ -11,6 +11,8 @@ export type Tier = {
   monthly: number;
   annualTotal: number;
   cta: string;
+  /** Shorter label used on the Pricing page cards (desktop width is tighter) */
+  ctaShort?: string;
   popular?: boolean;
   features: { title: string; detail: string; muted?: boolean }[];
 };
@@ -41,6 +43,7 @@ export const tiers: Tier[] = [
     monthly: 1995,
     annualTotal: 17955,
     cta: "Grow With Mercury Call Desk",
+    ctaShort: "Start Growth",
     popular: true,
     features: [
       { title: "Everything in Starter", detail: "All features from the Starter plan plus the additional Growth benefits listed below" },
