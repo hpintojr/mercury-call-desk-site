@@ -93,8 +93,8 @@ export default function DemoDrawerProvider({ children }: { children: React.React
 
       {/* Drawer */}
       <aside role="dialog" aria-modal="true" aria-label={`See ${site.name} in action`} aria-hidden={!isOpen}
-        className={`fixed inset-y-0 left-0 z-[80] flex w-full flex-col bg-white shadow-2xl transition-transform duration-300 ease-out sm:w-[420px] ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
-        <header className="relative flex flex-col items-center gap-1 border-b border-mcd-line px-5 pb-4 pt-6 text-center">
+        className={`fixed inset-y-0 left-0 z-[80] flex w-full flex-col overflow-y-auto bg-white shadow-2xl transition-transform duration-300 ease-out sm:w-[420px] ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        <header className="relative flex flex-col items-center gap-1 border-b border-mcd-line px-5 pb-5 pt-6 text-center">
           <button type="button" onClick={close} aria-label="Close" className="tap absolute right-3 top-3 inline-flex items-center justify-center rounded-full text-mcd-muted hover:bg-mcd-surface hover:text-mcd-navy">
             <Icon name="x" className="h-5 w-5" />
           </button>
@@ -102,8 +102,11 @@ export default function DemoDrawerProvider({ children }: { children: React.React
           <img src="/brand/mcd-icon.svg" alt="" className="h-9 w-9" />
           <p className="eyebrow mt-1">Live demo</p>
           <h2 className="text-lg font-extrabold text-mcd-navy">See {site.name} in Action</h2>
+          <p className="mt-1 max-w-[320px] text-sm text-mcd-muted">
+            See how {site.name} can answer your business calls 24/7, save your business hours each week, and reduce overhead costs. We&apos;ll demo the assistant live and discuss how it fits your specific needs.
+          </p>
         </header>
-        <div className="relative flex-1 bg-mcd-surface">
+        <div className="relative min-h-[520px] flex-1 bg-mcd-surface">
           {mounted && (
             <iframe src={links.demo} title="Book a demo" className="absolute inset-0 h-full w-full" allow="payment" loading="lazy" />
           )}
