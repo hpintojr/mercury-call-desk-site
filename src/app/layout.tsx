@@ -4,6 +4,7 @@ import "./globals.css";
 import { site } from "@/config/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DemoDrawerProvider from "@/components/DemoDrawer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,9 +41,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:shadow">
           Skip to content
         </a>
-        <Header />
-        <main id="content">{children}</main>
-        <Footer />
+        <DemoDrawerProvider>
+          <Header />
+          <main id="content">{children}</main>
+          <Footer />
+        </DemoDrawerProvider>
       </body>
     </html>
   );
