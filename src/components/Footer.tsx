@@ -13,20 +13,6 @@ export default function Footer() {
           <p className="mt-4 max-w-sm text-sm text-white/70">
             Intelligent AI phone assistants designed to answer every call, help customers, and free you and your team to focus on what matters most.
           </p>
-          <div className="mt-5 flex gap-3">
-            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
-              <Icon name="facebook" className="h-4 w-4" />
-            </a>
-            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
-              <Icon name="instagram" className="h-4 w-4" />
-            </a>
-            <a href={site.social.x} target="_blank" rel="noopener noreferrer" aria-label="X" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
-              <Icon name="xsocial" className="h-4 w-4" />
-            </a>
-            <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
-              <Icon name="linkedin" className="h-4 w-4" />
-            </a>
-          </div>
         </div>
 
         <div>
@@ -53,6 +39,20 @@ export default function Footer() {
             <li><a href={site.phoneHref} className="hover:text-mcd-cyan">{site.phone}</a></li>
             <li><a href={`mailto:${site.email}`} className="hover:text-mcd-cyan">{site.email}</a></li>
           </ul>
+          <div className="mt-5 flex gap-3">
+            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
+              <Icon name="facebook" className="h-4 w-4" />
+            </a>
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
+              <Icon name="instagram" className="h-4 w-4" />
+            </a>
+            <a href={site.social.x} target="_blank" rel="noopener noreferrer" aria-label="X" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
+              <Icon name="xsocial" className="h-4 w-4" />
+            </a>
+            <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-mcd-cyan hover:text-mcd-cyan">
+              <Icon name="linkedin" className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
 
