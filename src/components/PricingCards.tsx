@@ -32,7 +32,7 @@ export default function PricingCards({ showEnterprise = false, compact = false }
       <div className={`mt-10 grid gap-5 md:grid-cols-2 ${showEnterprise ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
         {tiers.map((t) => {
           const perMonth = annual ? Math.round(t.annualTotal / 12) : t.monthly;
-          const checkout = links.checkout[t.id];
+          const checkout = annual ? links.checkout[t.id].annual : links.checkout[t.id].monthly;
           return (
             <article key={t.id} className={`relative flex flex-col rounded-xl2 border bg-white p-6 shadow-sm ${t.popular ? "border-mcd-sky ring-2 ring-mcd-sky/40 md:-mt-2" : "border-mcd-line"}`}>
               {t.popular && <span className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-mcd-blue to-mcd-cyan px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-mcd-navy">Most Popular</span>}

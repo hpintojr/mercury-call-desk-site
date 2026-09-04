@@ -27,10 +27,11 @@ export const links = {
   demoCall: "tel:+19092767631", // TODO: number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
   partner: "#", // TODO: Sales Partner signup (CRM)
+  /** Stripe Payment Links (acct_1UBLNoPcxhBvixve). Monthly vs annual is chosen by the pricing toggle. */
   checkout: {
-    starter: "#", // TODO: Sulus CRM → Payments → Products/Payment Links (Stripe connected)
-    growth: "#", // TODO: payment link
-    pro: "#", // TODO: payment link
+    starter: { monthly: "https://buy.stripe.com/3cI5kF1lG4K2gV0fKj9R600", annual: "https://buy.stripe.com/4gM28t8O83FY0W21Tt9R601" },
+    growth: { monthly: "https://buy.stripe.com/cNifZjggA6SaawC1Tt9R602", annual: "https://buy.stripe.com/7sYfZj6G05O6awC1Tt9R603" },
+    pro: { monthly: "https://buy.stripe.com/3cI3cxd4o90i0W20Pp9R604", annual: "https://buy.stripe.com/6oU00laWg0tMfQWapZ9R605" },
   },
   legal: {
     terms: "/terms", // TODO: create page
