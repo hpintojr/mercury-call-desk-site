@@ -12,12 +12,51 @@ export const useDemo = () => useContext(DemoCtx);
  * Left slide-in drawer with the Sulus CRM booking calendar embedded (mirrors sulus.ai's "Demo" UX).
  * Any <a href={links.demo}> anywhere on the site opens the drawer instead of navigating
  * (click delegation), so the plain URL remains the no-JS / crawler fallback.
+ *
+ * The iframe is NOT loaded up front (it would compete with the main page for bandwidth).
+ * Instead we wait until the main page has finished loading, then quietly preload the iframe
+ * in the background (hidden) during idle time, so by the time someone actually clicks
+ * "Demo" the booking widget is already warm and opens instantly instead of showing its
+ * own ~2s load.
  */
 export default function DemoDrawerProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false); // lazy-load the iframe on first open
+  const [mounted, setMounted] = useState(false); // becomes true once the iframe should exist in the DOM
   const open = useCallback(() => { setMounted(true); setOpen(true); }, []);
   const close = useCallback(() => setOpen(false), []);
+
+  // Preload the booking iframe in the background, but only after the main page is done loading.
+  useEffect(() => {
+    if (mounted) return;
+
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    const schedulePreload = () => {
+      const ric = (window as any).requestIdleCallback as
+        | ((cb: () => void, opts?: { timeout: number }) => number)
+        | undefined;
+      if (ric) {
+        idleId = ric(() => setMounted(true), { timeout: 3000 });
+      } else {
+        // Safari / older browsers: fall back to a short delay after load.
+        timeoutId = setTimeout(() => setMounted(true), 1500);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      schedulePreload();
+    } else {
+      window.addEventListener("load", schedulePreload, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("load", schedulePreload);
+      const cic = (window as any).cancelIdleCallback as ((id: number) => void) | undefined;
+      if (idleId !== undefined && cic) cic(idleId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
+    };
+  }, [mounted]);
 
   // Intercept every demo link on the page.
   useEffect(() => {
