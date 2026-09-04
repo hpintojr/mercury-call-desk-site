@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ── Mercury Call Desk brand tokens (from 04-brand-assets Logo Asset Catalog) ── */
+@theme {
+  --color-mcd-blue: #2587ff;
+  --color-mcd-sky: #12c3f1;
+  --color-mcd-cyan: #16e8de;
+  --color-mcd-navy: #071426;
+  --color-mcd-navy-800: #0b1e38;
+  --color-mcd-navy-700: #10294a;
+  --color-mcd-ink: #0f172a;
+  --color-mcd-muted: #64748b;
+  --color-mcd-line: #e2e8f0;
+  --color-mcd-surface: #f6f9fc;
+
+  --radius-xl2: 1.25rem;
+
+  --animate-word-in: word-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+@keyframes word-in {
+  from { opacity: 0; transform: translateY(0.6em); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+:root { color-scheme: light; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  @apply bg-white text-mcd-ink antialiased;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Utilities */
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility text-gradient {
+  background-image: linear-gradient(90deg, var(--color-mcd-blue), var(--color-mcd-sky), var(--color-mcd-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-hero {
+  background:
+    radial-gradient(60% 50% at 85% 10%, rgba(37, 135, 255, 0.35), transparent 60%),
+    radial-gradient(50% 40% at 10% 90%, rgba(22, 232, 222, 0.25), transparent 60%),
+    linear-gradient(180deg, #071426 0%, #0b1e38 100%);
+}
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] text-mcd-blue;
+}
+@utility tap {
+  /* 44px minimum touch target */
+  @apply min-h-11 min-w-11;
+}
+
+/* Native details/summary accordion polish */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .chev { transform: rotate(180deg); }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee, .animate-float, .animate-word-in { animation: none !important; }
+}
