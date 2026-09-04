@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 bg-mcd-navy text-white transition-shadow ${scrolled ? "shadow-lg shadow-black/20" : ""}`}>
-      <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-20">
+      <div className="container-x flex h-20 items-center justify-between gap-4 sm:h-24 lg:h-28">
         <Logo />
 
         {/* Desktop nav */}
@@ -60,7 +60,7 @@ export default function Header() {
 
       {/* Mobile drawer */}
       <div id="mobile-menu" hidden={!open} className="lg:hidden">
-        <div className="fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-mcd-navy sm:top-20">
+        <div className="fixed inset-x-0 top-20 bottom-0 z-40 overflow-y-auto bg-mcd-navy sm:top-24">
           <nav aria-label="Mobile" className="container-x flex flex-col py-4">
             {nav.map((n) => (
               <Link key={n.href} href={n.href} className={`flex items-center justify-between border-b border-white/10 py-4 text-lg font-semibold ${pathname === n.href ? "text-mcd-cyan" : "text-white"}`}>
