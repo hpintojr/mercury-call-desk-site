@@ -18,6 +18,7 @@ export const site = {
   hours: "Monday - Friday: 8AM - 5PM PT",
   social: {
     facebook: "#", // TODO
+    instagram: "#", // TODO
     x: "#", // TODO
     linkedin: "#", // TODO
   },
