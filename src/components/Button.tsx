@@ -7,6 +7,8 @@ type Props = {
   size?: "md" | "lg";
   className?: string;
   full?: boolean;
+  /** Fired on click, before navigation (e.g. to stash state in localStorage for a same-origin page the link opens/redirects to). */
+  onClick?: () => void;
 };
 
 const base = "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition tap active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-mcd-sky focus-visible:ring-offset-2";
@@ -18,9 +20,9 @@ const variants = {
   outline: "border border-mcd-navy/20 text-mcd-navy hover:border-mcd-blue hover:text-mcd-blue",
 };
 
-export default function Button({ href, children, variant = "primary", size = "md", className = "", full }: Props) {
+export default function Button({ href, children, variant = "primary", size = "md", className = "", full, onClick }: Props) {
   const external = /^https?:|^tel:|^mailto:/.test(href);
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${full ? "w-full" : ""} ${className}`;
-  if (external) return <a href={href} className={cls} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener">{children}</a>;
-  return <Link href={href} className={cls}>{children}</Link>;
+  if (external) return <a href={href} className={cls} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener" onClick={onClick}>{children}</a>;
+  return <Link href={href} className={cls} onClick={onClick}>{children}</Link>;
 }

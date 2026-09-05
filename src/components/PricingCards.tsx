@@ -32,7 +32,19 @@ export default function PricingCards({ showEnterprise = false, compact = false }
       <div className={`mt-10 grid gap-5 md:grid-cols-2 ${showEnterprise ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
         {tiers.map((t) => {
           const perMonth = annual ? Math.round(t.annualTotal / 12) : t.monthly;
-          const checkout = annual ? links.checkout[t.id].annual : links.checkout[t.id].monthly;
+          // Front door of the purchase flow: Account Setup form (minimal info) →
+          // redirects to the matching Stripe Payment Link after submission.
+          const billingParam = annual ? "Annual - Save ~25%" : "Monthly";
+          const checkout = `${links.accountSetup}?package=${encodeURIComponent(t.name)}&billing=${encodeURIComponent(billingParam)}`;
+          // The CRM form's redirect-URL merge tags reliably echo back {{contact.email}}
+          // but not custom Select fields (package/billing) — GHL quirk. So we also
+          // stash the selection in localStorage (shared across tabs, same origin) as
+          // the source of truth /checkout reads from.
+          const stashSelection = () => {
+            try {
+              localStorage.setItem("mcd_pending_purchase", JSON.stringify({ tier: t.id, billing: annual ? "annual" : "monthly" }));
+            } catch {}
+          };
           return (
             <article key={t.id} className={`relative flex flex-col rounded-xl2 border bg-white p-6 shadow-sm ${t.popular ? "border-mcd-sky ring-2 ring-mcd-sky/40 md:-mt-2" : "border-mcd-line"}`}>
               {t.popular && <span className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-mcd-blue to-mcd-cyan px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-mcd-navy">Most Popular</span>}
@@ -59,7 +71,7 @@ export default function PricingCards({ showEnterprise = false, compact = false }
               </ul>
 
               <div className="mt-auto pt-6">
-                <Button href={checkout} full variant={t.popular ? "primary" : "outline"}>{compact && t.ctaShort ? t.ctaShort : t.cta}</Button>
+                <Button href={checkout} full variant={t.popular ? "primary" : "outline"} onClick={stashSelection}>{compact && t.ctaShort ? t.ctaShort : t.cta}</Button>
               </div>
             </article>
           );
