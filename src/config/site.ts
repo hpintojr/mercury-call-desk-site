@@ -10,6 +10,7 @@ export const site = {
     "24/7 AI phone assistants that answer, book appointments, qualify leads, and speak 40+ languages — so you close more business.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
   legalName: "Charter Oaks Assets, Inc. d/b/a Mercury Call Desk",
+  legalUpdated: "September 4, 2026",
   phone: "(909) 276-7631",
   phoneHref: "tel:+19092767631",
   email: "hello@mercurycalldesk.com",
