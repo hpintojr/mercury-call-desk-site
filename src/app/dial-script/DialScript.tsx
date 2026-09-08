@@ -32,7 +32,7 @@ function highlight(text: string, toks: string[], keyBase: string): ReactNode[] {
 
 /** Colour [placeholders] amber, then highlight. */
 function placeholders(text: string, toks: string[], keyBase: string): ReactNode[] {
-  return text.split(/(\[[^\]]+\])/g).flatMap((part, i) =>
+  return text.split(/(\[[^\]]+\])/g).flatMap<ReactNode>((part, i) =>
     /^\[[^\]]+\]$/.test(part)
       ? [<span key={keyBase + "p" + i} className="ph">{highlight(part, toks, keyBase + "p" + i)}</span>]
       : highlight(part, toks, keyBase + "t" + i),
@@ -41,7 +41,7 @@ function placeholders(text: string, toks: string[], keyBase: string): ReactNode[
 
 /** Render note text: supports <b>…</b> and search highlighting. */
 function rich(text: string, toks: string[], keyBase = "r"): ReactNode[] {
-  return subst(text).split(/(<b>.*?<\/b>)/g).flatMap((part, i) => {
+  return subst(text).split(/(<b>.*?<\/b>)/g).flatMap<ReactNode>((part, i) => {
     const m = part.match(/^<b>(.*?)<\/b>$/);
     if (m) return [<b key={keyBase + "b" + i}>{highlight(m[1], toks, keyBase + "b" + i)}</b>];
     return highlight(part, toks, keyBase + "n" + i);
