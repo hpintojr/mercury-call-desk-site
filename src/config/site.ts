@@ -11,8 +11,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
   legalName: "Charter Oaks Assets, Inc. d/b/a Mercury Call Desk",
   legalUpdated: "September 4, 2026",
-  phone: "(909) 276-7631",
-  phoneHref: "tel:+19092767631",
+  phone: "(949) 775-0451",
+  phoneHref: "tel:+19497750451",
   email: "hello@mercurycalldesk.com",
   address: ["231 E Alessandro Blvd A-208", "Riverside, CA 92508, USA"],
   hours: "Monday - Friday: 8AM - 5PM PT",
@@ -26,7 +26,7 @@ export const site = {
 
 export const links = {
   demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
-  demoCall: "tel:+19092767631", // TODO: number that rings the MCD demo assistant
+  demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
   partner: "#", // TODO: Sales Partner signup (CRM)
   /**
