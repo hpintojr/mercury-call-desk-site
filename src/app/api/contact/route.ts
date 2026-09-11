@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import { deliverLead, sanitizeAttribution } from "@/lib/crm";
 
 /**
- * Contact form handler (/contact) → Sulus CRM via src/lib/crm.ts.
- * Env: CRM_API_TOKEN + CRM_LOCATION_ID (preferred) and/or CRM_WEBHOOK_URL (fallback).
+ * Contact form handler (/contact) → Sulus CRM via src/lib/crm.ts
+ * (Inbound Webhook first, optional HMAC signature; legacy CRM API as fallback).
+ * Env: CRM_WEBHOOK_URL (+ CRM_WEBHOOK_SECRET) and/or CRM_API_TOKEN + CRM_LOCATION_ID.
  */
 type Payload = {
   firstName: string; lastName: string; company: string; phone: string; email: string; message: string; consent: boolean; website?: string;

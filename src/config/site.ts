@@ -9,10 +9,10 @@ export const site = {
   description:
     "24/7 AI phone assistants that answer, book appointments, qualify leads, and speak 40+ languages — so you close more business.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
-  legalName: "Charter Oaks Assets, Inc. d/b/a Mercury Call Desk",
+  legalName: "Benny & Penny | A Tech Company d/b/a Mercury Call Desk",
   legalUpdated: "September 4, 2026",
-  phone: "(909) 276-7631",
-  phoneHref: "tel:+19092767631",
+  phone: "(949) 775-0451",
+  phoneHref: "tel:+19497750451",
   email: "hello@mercurycalldesk.com",
   address: ["231 E Alessandro Blvd A-208", "Riverside, CA 92508, USA"],
   hours: "Monday - Friday: 8AM - 5PM PT",
@@ -24,7 +24,7 @@ export const site = {
   },
 };
 
-/** Public AI demo line (answered by the MCD assistant). Used on landing pages and "Talk to MCD now" CTAs. */
+/** Public AI demo line (answered by the MCD assistant). Used on landing pages and "Call the AI" CTAs. */
 export const aiLine = {
   display: "(949) 775-0451",
   href: "tel:+19497750451",
@@ -33,8 +33,7 @@ export const aiLine = {
 
 export const links = {
   demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
-  /** The public AI demo line — rings the Mercury Call Desk assistant itself, not a human. */
-  demoCall: "tel:+19497750451",
+  demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
   partner: "#", // TODO: Sales Partner signup (CRM)
   /**
@@ -52,8 +51,8 @@ export const links = {
     pro: { monthly: "https://buy.stripe.com/3cI3cxd4o90i0W20Pp9R604", annual: "https://buy.stripe.com/6oU00laWg0tMfQWapZ9R605" },
   },
   legal: {
-    terms: "/terms", // TODO: create page
-    privacy: "/privacy", // TODO: create page
+    terms: "/terms",
+    privacy: "/privacy",
   },
 };
 

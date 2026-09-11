@@ -165,7 +165,7 @@ export default function LandingPage({ page }: { page: LandingConfig }) {
           <p className="flex gap-4">
             <Link href={links.legal.privacy} className="underline">Privacy Policy</Link>
             <Link href={links.legal.terms} className="underline">Terms</Link>
-            <a href={site.phoneHref} data-placement={`${page.slug}-footer-office`} className="underline">Talk to a person: {site.phone}</a>
+            <a href={site.phoneHref} data-placement={`${page.slug}-footer`} className="underline">Call {site.phone}</a>
           </p>
         </div>
       </footer>
