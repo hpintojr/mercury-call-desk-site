@@ -49,7 +49,7 @@ export default function Header() {
 
         {/* Mobile: quick call + menu */}
         <div className="flex items-center gap-1 lg:hidden">
-          <a href={links.demoCall} className="tap inline-flex items-center justify-center rounded-full text-white/90 hover:bg-white/10" aria-label="Call us">
+          <a href={links.demoCall} className="tap inline-flex items-center justify-center rounded-full text-white/90 hover:bg-white/10" aria-label="Call our AI assistant">
             <Icon name="phone" />
           </a>
           <button type="button" onClick={() => setOpen((v) => !v)} className="tap inline-flex items-center justify-center rounded-full hover:bg-white/10" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>

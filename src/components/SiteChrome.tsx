@@ -4,9 +4,11 @@ import { usePathname } from "next/navigation";
 
 /**
  * Hides the marketing header/footer on internal tool routes
- * (currently just /dial-script) so they get a full-screen layout.
+ * (/dial-script) and on ad landing pages (which render their own minimal chrome).
  */
-const BARE_PREFIXES = ["/dial-script"];
+import { landingSlugs } from "@/content/landing";
+
+const BARE_PREFIXES = ["/dial-script", ...landingSlugs.map((s) => "/" + s)];
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";

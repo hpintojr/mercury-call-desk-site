@@ -24,6 +24,13 @@ export const site = {
   },
 };
 
+/** Public AI demo line (answered by the MCD assistant). Used on landing pages and "Call the AI" CTAs. */
+export const aiLine = {
+  display: "(949) 775-0451",
+  href: "tel:+19497750451",
+  e164: "+19497750451",
+};
+
 export const links = {
   demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
   demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
