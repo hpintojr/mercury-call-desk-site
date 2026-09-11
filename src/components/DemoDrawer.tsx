@@ -121,7 +121,7 @@ export default function DemoDrawerProvider({ children }: { children: React.React
           )}
         </div>
         <footer className="border-t border-mcd-line px-5 py-3 text-center text-xs text-mcd-muted">
-          Prefer to talk now? <a href={links.demoCall} className="font-semibold text-mcd-blue">Call {site.phone}</a>
+          Prefer to talk now? <a href={site.phoneHref} className="font-semibold text-mcd-blue">Call {site.phone}</a>
         </footer>
       </aside>
     </DemoCtx.Provider>

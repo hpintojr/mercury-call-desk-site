@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { links, site } from "@/config/site";
+import { getAttribution, track } from "@/lib/track";
 
 type State = "idle" | "sending" | "sent" | "error";
 
@@ -20,10 +21,11 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ ...data, consent: data.consent === "on" }),
+        body: JSON.stringify({ ...data, consent: data.consent === "on", attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error("bad");
       setState("sent");
+      track("contact_submit");
       form.reset();
     } catch {
       setState("error");
