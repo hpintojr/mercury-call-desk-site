@@ -9,7 +9,7 @@ export const site = {
   description:
     "24/7 AI phone assistants that answer, book appointments, qualify leads, and speak 40+ languages — so you close more business.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
-  legalName: "Charter Oaks Assets, Inc. d/b/a Mercury Call Desk",
+  legalName: "Benny & Penny | A Tech Company d/b/a Mercury Call Desk",
   legalUpdated: "September 4, 2026",
   phone: "(949) 775-0451",
   phoneHref: "tel:+19497750451",
@@ -44,8 +44,8 @@ export const links = {
     pro: { monthly: "https://buy.stripe.com/3cI3cxd4o90i0W20Pp9R604", annual: "https://buy.stripe.com/6oU00laWg0tMfQWapZ9R605" },
   },
   legal: {
-    terms: "/terms", // TODO: create page
-    privacy: "/privacy", // TODO: create page
+    terms: "/terms",
+    privacy: "/privacy",
   },
 };
 
