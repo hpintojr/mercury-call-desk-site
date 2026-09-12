@@ -54,7 +54,18 @@ export async function deliverLead(lead: Lead): Promise<DeliveryResult> {
 
   if (webhook) {
     try {
-      const raw = JSON.stringify({ ...lead, phone, submittedAt: new Date().toISOString() });
+      // Flat, string-only conveniences for workflow builders whose merge fields can't read arrays/objects:
+      //   tagsCsv            "ad-callback,ai-call-consent,..."
+      //   callbackRequested  "yes" | "no"   (true when the lead asked for the AI callback)
+      //   industry           value of customFields.lead_industry, if any
+      //   utm_* / gclid / fbclid / referrer / landing_page  hoisted from attribution
+      const flat: Record<string, string> = {
+        tagsCsv: lead.tags.join(","),
+        callbackRequested: lead.tags.includes("ad-callback") ? "yes" : "no",
+        industry: lead.customFields?.lead_industry ?? "",
+        ...(lead.attribution ?? {}),
+      };
+      const raw = JSON.stringify({ ...lead, ...flat, phone, submittedAt: new Date().toISOString() });
       const headers: Record<string, string> = { "Content-Type": "application/json" };
       if (webhookSecret) headers["X-Webhook-Signature"] = `sha256=${createHmac("sha256", webhookSecret).update(raw).digest("hex")}`;
       const res = await fetch(webhook, { method: "POST", headers, body: raw });
