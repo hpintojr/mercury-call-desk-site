@@ -44,11 +44,18 @@ export function normalizePhone(raw: string): string {
   return digits;
 }
 
-export async function deliverLead(lead: Lead): Promise<DeliveryResult> {
+export type DeliveryTarget = "contact" | "callback";
+
+/**
+ * @param target "callback" routes to the dedicated ad-callback workflow (CRM_CALLBACK_WEBHOOK_URL /
+ *   CRM_CALLBACK_WEBHOOK_SECRET) when configured, otherwise falls back to the main intake webhook.
+ */
+export async function deliverLead(lead: Lead, target: DeliveryTarget = "contact"): Promise<DeliveryResult> {
   const token = process.env.CRM_API_TOKEN;
   const locationId = process.env.CRM_LOCATION_ID;
-  const webhook = process.env.CRM_WEBHOOK_URL;
-  const webhookSecret = process.env.CRM_WEBHOOK_SECRET;
+  const useCallback = target === "callback" && !!process.env.CRM_CALLBACK_WEBHOOK_URL;
+  const webhook = useCallback ? process.env.CRM_CALLBACK_WEBHOOK_URL : process.env.CRM_WEBHOOK_URL;
+  const webhookSecret = useCallback ? process.env.CRM_CALLBACK_WEBHOOK_SECRET : process.env.CRM_WEBHOOK_SECRET;
   const phone = normalizePhone(lead.phone);
   const errors: string[] = [];
 

@@ -9,7 +9,8 @@ import { landingSlugs } from "@/content/landing";
  *   ai-call-consent    → the visitor accepted AI/automated-call + SMS consent (TCPA)
  *   lp:<slug>          → which landing page
  *   industry:<value>   → the qualifying answer
- * The CRM workflow (not this route) places the call, within the 8am–8pm local window.
+ * Delivered to the dedicated "Ad Callback -> AI Call" workflow (CRM_CALLBACK_WEBHOOK_URL) when set;
+ * that workflow creates the contact, opens the opportunity and places the Sulus AI outbound call.
  */
 type Payload = {
   firstName: string; phone: string; email?: string; company?: string; industry?: string;
@@ -43,7 +44,7 @@ export async function POST(req: Request) {
     tags: ["ad-callback", "ai-call-consent", "sms-consent", `lp:${slug}`, `industry:${industry}`],
     customFields: { lead_industry: industry },
     attribution: sanitizeAttribution(body.attribution),
-  });
+  }, "callback");
 
   if (!result.ok) return NextResponse.json({ ok: false, error: "Delivery failed" }, { status: 502 });
   return NextResponse.json({ ok: true });
