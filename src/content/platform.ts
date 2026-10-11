@@ -1,0 +1,59 @@
+/** Content for the /platform page: the Sulus CRM tour. */
+
+export const platformHero = {
+  crumb: "Platform",
+  title: "Sulus CRM: the whole phone operation, one platform",
+  body: "Your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants, working as one. This is the tour.",
+};
+
+export const platformSections = [
+  {
+    eyebrow: "Core CRM",
+    title: "Every call lands in your CRM",
+    body: "Contacts, companies, and conversations live in Sulus CRM. No syncing from a separate phone tool, no CSV exports, no data lost between systems. When the AI books an appointment, the contact, the booking, and the transcript are already there.",
+    icon: "users",
+    points: ["Contacts, companies, and full conversation history", "Pipelines and opportunities tied to every call", "Files, forms, and websites in the same workspace"],
+  },
+  {
+    eyebrow: "AI Front Desk",
+    title: "Assistants that answer like your best employee",
+    body: "Mercury Call Desk AI assistants pick up in under a second, hold natural conversations, book appointments, qualify leads, and follow up by SMS. 40+ languages with automatic detection, 24/7, including nights, weekends, and holidays.",
+    icon: "phone",
+    points: ["Answers in under 1 second, every call, every time", "Books, qualifies, and follows up automatically", "100+ natural voices, 40+ languages"],
+  },
+  {
+    eyebrow: "Phone System + Dialer",
+    title: "A real phone system, not an add-on",
+    body: "Inbound handling, outbound dialing, local numbers, call recording with searchable transcripts, and SMS, all native to the platform. Your team, your AI, or both can run the phones.",
+    icon: "zap",
+    points: ["Outbound dialer with local presence numbers", "Call recording, transcripts, and AI summaries", "SMS messaging with A2P 10DLC handled"],
+  },
+  {
+    eyebrow: "Automation",
+    title: "Workflows that work while you sleep",
+    body: "Missed-call text-back, appointment reminders, review requests, and pipeline follow-ups run automatically. Build them visually, trigger them from any call event.",
+    icon: "bolt",
+    points: ["Missed-call text-back and speed-to-lead flows", "Appointment reminders and review requests", "Reputation management built in"],
+  },
+  {
+    eyebrow: "Reporting",
+    title: "See what your phones are doing",
+    body: "Call volume, answer rates, booking conversion, and lead capture, per location and per campaign. The 98.5% lead capture rate isn't a slogan, it's a dashboard.",
+    icon: "chart",
+    points: ["Call outcomes and conversion tracking", "Lead source attribution", "Per-location and per-agent reporting"],
+  },
+  {
+    eyebrow: "Migration",
+    title: "Bring your data with you",
+    body: "Moving from GoHighLevel or another CRM? Agencies-tier and up include guided data migration with HighLevel import and custom MCP data tools, so your contacts, pipelines, and history come along.",
+    icon: "plug",
+    points: ["HighLevel import on Agencies and Enterprise", "Custom MCP data tools on Enterprise", "White-glove migration support"],
+  },
+];
+
+export const tierGating = [
+  { tier: "Starter", detail: "Core CRM, Sales, and Web Presence modules. Everything a solo operator needs." },
+  { tier: "Professional", detail: "Adds Financials, Marketing, and Automation. The growth engine for most businesses." },
+  { tier: "Agencies", detail: "Adds Advanced Tools and Data Migration. Multi-location reporting and HighLevel import." },
+  { tier: "Enterprise", detail: "Adds SaaS Reseller: white-label sub-accounts and rebilling under your own brand." },
+];
