@@ -50,7 +50,7 @@ function UsageTable() {
 export default function PricingPage() {
   return (
     <>
-      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $97/mo plus transparent, published usage rates. Every tier includes the AI front desk, the full dialer, and the CRM. Annual billing includes 2 months free." />
+      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $97/mo plus transparent, published usage rates. Every tier includes Mercury CRM, the AI front desk, and the full dialer. Already have a CRM? Keep it and we connect to it. Annual billing includes 2 months free." />
 
       <section className="py-14 sm:py-20">
         <div className="container-x"><PricingCards /></div>

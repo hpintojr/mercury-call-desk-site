@@ -28,6 +28,7 @@ export const tiers: Tier[] = [
     annualTotal: 970,
     cta: "Start with Starter",
     features: [
+      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "1 user", detail: "One seat for the owner-operator" },
       { title: "2,500 contacts", detail: "Contacts, companies, and conversations in Mercury CRM" },
       { title: "10 GB storage", detail: "Call recordings, files, and documents" },
@@ -47,6 +48,7 @@ export const tiers: Tier[] = [
     ctaShort: "Start Professional",
     popular: true,
     features: [
+      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "Everything in Starter", detail: "All Starter features plus the Professional benefits below" },
       { title: "5 users", detail: "Seats for your whole front office" },
       { title: "10,000 contacts", detail: "Room to grow your database" },
@@ -65,6 +67,7 @@ export const tiers: Tier[] = [
     annualTotal: 3970,
     cta: "Start with Agencies",
     features: [
+      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "Everything in Professional", detail: "All Professional features plus the Agencies benefits below" },
       { title: "10 users", detail: "Seats across locations and departments" },
       { title: "50,000 contacts", detail: "High-volume database capacity" },
@@ -85,6 +88,7 @@ export const tiers: Tier[] = [
     cta: "Talk to Sales",
     badge: "White-label reseller",
     features: [
+      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "Everything in Agencies", detail: "All Agencies features plus the Enterprise benefits below" },
       { title: "Unlimited users, contacts & storage", detail: "No caps as you scale" },
       { title: "$50 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
@@ -200,6 +204,7 @@ export const pricingFaq = [
   { q: "Can I change tiers later?", a: "Yes. Upgrade or downgrade anytime to match your business. Changes take effect immediately with no service interruption." },
   { q: "Is there a setup fee?", a: "No setup fees and no long-term contracts. Monthly billing, cancel anytime." },
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
+  { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
   { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr, Agencies $3,970/yr, Enterprise $12,500/yr." },
 ];
@@ -209,6 +214,6 @@ export const whyChoose = [
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
   { title: "Built-In Compliance", body: "Native TCPA controls, DNC scrubbing, timezone-aware calling, AI call disclosure, and A2P 10DLC registration handled." },
-  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Enterprise unlocks white-label sub-accounts and rebilling." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks white-label sub-accounts and rebilling." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];
