@@ -7,7 +7,7 @@ export const site = {
   shortName: "MCD",
   tagline: "Never miss a call again!",
   description:
-    "24/7 AI phone assistants that answer, book appointments, qualify leads, and speak 40+ languages — so you close more business.",
+    "Mercury CRM: your customer database, full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
   legalName: "Benny & Penny | A Tech Company d/b/a Mercury Call Desk",
   legalUpdated: "September 4, 2026",
@@ -39,7 +39,7 @@ export const links = {
   /**
    * Sulus CRM "Account Setup" form — the front door of the purchase flow.
    * Collects minimal info, pre-selects package/billing via query params
-   * (?package=Starter|Growth|Pro&billing=Monthly|Annual - Save ~25%),
+   * (?package=Starter|Professional|Agencies|Enterprise&billing=Monthly|Annual),
    * then on submit redirects to /checkout (Next.js) → the matching Stripe
    * Payment Link below, with the buyer's email pre-filled.
    */
@@ -48,7 +48,7 @@ export const links = {
   checkout: {
     starter: { monthly: "https://buy.stripe.com/3cI5kF1lG4K2gV0fKj9R600", annual: "https://buy.stripe.com/4gM28t8O83FY0W21Tt9R601" },
     growth: { monthly: "https://buy.stripe.com/cNifZjggA6SaawC1Tt9R602", annual: "https://buy.stripe.com/7sYfZj6G05O6awC1Tt9R603" },
-    pro: { monthly: "https://buy.stripe.com/3cI3cxd4o90i0W20Pp9R604", annual: "https://buy.stripe.com/6oU00laWg0tMfQWapZ9R605" },
+    pro: { monthly: "https://buy.stripe.com/3cI3cxd4o90i0W20Pp9R604", annual: "https://buy.stripe.com/6oU00laWg0tMfQWapR605" },
   },
   legal: {
     terms: "/terms",
@@ -57,8 +57,9 @@ export const links = {
 };
 
 export const nav = [
+  { label: "Platform", href: "/platform" },
+  { label: "Dialer", href: "/dialer" },
   { label: "Features", href: "/features" },
-  { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },
   { label: "FAQ's", href: "/faq" },
   { label: "Contact", href: "/contact" },

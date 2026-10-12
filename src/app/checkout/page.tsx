@@ -3,7 +3,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { links } from "@/config/site";
-import type { TierId } from "@/content/pricing";
 
 /**
  * Checkout redirect.
@@ -17,6 +16,9 @@ import type { TierId } from "@/content/pricing";
  * into the matching Stripe Payment Link with the email pre-filled.
  */
 
+// Legacy Stripe Payment Link keys (old pricing). Not the new pricing.ts tiers;
+// re-map once Stripe links exist for Starter/Professional/Agencies/Enterprise.
+type TierId = keyof typeof links.checkout;
 const VALID_TIERS: TierId[] = ["starter", "growth", "pro"];
 
 function normalizeTier(raw: string | null): TierId | null {

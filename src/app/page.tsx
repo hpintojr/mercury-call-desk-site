@@ -3,16 +3,15 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Icon, { type IconName } from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
-import RotatingWords from "@/components/RotatingWords";
 import Marquee from "@/components/Marquee";
-import FeatureCard from "@/components/FeatureCard";
-import PricingCards from "@/components/PricingCards";
 import Testimonials from "@/components/Testimonials";
 import CTABand from "@/components/CTABand";
-import { links, site } from "@/config/site";
-import { heroWords, benefitWords, frontLines, featureRows, homeIntegrations, insights } from "@/content/home";
+import RoiCalculator from "@/components/RoiCalculator";
+import { links, site, aiLine } from "@/config/site";
+import { benefitWords, pillars, featureRows, homeIntegrations, insights, oneBill, compliancePoints } from "@/content/home";
+import { tiers } from "@/content/pricing";
 
-const frontIcons: IconName[] = ["phone", "zap", "users"];
+const pillarIcons: IconName[] = ["phone", "zap", "users"];
 const intSlugs: Record<string, string> = { "Google Calendar": "google-calendar", Stripe: "stripe", "Microsoft Outlook": "microsoft-outlook", Zapier: "zapier" };
 
 export default function HomePage() {
@@ -24,10 +23,10 @@ export default function HomePage() {
         <div className="container-x relative grid gap-10 py-16 sm:py-20 lg:grid-cols-12 lg:items-center lg:py-28">
           <div className="lg:col-span-7">
             <h1 className="text-[2.1rem] font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
-              Never miss a… <RotatingWords words={heroWords} /> <br className="hidden sm:block" />call again!
+              Your entire phone operation. One platform.
             </h1>
             <p className="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-              {site.name} phone assistants that handle calls like your best employee — 24/7, with custom workflows for any business.
+              Mercury CRM combines your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={links.demo} size="lg">Schedule a Custom Demo</Button>
@@ -36,7 +35,7 @@ export default function HomePage() {
             <p className="mt-6 text-xs text-white/50">Trusted by businesses that know missed calls mean missed business.</p>
           </div>
 
-          {/* Live-call card (visual stand-in for the hero image) */}
+          {/* Live-call card */}
           <div className="lg:col-span-5">
             <div className="animate-float mx-auto max-w-sm rounded-xl2 border border-white/10 bg-white/5 p-5 backdrop-blur">
               <div className="flex items-center gap-3">
@@ -58,25 +57,99 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Never miss a call, and… ── */}
-      <section className="bg-mcd-surface py-14 sm:py-20">
+      {/* ── Benefit marquee ── */}
+      <section className="bg-mcd-surface py-10">
+        <div className="container-x"><Marquee items={benefitWords} /></div>
+      </section>
+
+      {/* ── Three pillars ── */}
+      <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading title={<>Never Miss a Call Again, and&hellip;</>} />
-          <div className="mt-8"><Marquee items={benefitWords} /></div>
-          <p className="mx-auto mt-8 max-w-2xl text-center text-mcd-muted sm:text-lg">
-            {site.name} assistants answer your calls 24/7 with ultra-realistic AI that books appointments, qualifies leads, and connects to your CRM, and more… instantly!
-          </p>
-          <div className="mt-8 flex justify-center"><Button href={links.demo} size="lg">Schedule a Custom Demo</Button></div>
+          <SectionHeading eyebrow="One Platform, Three Pillars" title="Everything your phones do, in one place" body="Inbound, outbound, and everything behind the scenes. No stitching vendors together, no syncing data between tools." />
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {pillars.map((p, i) => (
+              <Link key={p.title} href={p.href} className="group rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-mcd-surface text-mcd-blue"><Icon name={pillarIcons[i]} className="h-6 w-6" /></span>
+                <h3 className="mt-4 text-lg font-bold text-mcd-navy">{p.title}</h3>
+                <p className="mt-2 text-sm text-mcd-muted">{p.body}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-mcd-blue group-hover:underline">Learn more <Icon name="arrow" className="h-4 w-4" /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Front lines ── */}
+      {/* ── One bill, not three ── */}
+      <section className="bg-mcd-navy py-14 text-white sm:py-20">
+        <div className="container-x">
+          <SectionHeading eyebrow={oneBill.eyebrow} title={oneBill.title} body={oneBill.body} />
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="space-y-3">
+              <p className="text-xs font-bold uppercase tracking-wider text-white/50">The old way</p>
+              {oneBill.oldWay.map((o) => (
+                <div key={o.name} className="flex items-center justify-between rounded-xl2 border border-white/10 bg-white/5 px-5 py-4">
+                  <div><p className="font-bold">{o.name}</p><p className="text-sm text-white/60">{o.detail}</p></div>
+                  <Icon name="x" className="h-5 w-5 text-white/30" />
+                </div>
+              ))}
+              <p className="pt-1 text-sm text-white/50">Three vendors. Three bills. Three logins.</p>
+            </div>
+            <div className="rounded-xl2 border border-mcd-cyan/40 bg-gradient-to-br from-mcd-blue/30 to-mcd-cyan/10 p-6 sm:p-8">
+              <p className="text-xs font-bold uppercase tracking-wider text-mcd-cyan">The Mercury way</p>
+              <p className="mt-3 text-2xl font-extrabold">{oneBill.newWay.name}</p>
+              <p className="mt-1 text-xl font-bold text-mcd-cyan">{oneBill.newWay.price}</p>
+              <p className="mt-3 text-white/75">{oneBill.newWay.detail}</p>
+              <div className="mt-6"><Button href="/pricing" variant="white">See the plans</Button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Talk to the AI now ── */}
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Your Always-On Front Desk" title={<>Let {site.name} Handle the Front Lines For Your Business</>} body={`${site.name} answers, routes, books, follows up, and so much more, 24/7. Trained to sound human and built to adapt to your business needs.`} />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {frontLines.map((f, i) => <FeatureCard key={f.title} title={f.title} body={f.body} icon={frontIcons[i]} />)}
+          <div className="grid items-center gap-8 rounded-xl2 border border-mcd-line bg-white p-8 shadow-sm sm:p-12 lg:grid-cols-2">
+            <div>
+              <p className="eyebrow text-mcd-blue">Live Demo</p>
+              <h2 className="mt-3 text-2xl font-extrabold text-mcd-navy sm:text-3xl">Don&apos;t take our word for it. Call the AI.</h2>
+              <p className="mt-4 text-mcd-muted sm:text-lg">The fastest demo in the industry: pick up your phone, call the number, and try to stump it. Book a fake appointment. Ask a hard question. Try Spanish.</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button href={links.demoCall} size="lg"><Icon name="phone" className="h-4 w-4" /> {aiLine.display}</Button>
+                <Button href={links.demo} size="lg" variant="outline">Schedule a Custom Demo</Button>
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <a href={links.demoCall} className="flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-mcd-blue to-mcd-cyan text-white shadow-xl transition hover:scale-105 sm:h-56 sm:w-56" aria-label="Call our AI assistant now">
+                <Icon name="phone" className="h-16 w-16 sm:h-20 sm:w-20" />
+              </a>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── ROI calculator ── */}
+      <section className="bg-mcd-surface py-14 sm:py-20">
+        <div className="container-x">
+          <SectionHeading eyebrow="Do The Math" title="What are missed calls costing you?" body="Plug in your numbers. This is the revenue an AI front desk recovers by answering every call." />
+          <div className="mt-10"><RoiCalculator /></div>
+        </div>
+      </section>
+
+      {/* ── Pricing teaser ── */}
+      <section className="py-14 sm:py-20">
+        <div className="container-x">
+          <SectionHeading eyebrow="Plans That Scale With You" title="Clear pricing, no surprises" body="Platform plans from $97/mo plus transparent usage rates. Every tier includes the AI front desk, the full dialer, and Mercury CRM." />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {tiers.map((t) => (
+              <div key={t.id} className={`relative rounded-xl2 border bg-white p-6 shadow-sm ${t.popular ? "border-mcd-sky ring-2 ring-mcd-sky/40" : "border-mcd-line"}`}>
+                {t.popular && <span className="absolute -top-3 left-6 rounded-full bg-gradient-to-r from-mcd-blue to-mcd-cyan px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-mcd-navy">Most Popular</span>}
+                <h3 className="text-lg font-extrabold text-mcd-navy">{t.name}</h3>
+                <p className="mt-1 text-sm text-mcd-muted">{t.blurb}</p>
+                <p className="mt-4"><span className="text-3xl font-extrabold text-mcd-navy">${t.monthly.toLocaleString()}</span><span className="text-sm text-mcd-muted">/mo + usage</span></p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center"><Button href="/pricing" size="lg">See all plans</Button></div>
         </div>
       </section>
 
@@ -89,7 +162,7 @@ export default function HomePage() {
                 <p className="eyebrow text-mcd-cyan">{r.eyebrow}</p>
                 <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl">{r.title}</h2>
                 <p className="mt-4 text-white/75 sm:text-lg">{r.body}</p>
-                <Link href="/features" className="mt-6 inline-flex items-center gap-2 font-semibold text-mcd-cyan hover:underline">Discover more <Icon name="arrow" className="h-4 w-4" /></Link>
+                <Link href="/platform" className="mt-6 inline-flex items-center gap-2 font-semibold text-mcd-cyan hover:underline">Discover more <Icon name="arrow" className="h-4 w-4" /></Link>
               </div>
               <div className="flex items-center justify-center rounded-xl2 border border-white/10 bg-white/5 p-10 sm:p-16">
                 <Icon name={r.icon as IconName} className="h-24 w-24 text-mcd-cyan sm:h-32 sm:w-32" />
@@ -99,10 +172,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Integrations ── */}
+      {/* ── Integrations (native first) ── */}
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Built to Connect" title="Works With Your Tools. No Extra Lift" body={`Your ${site.name} assistant connects instantly with your existing tools — CRMs, calendars, payment systems, and more — so you don't need to change how your business runs. Every conversation becomes a completed task, booked appointment, or updated record without lifting a finger.`} />
+          <SectionHeading eyebrow="Built In, Not Bolted On" title="The CRM is included. So is everything else." body="Most AI phone tools make you connect your own CRM, calendar, and payment system. Mercury CRM ships with all of it, and still plays nicely with the tools you already use." />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {homeIntegrations.map((it) => (
               <Link key={it.name} href="/integrations" className="group rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -114,28 +187,17 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <div className="mt-8 text-center"><Button href="/integrations" variant="outline">Explore more integrations</Button></div>
         </div>
       </section>
 
-      {/* ── Pricing ── */}
-      <section id="pricing" className="bg-mcd-surface py-14 sm:py-20">
-        <div className="container-x">
-          <SectionHeading eyebrow="Plans That Scale With You" title="Clear Pricing, No Surprises" body={`Whether you're starting small or running at scale, ${site.name} has a plan that grows with your business. Every tier includes a powerful ${site.name} assistant that sounds human, handles calls end-to-end, and helps you focus on what matters most.`} />
-          <div className="mt-10"><PricingCards /></div>
-          <p className="mt-6 text-center text-sm text-mcd-muted">Need the full feature comparison? <Link href="/pricing" className="font-semibold text-mcd-blue underline">See all plans</Link></p>
-        </div>
-      </section>
-
-      {/* ── Insights ── */}
-      <section className="py-14 sm:py-20">
+      {/* ── Stats ── */}
+      <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading align="left" eyebrow="Smarter Decisions" title="Turn Every Call Into a Business Advantage" body={`Don't just collect data — act on it. ${site.name} reveals patterns in customer needs, call outcomes, and agent performance so you can make faster, smarter decisions. Businesses use these insights to increase bookings, improve customer satisfaction, and reduce missed opportunities.`} />
+            <SectionHeading align="left" eyebrow="Smarter Decisions" title="Turn every call into a business advantage" body="Mercury CRM reveals patterns in customer needs, call outcomes, and agent performance so you can make faster, smarter decisions." />
             <ul className="mt-6 space-y-3">
               {insights.map((t) => <li key={t} className="flex items-center gap-3 font-semibold text-mcd-navy"><Icon name="check" className="h-5 w-5 text-mcd-blue" />{t}</li>)}
             </ul>
-            <Link href="/features" className="mt-6 inline-flex items-center gap-2 font-semibold text-mcd-blue hover:underline">Discover more <Icon name="arrow" className="h-4 w-4" /></Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
             {[["98.5%", "Lead capture"], ["<1 sec", "Response time"], ["24/7", "Availability"], ["40+", "Languages"]].map(([n, l]) => (
@@ -149,14 +211,27 @@ export default function HomePage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="bg-mcd-surface py-14 sm:py-20">
+      <section className="py-14 sm:py-20">
         <div className="container-x">
           <SectionHeading eyebrow="Real Customer Wins" title={<>How companies like yours use {site.name} every day</>} body={`Real customers sharing how ${site.name} increased their revenue, improved customer satisfaction, and saved valuable time and money.`} />
           <div className="mt-10"><Testimonials /></div>
         </div>
       </section>
 
-      <CTABand eyebrow="Never Miss a Call" title="Every Call Answered. Every Customer Heard." body={`Join hundreds of businesses already using ${site.name} assistants to increase revenue, improve customer satisfaction, and save time.`} cta="See It In Action" href={links.demo} />
+      {/* ── Compliance strip ── */}
+      <section className="bg-mcd-navy py-10 text-white">
+        <div className="container-x flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+          <p className="text-center text-sm font-semibold text-white/85 lg:text-left">Built for regulated outreach: compliance controls are native, not an add-on.</p>
+          <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {compliancePoints.map((c) => (
+              <li key={c} className="flex items-center gap-2 text-sm font-semibold"><Icon name="check" className="h-4 w-4 text-mcd-cyan" />{c}</li>
+            ))}
+          </ul>
+          <Link href="/dialer#compliance" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-mcd-cyan hover:underline">How we handle compliance <Icon name="arrow" className="h-4 w-4" /></Link>
+        </div>
+      </section>
+
+      <CTABand eyebrow="Get Started" title="One platform. One bill. Zero missed calls." body={`Join businesses running their entire phone operation on Mercury CRM and ${site.name} AI assistants. Talk to the AI right now at ${aiLine.display}, or book a custom demo.`} cta="Schedule a Custom Demo" href={links.demo} />
     </>
   );
 }

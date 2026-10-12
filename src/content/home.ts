@@ -12,17 +12,14 @@ export const heroWords = [
 ];
 
 export const benefitWords = [
-  "Capture Every Lead",
-  "Book Appointments",
-  "Send Custom Text Messages",
-  "Call to Confirm Appointments",
-  "Capture Calls Day and Night",
-  "Handle Invoicing & Payments",
-  "Calls Captured on Weekends",
-  "Collect Customer Feedback",
-  "Calls Answered on Holidays",
-  "Handle After Hours Support",
-  "So Much More!",
+  "CRM Included",
+  "Full Dialer Built In",
+  "AI Answers 24/7",
+  "Outbound Calling",
+  "SMS + Voice",
+  "Call Recordings",
+  "40+ Languages",
+  "One Bill",
 ];
 
 export const frontLines = [
@@ -31,11 +28,55 @@ export const frontLines = [
   { title: "Built for Your Business", body: "Whether it's home services to healthcare, Mercury Call Desk adapts to how you work — fast setup, no technical headaches." },
 ];
 
+export const pillars = [
+  {
+    title: "AI Front Desk",
+    body: "AI assistants answer every inbound call in under a second, book appointments, qualify leads, and follow up by SMS. 40+ languages, day and night.",
+    href: "/platform",
+    icon: "phone",
+  },
+  {
+    title: "Sales Dialer",
+    body: "A full outbound dialer with local numbers, call recording, transcripts, and SMS. Run it with your team, your AI, or both.",
+    href: "/dialer",
+    icon: "zap",
+  },
+  {
+    title: "CRM + Automations",
+    body: "Every call lands in Mercury CRM: contacts, pipelines, workflows, and reporting. Nothing to sync, nothing to bolt on.",
+    href: "/platform",
+    icon: "users",
+  },
+];
+
+export const oneBill = {
+  eyebrow: "One Bill, Not Three",
+  title: "Stop stitching your phones together",
+  body: "Most businesses pay three vendors to cover their phones: a CRM, a phone system, and an answering service. Mercury CRM replaces all three.",
+  oldWay: [
+    { name: "CRM subscription", detail: "Contacts, pipelines, automations" },
+    { name: "Business phone system", detail: "Numbers, dialer, recordings" },
+    { name: "AI answering service", detail: "After-hours call coverage" },
+  ],
+  newWay: {
+    name: "Mercury CRM",
+    price: "from $97/mo + usage",
+    detail: "CRM, phone system, dialer, and AI assistants. One vendor, one bill, one login.",
+  },
+};
+
+export const compliancePoints = [
+  "Native TCPA controls",
+  "AI call disclosure",
+  "DNC scrubbing",
+  "A2P 10DLC handled",
+];
+
 export const featureRows = [
   {
     eyebrow: "Instant Trust",
     title: "Talks Like a Human. Helps Like One, Too.",
-    body: "Your Mercury Call Desk assistant holds real-time, natural conversations, not robotic scripts. Every caller feels heard, understood, and served by a real team member, even though it's AI.",
+    body: "Your Mercury Call Desk assistant holds real-time, natural conversations, not robotic scripts. Every caller feels heard and helped, even though it's AI.",
     icon: "chat",
   },
   {
@@ -47,7 +88,7 @@ export const featureRows = [
   {
     eyebrow: "Built to Get Things Done",
     title: "Not Just Smart, It Takes Action.",
-    body: "From booking appointments and updating CRMs to sending reminders and accepting payments, your Mercury Call Desk assistant handles what needs to happen next. Automatically, instantly, and exactly the way your business runs.",
+    body: "Books appointments, sends reminders, and takes payments, acting directly inside Mercury CRM. The CRM is built in, not bolted on.",
     icon: "bolt",
   },
 ];
