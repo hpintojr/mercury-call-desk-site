@@ -37,7 +37,7 @@ export const pillars = [
   },
   {
     title: "Sales Dialer",
-    body: "A full outbound dialer with local numbers, call recording, transcripts, and SMS. Run it with your team, your AI, or both.",
+    body: "A 10-line parallel dialer with local numbers, call recording, transcripts, and SMS. Run it with your team, your AI, or both.",
     href: "/dialer",
     icon: "zap",
   },
@@ -66,9 +66,9 @@ export const oneBill = {
 };
 
 export const compliancePoints = [
-  "Native TCPA controls",
-  "AI call disclosure",
-  "DNC scrubbing",
+  "Built-in DNC list",
+  "Calling-hour enforcement",
+  "Automatic consent checks",
   "A2P 10DLC handled",
 ];
 

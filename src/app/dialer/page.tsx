@@ -9,7 +9,7 @@ import { dialerHero, dialerFeatures, complianceItems, dialerFaq } from "@/conten
 
 export const metadata: Metadata = {
   title: "Dialer",
-  description: "A full outbound dialer built into Mercury CRM: local numbers, recordings, SMS, and natively enforced TCPA, DNC, and timezone compliance.",
+  description: "A 10-line parallel dialer built into Mercury CRM: local numbers, recordings, SMS, an in-system DNC list, automatic consent checks, and calling-hour enforcement.",
 };
 
 const featureIcons: IconName[] = ["zap", "phone", "chat", "chat"];
@@ -37,7 +37,7 @@ export default function DialerPage() {
       {/* ── Compliance ── */}
       <section id="compliance" className="scroll-mt-24 bg-mcd-navy py-14 text-white sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Compliance, Native" title="Built for regulated outreach" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. The dialer enforces the controls natively instead of leaving them to a checklist." />
+          <SectionHeading eyebrow="Compliance tools" title="Built for regulated outreach" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. Mercury CRM checks consent and enforces calling hours before it dials, and suppresses opt-outs automatically. Scrubbing your lists against the National DNC Registry stays your responsibility." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {complianceItems.map((c) => (
               <div key={c.title} className="rounded-xl2 border border-white/10 bg-white/5 p-6">
