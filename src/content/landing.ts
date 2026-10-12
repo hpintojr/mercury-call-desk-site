@@ -281,7 +281,7 @@ export const landingPages: LandingConfig[] = [
     stats: [
       { value: "$97", label: "Starter · AI front desk, dialer + Mercury CRM", basis: "Per month plus published usage rates; no setup fee" },
       { value: "$297", label: "Professional · 5 users, marketing + automation", basis: "Most popular; per month plus published usage rates" },
-      { value: "$397", label: "Agencies · white-label sub-accounts + rebilling", basis: "Per month plus published usage rates" },
+      { value: "$397", label: "Agencies · white-label client sub-accounts", basis: "Per month plus published usage rates" },
     ],
     bookEyebrow: "Pick a time",
     bookTitle: "Book your Front-Desk Audit",
@@ -297,4 +297,6 @@ export const landingPages: LandingConfig[] = [
 ];
 
 export const landingSlugs = landingPages.map((p) => p.slug);
+/** Template pages plus standalone landing pages (e.g. /agencies) that share the bare chrome and callback form. */
+export const allLandingSlugs = [...landingSlugs, "agencies"];
 export const getLanding = (slug: string) => landingPages.find((p) => p.slug === slug);

@@ -62,7 +62,7 @@ export const tiers: Tier[] = [
   {
     id: "agencies",
     name: "Agencies",
-    blurb: "For agencies reselling under their own brand",
+    blurb: "For agencies running client accounts under their own brand",
     monthly: 397,
     annualTotal: 3970,
     cta: "Start with Agencies",
@@ -74,7 +74,7 @@ export const tiers: Tier[] = [
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
-      { title: "White-label sub-accounts + rebilling", detail: "Brand client accounts as your own and rebill them at your price" },
+      { title: "White-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
     ],
@@ -214,6 +214,6 @@ export const whyChoose = [
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
   { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic consent checks, calling-hour enforcement, automatic opt-outs, and A2P 10DLC registration handled." },
-  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks white-label sub-accounts and rebilling." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks white-label sub-accounts; Enterprise adds usage rebilling." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];
