@@ -9,7 +9,7 @@ import CTABand from "@/components/CTABand";
 import RoiCalculator from "@/components/RoiCalculator";
 import { links, site, aiLine } from "@/config/site";
 import { benefitWords, pillars, featureRows, homeIntegrations, insights, oneBill, compliancePoints } from "@/content/home";
-import { tiers } from "@/content/pricing";
+import { tiers, enterprise } from "@/content/pricing";
 
 const pillarIcons: IconName[] = ["phone", "zap", "users"];
 const intSlugs: Record<string, string> = { "Google Calendar": "google-calendar", Stripe: "stripe", "Microsoft Outlook": "microsoft-outlook", Zapier: "zapier" };
@@ -148,6 +148,11 @@ export default function HomePage() {
                 <p className="mt-4"><span className="text-3xl font-extrabold text-mcd-navy">${t.monthly.toLocaleString()}</span><span className="text-sm text-mcd-muted">/mo + usage</span></p>
               </div>
             ))}
+            <div className="relative rounded-xl2 bg-mcd-navy p-6 text-white shadow-sm">
+              <h3 className="text-lg font-extrabold">{enterprise.name}</h3>
+              <p className="mt-1 text-sm text-white/70">Custom tailored for high-volume businesses and agencies</p>
+              <p className="mt-4"><a href={links.demo} className="text-lg font-extrabold text-mcd-cyan hover:underline">Talk to our team</a></p>
+            </div>
           </div>
           <div className="mt-8 text-center"><Button href="/pricing" size="lg">See all plans</Button></div>
         </div>

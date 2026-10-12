@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Icon from "./Icon";
-import { tiers } from "@/content/pricing";
+import { tiers, enterprise } from "@/content/pricing";
 import { links } from "@/config/site";
 
 const money = (n: number) => n.toLocaleString("en-US");
@@ -28,8 +28,8 @@ export default function PricingCards({ compact = false }: { compact?: boolean })
         </div>
       </div>
 
-      {/* Cards: stack on mobile → 2-col tablet → 4-col desktop */}
-      <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {/* Cards: stack on mobile → 3-col desktop */}
+      <div className="mt-10 grid gap-5 md:grid-cols-3">
         {tiers.map((t) => {
           const perMonth = annual ? Math.round(t.annualTotal / 12) : t.monthly;
           const badge = t.popular ? "Most Popular" : t.badge;
@@ -66,6 +66,23 @@ export default function PricingCards({ compact = false }: { compact?: boolean })
           );
         })}
       </div>
+
+      {/* Enterprise: quote-only, no published price */}
+      <article className="mt-5 grid gap-6 rounded-xl2 bg-mcd-navy p-6 text-white shadow-sm sm:p-8 lg:grid-cols-12 lg:items-center">
+        <div className="lg:col-span-5">
+          <p className="eyebrow text-mcd-cyan">{enterprise.eyebrow}</p>
+          <h3 className="mt-2 text-2xl font-extrabold">{enterprise.title}</h3>
+          <p className="mt-3 text-sm text-white/75">{enterprise.body}</p>
+          <div className="mt-6"><Button href={links.demo} variant="white">{enterprise.cta}</Button></div>
+        </div>
+        {!compact && (
+          <ul className="grid gap-x-8 gap-y-3 text-sm sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
+            {enterprise.points.map((p) => (
+              <li key={p} className="flex gap-2 text-white/85"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-cyan" />{p}</li>
+            ))}
+          </ul>
+        )}
+      </article>
     </div>
   );
 }

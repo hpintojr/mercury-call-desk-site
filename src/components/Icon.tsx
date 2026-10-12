@@ -2,7 +2,7 @@ type Name =
   | "check" | "x" | "chevron" | "phone" | "menu" | "globe" | "chat" | "bolt"
   | "calendar" | "card" | "mail" | "zap" | "shield" | "chart" | "users" | "clock"
   | "star" | "arrow" | "quote" | "plug" | "mic" | "pin" | "paragraph"
-  | "facebook" | "instagram" | "xsocial" | "linkedin";
+  | "facebook" | "instagram" | "xsocial" | "linkedin" | "youtube";
 
 const paths: Record<Name, React.ReactNode> = {
   check: <path d="M20 6 9 17l-5-5" />,
@@ -32,6 +32,7 @@ const paths: Record<Name, React.ReactNode> = {
   instagram: <><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></>,
   xsocial: <path d="M18.9 2H22l-7.4 8.5L23 22h-6.8l-5.3-6.9L4.8 22H2l7.9-9.1L1.7 2h7l4.8 6.3L18.9 2z" />,
   linkedin: <><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></>,
+  youtube: <><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17" /><path d="m10 15 5-3-5-3z" /></>,
 };
 
 export default function Icon({ name, className = "h-5 w-5" }: { name: Name; className?: string }) {
