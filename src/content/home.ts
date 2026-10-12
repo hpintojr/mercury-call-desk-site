@@ -67,8 +67,8 @@ export const oneBill = {
 
 export const compliancePoints = [
   "Built-in DNC list",
-  "Automatic opt-outs",
-  "Consent on record",
+  "Calling-hour enforcement",
+  "Automatic consent checks",
   "A2P 10DLC handled",
 ];
 

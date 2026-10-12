@@ -248,7 +248,7 @@ export const landingPages: LandingConfig[] = [
     bookBody: "Bring the sources your leads come from and how you follow up today. In 20 minutes we'll map the cadence we'd build, what it connects to, and what it would take to be live.",
     faq: [
       { q: "Do I need to switch CRMs?", a: "No. We build it in Mercury CRM, which is included with every plan and runs calls, texts, email, pipelines and calendars in one place. If you'd rather keep the CRM you already use, we connect to it instead." },
-      { q: "Is the outbound calling compliant?", a: "The AI callback only goes to people who just asked to be contacted through your form, and we write consent language for your forms as part of the build. Contacts who opt out go onto your built-in DNC list. For any other list you call, registry scrubbing, consent, and calling hours are your responsibility." },
+      { q: "Is the outbound calling compliant?", a: "The AI callback only goes to people who just asked to be contacted through your form, and we write consent language for your forms as part of the build. Contacts who opt out go onto your built-in DNC list. For any other list you call, the dialer checks consent and enforces calling hours before it dials; scrubbing the list against the National DNC Registry is your responsibility." },
       { q: "What's included in the build?", a: "The workflows, the messaging, the pipeline, the AI callback assistant, the calendar and CRM connections, and testing with your team. You get a working system, not a template." },
       commonFaq[4],
       commonFaq[5],

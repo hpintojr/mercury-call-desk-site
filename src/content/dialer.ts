@@ -39,8 +39,12 @@ export const complianceItems = [
     body: "Mercury CRM does not check numbers against the National Do Not Call Registry. Scrub purchased or cold lists against the federal registry and your state lists before you upload them.",
   },
   {
-    title: "Consent on record",
-    body: "AI-generated voices count as artificial voices under the TCPA (FCC ruling, Feb 2024), so AI-placed marketing calls need prior express written consent. Consent captured on your forms is stored on the contact. Violations run $500 to $1,500 per call.",
+    title: "Automatic consent checks",
+    body: "AI-generated voices count as artificial voices under the TCPA (FCC ruling, Feb 2024), so AI-placed marketing calls need prior express written consent. The dialer checks for consent on the contact before it dials and keeps the record. Violations run $500 to $1,500 per call.",
+  },
+  {
+    title: "Calling-hour enforcement",
+    body: "Campaigns only dial inside allowed calling hours in the recipient's local timezone. No 6 AM calls to the wrong coast.",
   },
   {
     title: "AI disclosure in the greeting",
@@ -57,7 +61,7 @@ export const complianceItems = [
 ];
 
 export const dialerFaq = [
-  { q: "Do I need consent before the AI calls someone?", a: "For AI-placed marketing calls to mobile numbers, yes: prior express written consent is required under the TCPA. Getting that consent is your responsibility; consent captured on your forms is stored on the contact record." },
+  { q: "Do I need consent before the AI calls someone?", a: "For AI-placed marketing calls to mobile numbers, yes: prior express written consent is required under the TCPA. The dialer checks for that consent on the contact before dialing and keeps the record. Collecting the consent in the first place is your responsibility." },
   { q: "Do you scrub my lists against the National Do Not Call Registry?", a: "No. Scrub any list against the federal registry and applicable state lists before you upload it. Once numbers are in, the in-system DNC list suppresses opt-outs and do-not-call requests across voice and SMS automatically." },
   { q: "How many lines does the dialer run?", a: "Up to 10 lines per rep at once (a 10:1 ratio). When someone answers, the call connects to the rep and the other lines drop." },
   { q: "Can my human team use the dialer too?", a: "Yes. The dialer works for human agents, AI assistants, or a mix. Recordings, transcripts, and dispositions are identical either way." },
