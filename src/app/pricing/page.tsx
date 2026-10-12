@@ -12,7 +12,7 @@ import { pricingFaq, whyChoose, usageRates, usageExplainers } from "@/content/pr
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Sulus CRM plans from $97/mo plus transparent usage rates. CRM, phone system, dialer, and AI assistants in one platform. Annual billing includes 2 months free.",
+  description: "Mercury CRM plans from $97/mo plus transparent usage rates. CRM, phone system, dialer, and AI assistants in one platform. Annual billing includes 2 months free.",
 };
 
 const icons: IconName[] = ["star", "bolt", "zap", "clock", "chart", "users"];
@@ -50,7 +50,7 @@ function UsageTable() {
 export default function PricingPage() {
   return (
     <>
-      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Sulus CRM plans from $97/mo plus transparent, published usage rates. Every tier includes the AI front desk, the full dialer, and the CRM. Annual billing includes 2 months free." />
+      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $97/mo plus transparent, published usage rates. Every tier includes the AI front desk, the full dialer, and the CRM. Annual billing includes 2 months free." />
 
       <section className="py-14 sm:py-20">
         <div className="container-x"><PricingCards /></div>
@@ -81,7 +81,7 @@ export default function PricingPage() {
 
       <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Why Sulus" title={<>Why businesses choose {site.name}</>} body="One platform replacing three vendors, with pricing you can actually read." />
+          <SectionHeading eyebrow="Why Mercury" title={<>Why businesses choose {site.name}</>} body="One platform replacing three vendors, with pricing you can actually read." />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whyChoose.map((w, i) => <FeatureCard key={w.title} title={w.title} body={w.body} icon={icons[i]} />)}
           </div>
@@ -90,7 +90,7 @@ export default function PricingPage() {
 
       <section className="py-14 sm:py-20">
         <div className="container-x max-w-4xl">
-          <SectionHeading eyebrow="Get answers" title="Common pricing questions" body="How usage, billing, and onboarding work on the Sulus CRM platform." />
+          <SectionHeading eyebrow="Get answers" title="Common pricing questions" body="How usage, billing, and onboarding work on the Mercury CRM platform." />
           <div className="mt-10"><FAQAccordion items={pricingFaq} /></div>
         </div>
       </section>

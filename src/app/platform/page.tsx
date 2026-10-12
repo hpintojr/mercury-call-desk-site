@@ -9,7 +9,7 @@ import { platformHero, platformSections, tierGating } from "@/content/platform";
 
 export const metadata: Metadata = {
   title: "Platform",
-  description: "Tour Sulus CRM: core CRM, AI front desk, phone system and dialer, automations, reporting, and migration. One platform, one bill.",
+  description: "Tour Mercury CRM: core CRM, AI front desk, phone system and dialer, automations, reporting, and migration. One platform, one bill.",
 };
 
 export default function PlatformPage() {

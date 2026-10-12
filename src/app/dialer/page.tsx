@@ -9,7 +9,7 @@ import { dialerHero, dialerFeatures, complianceItems, dialerFaq } from "@/conten
 
 export const metadata: Metadata = {
   title: "Dialer",
-  description: "A full outbound dialer built into Sulus CRM: local numbers, recordings, SMS, and natively enforced TCPA, DNC, and timezone compliance.",
+  description: "A full outbound dialer built into Mercury CRM: local numbers, recordings, SMS, and natively enforced TCPA, DNC, and timezone compliance.",
 };
 
 const featureIcons: IconName[] = ["zap", "phone", "chat", "chat"];

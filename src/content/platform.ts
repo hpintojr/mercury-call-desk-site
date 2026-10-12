@@ -2,7 +2,7 @@
 
 export const platformHero = {
   crumb: "Platform",
-  title: "Sulus CRM: the whole phone operation, one platform",
+  title: "Mercury CRM: the whole phone operation, one platform",
   body: "Your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants, working as one. This is the tour.",
 };
 
@@ -10,7 +10,7 @@ export const platformSections = [
   {
     eyebrow: "Core CRM",
     title: "Every call lands in your CRM",
-    body: "Contacts, companies, and conversations live in Sulus CRM. No syncing from a separate phone tool, no CSV exports, no data lost between systems. When the AI books an appointment, the contact, the booking, and the transcript are already there.",
+    body: "Contacts, companies, and conversations live in Mercury CRM. No syncing from a separate phone tool, no CSV exports, no data lost between systems. When the AI books an appointment, the contact, the booking, and the transcript are already there.",
     icon: "users",
     points: ["Contacts, companies, and full conversation history", "Pipelines and opportunities tied to every call", "Files, forms, and websites in the same workspace"],
   },
@@ -45,7 +45,7 @@ export const platformSections = [
   {
     eyebrow: "Migration",
     title: "Switch from GoHighLevel in days, not months",
-    body: "We built the API to transfer your GoHighLevel data straight into Sulus: contacts, pipelines, workflows, and history. During setup we rework your workflows so they run cleaner and faster than before, and you get MCP access to connect your own data tools. Most migrations finish in days.",
+    body: "We built the API to transfer your GoHighLevel data straight into Mercury CRM: contacts, pipelines, workflows, and history. During setup we rework your workflows so they run cleaner and faster than before, and you get MCP access to connect your own data tools. Most migrations finish in days.",
     icon: "plug",
     points: ["Direct GHL data transfer via our migration API", "Workflows rebuilt and optimized during setup", "MCP access for your own data tools", "White-glove migration on Agencies and Enterprise"],
   },

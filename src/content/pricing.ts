@@ -29,7 +29,7 @@ export const tiers: Tier[] = [
     cta: "Start with Starter",
     features: [
       { title: "1 user", detail: "One seat for the owner-operator" },
-      { title: "2,500 contacts", detail: "Contacts, companies, and conversations in Sulus CRM" },
+      { title: "2,500 contacts", detail: "Contacts, companies, and conversations in Mercury CRM" },
       { title: "10 GB storage", detail: "Call recordings, files, and documents" },
       { title: "$5 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "AI Front Desk", detail: "AI assistant answers every call 24/7, books appointments, sends SMS follow-ups" },
@@ -177,7 +177,7 @@ export const compare: CompareGroup[] = [
       { label: "Automation (workflows, reputation)", cells: [false, true, true, true] },
       { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true, true] },
       { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true, true] },
-      { label: "SaaS Reseller (sub-account rebilling)", tip: "Resell Sulus CRM under your own brand with white-label sub-accounts.", cells: [false, false, false, true] },
+      { label: "SaaS Reseller (sub-account rebilling)", tip: "Resell Mercury CRM under your own brand with white-label sub-accounts.", cells: [false, false, false, true] },
     ],
   },
   {

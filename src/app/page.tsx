@@ -26,7 +26,7 @@ export default function HomePage() {
               Your entire phone operation. One platform.
             </h1>
             <p className="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-              Sulus CRM combines your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.
+              Mercury CRM combines your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={links.demo} size="lg">Schedule a Custom Demo</Button>
@@ -95,7 +95,7 @@ export default function HomePage() {
               <p className="pt-1 text-sm text-white/50">Three vendors. Three bills. Three logins.</p>
             </div>
             <div className="rounded-xl2 border border-mcd-cyan/40 bg-gradient-to-br from-mcd-blue/30 to-mcd-cyan/10 p-6 sm:p-8">
-              <p className="text-xs font-bold uppercase tracking-wider text-mcd-cyan">The Sulus way</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-mcd-cyan">The Mercury way</p>
               <p className="mt-3 text-2xl font-extrabold">{oneBill.newWay.name}</p>
               <p className="mt-1 text-xl font-bold text-mcd-cyan">{oneBill.newWay.price}</p>
               <p className="mt-3 text-white/75">{oneBill.newWay.detail}</p>
@@ -138,7 +138,7 @@ export default function HomePage() {
       {/* ── Pricing teaser ── */}
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Plans That Scale With You" title="Clear pricing, no surprises" body="Platform plans from $97/mo plus transparent usage rates. Every tier includes the AI front desk, the full dialer, and Sulus CRM." />
+          <SectionHeading eyebrow="Plans That Scale With You" title="Clear pricing, no surprises" body="Platform plans from $97/mo plus transparent usage rates. Every tier includes the AI front desk, the full dialer, and Mercury CRM." />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {tiers.map((t) => (
               <div key={t.id} className={`relative rounded-xl2 border bg-white p-6 shadow-sm ${t.popular ? "border-mcd-sky ring-2 ring-mcd-sky/40" : "border-mcd-line"}`}>
@@ -175,7 +175,7 @@ export default function HomePage() {
       {/* ── Integrations (native first) ── */}
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Built In, Not Bolted On" title="The CRM is included. So is everything else." body="Most AI phone tools make you connect your own CRM, calendar, and payment system. Sulus CRM ships with all of it, and still plays nicely with the tools you already use." />
+          <SectionHeading eyebrow="Built In, Not Bolted On" title="The CRM is included. So is everything else." body="Most AI phone tools make you connect your own CRM, calendar, and payment system. Mercury CRM ships with all of it, and still plays nicely with the tools you already use." />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {homeIntegrations.map((it) => (
               <Link key={it.name} href="/integrations" className="group rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -194,7 +194,7 @@ export default function HomePage() {
       <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading align="left" eyebrow="Smarter Decisions" title="Turn every call into a business advantage" body="Sulus CRM reveals patterns in customer needs, call outcomes, and agent performance so you can make faster, smarter decisions." />
+            <SectionHeading align="left" eyebrow="Smarter Decisions" title="Turn every call into a business advantage" body="Mercury CRM reveals patterns in customer needs, call outcomes, and agent performance so you can make faster, smarter decisions." />
             <ul className="mt-6 space-y-3">
               {insights.map((t) => <li key={t} className="flex items-center gap-3 font-semibold text-mcd-navy"><Icon name="check" className="h-5 w-5 text-mcd-blue" />{t}</li>)}
             </ul>
@@ -231,7 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTABand eyebrow="Get Started" title="One platform. One bill. Zero missed calls." body={`Join businesses running their entire phone operation on Sulus CRM and ${site.name} AI assistants. Talk to the AI right now at ${aiLine.display}, or book a custom demo.`} cta="Schedule a Custom Demo" href={links.demo} />
+      <CTABand eyebrow="Get Started" title="One platform. One bill. Zero missed calls." body={`Join businesses running their entire phone operation on Mercury CRM and ${site.name} AI assistants. Talk to the AI right now at ${aiLine.display}, or book a custom demo.`} cta="Schedule a Custom Demo" href={links.demo} />
     </>
   );
 }

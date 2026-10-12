@@ -7,7 +7,7 @@ export const site = {
   shortName: "MCD",
   tagline: "Never miss a call again!",
   description:
-    "Sulus CRM: your customer database, full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.",
+    "Mercury CRM: your customer database, full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mercurycalldesk.com",
   legalName: "Benny & Penny | A Tech Company d/b/a Mercury Call Desk",
   legalUpdated: "September 4, 2026",

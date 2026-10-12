@@ -43,7 +43,7 @@ export const pillars = [
   },
   {
     title: "CRM + Automations",
-    body: "Every call lands in Sulus CRM: contacts, pipelines, workflows, and reporting. Nothing to sync, nothing to bolt on.",
+    body: "Every call lands in Mercury CRM: contacts, pipelines, workflows, and reporting. Nothing to sync, nothing to bolt on.",
     href: "/platform",
     icon: "users",
   },
@@ -52,14 +52,14 @@ export const pillars = [
 export const oneBill = {
   eyebrow: "One Bill, Not Three",
   title: "Stop stitching your phones together",
-  body: "Most businesses pay three vendors to cover their phones: a CRM, a phone system, and an answering service. Sulus CRM replaces all three.",
+  body: "Most businesses pay three vendors to cover their phones: a CRM, a phone system, and an answering service. Mercury CRM replaces all three.",
   oldWay: [
     { name: "CRM subscription", detail: "Contacts, pipelines, automations" },
     { name: "Business phone system", detail: "Numbers, dialer, recordings" },
     { name: "AI answering service", detail: "After-hours call coverage" },
   ],
   newWay: {
-    name: "Sulus CRM",
+    name: "Mercury CRM",
     price: "from $97/mo + usage",
     detail: "CRM, phone system, dialer, and AI assistants. One vendor, one bill, one login.",
   },
@@ -88,7 +88,7 @@ export const featureRows = [
   {
     eyebrow: "Built to Get Things Done",
     title: "Not Just Smart, It Takes Action.",
-    body: "Books appointments, sends reminders, and takes payments, acting directly inside Sulus CRM. The CRM is built in, not bolted on.",
+    body: "Books appointments, sends reminders, and takes payments, acting directly inside Mercury CRM. The CRM is built in, not bolted on.",
     icon: "bolt",
   },
 ];
