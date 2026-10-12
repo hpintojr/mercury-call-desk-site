@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { deliverLead, sanitizeAttribution } from "@/lib/crm";
-import { landingSlugs } from "@/content/landing";
+import { allLandingSlugs } from "@/content/landing";
 
 /**
  * "Get a 60-second callback" form on the ad landing pages.
@@ -31,7 +31,7 @@ export async function POST(req: Request) {
   if (!body.phone || typeof body.phone !== "string" || body.phone.replace(/\D/g, "").length < 10) return NextResponse.json({ ok: false, error: "Invalid phone" }, { status: 400 });
   if (body.consent !== true) return NextResponse.json({ ok: false, error: "Consent required" }, { status: 400 });
 
-  const slug = typeof body.slug === "string" && (landingSlugs as readonly string[]).includes(body.slug) ? body.slug : "try";
+  const slug = typeof body.slug === "string" && (allLandingSlugs as readonly string[]).includes(body.slug) ? body.slug : "try";
   const industry = typeof body.industry === "string" && INDUSTRIES.has(body.industry) ? body.industry : "other";
 
   const result = await deliverLead({

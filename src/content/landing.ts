@@ -297,4 +297,6 @@ export const landingPages: LandingConfig[] = [
 ];
 
 export const landingSlugs = landingPages.map((p) => p.slug);
+/** Template pages plus standalone landing pages (e.g. /agencies) that share the bare chrome and callback form. */
+export const allLandingSlugs = [...landingSlugs, "agencies"];
 export const getLanding = (slug: string) => landingPages.find((p) => p.slug === slug);
