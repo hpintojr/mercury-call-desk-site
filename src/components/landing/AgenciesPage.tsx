@@ -6,15 +6,15 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CallbackForm from "./CallbackForm";
 import BookEmbed from "./BookEmbed";
 import { aiLine, links, site } from "@/config/site";
-import { agenciesFaq, agenciesHero, agenciesSlug as slug, billStack, compareRows, included, sources, steps } from "@/content/agencies";
+import BillCalculator from "./BillCalculator";
+import { agenciesFaq, agenciesHero, agenciesSlug as slug, calc, compareRows, included, sources, steps } from "@/content/agencies";
 
 const btn = "tap inline-flex items-center justify-center gap-2 rounded-full font-semibold transition active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-mcd-sky focus-visible:ring-offset-2 px-7 py-4 text-base";
 const btnPrimary = `${btn} bg-gradient-to-r from-mcd-blue via-mcd-sky to-mcd-cyan text-mcd-navy shadow-lg shadow-mcd-sky/30 hover:brightness-110`;
 const btnGhost = `${btn} border border-white/30 text-white hover:bg-white/10`;
 
-const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
-const ghlTotal = billStack.ghl.reduce((s, r) => s + r.price, 0);
-const mcdTotal = billStack.mcd.reduce((s, r) => s + r.price, 0);
+/** Smallest monthly gap the calculator can show: one client on the cheaper AI Employee plan. */
+const minGap = calc.ghlPlan.price + Math.min(...calc.ghlAi.map((a) => a.price)) + calc.ghlDialer.price - calc.mcdPlan.price;
 
 /**
  * Agency comparison landing page (/agencies). Same minimal chrome as LandingPage —
@@ -48,28 +48,7 @@ export default function AgenciesPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-xl2 border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-white/60">{billStack.title}</p>
-              <div className="mt-4 rounded-lg bg-white/5 p-4">
-                <p className="text-sm font-bold text-white/90">GoHighLevel</p>
-                <ul className="mt-2 space-y-1.5 text-sm text-white/70">
-                  {billStack.ghl.map((r) => (
-                    <li key={r.item} className="flex justify-between gap-4"><span>{r.item}</span><span className="tabular-nums">{r.from ? "from " : ""}{usd(r.price)}</span></li>
-                  ))}
-                </ul>
-                <p className="mt-3 flex justify-between border-t border-white/10 pt-3 font-bold"><span>Per month</span><span className="tabular-nums">{usd(ghlTotal)}+</span></p>
-              </div>
-              <div className="mt-3 rounded-lg bg-white p-4 text-mcd-navy">
-                <p className="text-sm font-bold">Mercury CRM</p>
-                <ul className="mt-2 space-y-1.5 text-sm text-mcd-muted">
-                  {billStack.mcd.map((r) => (
-                    <li key={r.item} className="flex justify-between gap-4"><span>{r.item}</span><span className="tabular-nums">{r.price ? usd(r.price) : "Included"}</span></li>
-                  ))}
-                </ul>
-                <p className="mt-3 flex justify-between border-t border-mcd-line pt-3 font-extrabold"><span>Per month</span><span className="tabular-nums">{usd(mcdTotal)}</span></p>
-              </div>
-              <p className="mt-3 text-xs text-white/50">{billStack.note}</p>
-            </div>
+            <BillCalculator />
           </div>
         </div>
       </section>
@@ -78,9 +57,9 @@ export default function AgenciesPage() {
       <section className="border-b border-mcd-line bg-mcd-surface">
         <div className="container-x grid gap-6 py-10 sm:grid-cols-3">
           {[
-            { value: "$100", label: "a month under GoHighLevel Agency Pro", basis: "$397 Agencies vs $497 Agency Pro list price" },
+            { value: "$0", label: "per client account", basis: "Add clients without adding to your Mercury CRM bill" },
             { value: "10 lines", label: "per rep, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
-            { value: "$0", label: "per-client add-on for the AI front desk", basis: "GoHighLevel AI Employee is $50–$97 per sub-account" },
+            { value: `$${minGap}+`, label: "a month less than GoHighLevel with just one AI client", basis: "Unlimited plan + AI Employee Growth + dialer bolt-on, before usage" },
           ].map((s) => (
             <div key={s.label} className="text-center sm:text-left">
               <p className="text-3xl font-extrabold text-mcd-navy tabular-nums">{s.value}</p>
@@ -95,13 +74,13 @@ export default function AgenciesPage() {
       <section id="compare" className="scroll-mt-24 py-14 sm:py-20">
         <div className="container-x max-w-5xl">
           <p className="eyebrow">Side by side</p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">GoHighLevel Agency Pro vs Mercury CRM Agencies</h2>
+          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">GoHighLevel Unlimited vs Mercury CRM Agencies</h2>
           <div className="mt-8 overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
             <table className="w-full min-w-[640px] text-left text-sm">
               <thead>
                 <tr className="border-b border-mcd-line bg-mcd-surface">
                   <th scope="col" className="w-1/3 px-5 py-4 font-semibold text-mcd-muted"><span className="sr-only">Feature</span></th>
-                  <th scope="col" className="w-1/3 px-5 py-4 font-bold text-mcd-ink">GoHighLevel Agency Pro</th>
+                  <th scope="col" className="w-1/3 px-5 py-4 font-bold text-mcd-ink">GoHighLevel Unlimited</th>
                   <th scope="col" className="w-1/3 px-5 py-4 font-extrabold text-mcd-blue">Mercury CRM Agencies</th>
                 </tr>
               </thead>
