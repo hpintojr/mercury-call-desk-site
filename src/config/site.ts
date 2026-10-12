@@ -20,6 +20,7 @@ export const site = {
     facebook: "#", // TODO
     instagram: "#", // TODO
     x: "#", // TODO
+    youtube: "#", // TODO
     linkedin: "#", // TODO
   },
 };
@@ -35,11 +36,13 @@ export const links = {
   demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
   demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
-  partner: "#", // TODO: Sales Partner signup (CRM)
+  /** Affiliate program (footer). TODO: signup form URL and the published affiliate agreement. */
+  affiliate: "#", // TODO: affiliate signup (CRM form)
+  affiliateAgreement: "#", // TODO: affiliate agreement page or PDF
   /**
    * Sulus CRM "Account Setup" form — the front door of the purchase flow.
    * Collects minimal info, pre-selects package/billing via query params
-   * (?package=Starter|Professional|Agencies|Enterprise&billing=Monthly|Annual),
+   * (?package=Starter|Professional|Agencies&billing=Monthly|Annual),
    * then on submit redirects to /checkout (Next.js) → the matching Stripe
    * Payment Link below, with the buyer's email pre-filled.
    */

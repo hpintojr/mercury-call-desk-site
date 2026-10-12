@@ -17,7 +17,7 @@ import { links } from "@/config/site";
  */
 
 // Legacy Stripe Payment Link keys (old pricing). Not the new pricing.ts tiers;
-// re-map once Stripe links exist for Starter/Professional/Agencies/Enterprise.
+// re-map once Stripe links exist for Starter/Professional/Agencies.
 type TierId = keyof typeof links.checkout;
 const VALID_TIERS: TierId[] = ["starter", "growth", "pro"];
 

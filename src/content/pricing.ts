@@ -1,9 +1,9 @@
 /**
- * Sulus CRM platform pricing — updated 2026-10-11.
+ * Mercury CRM platform pricing — updated 2026-10-12 (Agencies to $297 with rebilling + SaaS; Enterprise quote-only).
  * Monthly platform fee + transparent usage (published per-tier rates).
  * Annual billing = 2 months free.
  */
-export type TierId = "starter" | "professional" | "agencies" | "enterprise";
+export type TierId = "starter" | "professional" | "agencies";
 
 export type Tier = {
   id: TierId;
@@ -62,9 +62,10 @@ export const tiers: Tier[] = [
   {
     id: "agencies",
     name: "Agencies",
-    blurb: "For agencies running client accounts under their own brand",
-    monthly: 397,
-    annualTotal: 3970,
+    blurb: "For agencies reselling the platform under their own brand",
+    monthly: 297,
+    annualTotal: 2970,
+    badge: "Agency SaaS",
     cta: "Start with Agencies",
     features: [
       { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
@@ -74,38 +75,33 @@ export const tiers: Tier[] = [
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
-      { title: "White-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
+      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
+      { title: "Usage rebilling", detail: "Rebill your clients' calls and texts at your own markup" },
+      { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
     ],
   },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    blurb: "White-label SaaS resale for high-volume operators",
-    monthly: 1250,
-    annualTotal: 12500,
-    cta: "Talk to Sales",
-    badge: "White-label reseller",
-    features: [
-      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
-      { title: "Everything in Agencies", detail: "All Agencies features plus the Enterprise benefits below" },
-      { title: "Unlimited users, contacts & storage", detail: "No caps as you scale" },
-      { title: "$50 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "Unlimited white-label sub-accounts", detail: "Resell under your own brand at any volume and keep the margin" },
-      { title: "White-label sub-account deployment", detail: "Spin up branded client accounts in minutes" },
-      { title: "Custom MCP data tools", detail: "Connect the platform to your own data and systems" },
-      { title: "Best usage rates", detail: "1.95x wholesale on SMS and voice" },
-    ],
-  },
 ];
 
-/** Kept for compatibility with existing imports. */
+/**
+ * Enterprise is quote-only (modeled on GoHighLevel's Enterprise block): no published price,
+ * shown as a full-width "talk to us" block under the priced tiers.
+ */
 export const enterprise = {
   name: "Enterprise",
-  price: "$1,250/mo",
-  blurb: "White-label SaaS resale",
-  cta: "Talk to Sales",
+  eyebrow: "Enterprise plan",
+  title: "Built around your business",
+  body: "Designed for high-volume businesses and agencies, the Enterprise plan is custom tailored to each account. We price it to fit your volume and protect your margins, with the full platform and a team behind it.",
+  points: [
+    "Dedicated account manager",
+    "Unlimited users, contacts and storage",
+    "Volume usage rates",
+    "Custom builds, integrations and MCP data tools",
+    "White-glove migration from HighLevel",
+    "Priority support",
+  ],
+  cta: "Speak with Our Enterprise Team",
 };
 
 /** Published usage rates — transparent wholesale-plus pricing per tier. */
@@ -115,7 +111,6 @@ export type UsageRate = {
   starter: string;
   professional: string;
   agencies: string;
-  enterprise: string;
   wholesale: string;
 };
 
@@ -126,7 +121,6 @@ export const usageRates: UsageRate[] = [
     starter: "$0.0375",
     professional: "$0.0375",
     agencies: "$0.030",
-    enterprise: "$0.02925",
     wholesale: "$0.015",
   },
   {
@@ -135,7 +129,6 @@ export const usageRates: UsageRate[] = [
     starter: "$0.0625",
     professional: "$0.0625",
     agencies: "$0.050",
-    enterprise: "$0.04875",
     wholesale: "$0.025",
   },
 ];
@@ -151,50 +144,51 @@ export const usageExplainers = [
   },
   {
     title: "Monthly credits",
-    body: "Every plan includes monthly usage credits ($5 to $50 depending on tier) applied automatically. Credits reset each billing cycle and do not roll over.",
+    body: "Every plan includes monthly usage credits ($5 to $30 depending on tier) applied automatically. Credits reset each billing cycle and do not roll over.",
   },
 ];
 
-/** Feature comparison table (Pricing page). Column order: Starter, Professional, Agencies, Enterprise. */
+/** Feature comparison table (Pricing page). Column order: Starter, Professional, Agencies. */
 export type CompareCell = string | boolean;
-export type CompareRow = { label: string; tip?: string; cells: [CompareCell, CompareCell, CompareCell, CompareCell] };
+export type CompareRow = { label: string; tip?: string; cells: [CompareCell, CompareCell, CompareCell] };
 export type CompareGroup = { title: string; rows: CompareRow[] };
 
 export const compare: CompareGroup[] = [
   {
     title: "Platform",
     rows: [
-      { label: "Users", cells: ["1", "5", "10", "Unlimited"] },
-      { label: "Contacts", cells: ["2,500", "10,000", "50,000", "Unlimited"] },
-      { label: "Storage", cells: ["10 GB", "50 GB", "100 GB", "Unlimited"] },
-      { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30", "$50"] },
+      { label: "Users", cells: ["1", "5", "10"] },
+      { label: "Contacts", cells: ["2,500", "10,000", "50,000"] },
+      { label: "Storage", cells: ["10 GB", "50 GB", "100 GB"] },
+      { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30"] },
     ],
   },
   {
     title: "Modules",
     rows: [
-      { label: "Core CRM (contacts, companies, conversations)", cells: [true, true, true, true] },
-      { label: "Sales (calendar, pipelines, opportunities)", cells: [true, true, true, true] },
-      { label: "Web Presence (forms, websites, files)", cells: [true, true, true, true] },
-      { label: "Financials (invoices, estimates, documents)", cells: [false, true, true, true] },
-      { label: "Marketing (campaigns, broadcasts, social)", cells: [false, true, true, true] },
-      { label: "Automation (workflows, reputation)", cells: [false, true, true, true] },
-      { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true, true] },
-      { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true, true] },
-      { label: "SaaS Reseller (sub-account rebilling)", tip: "Resell Mercury CRM under your own brand with white-label sub-accounts.", cells: [false, false, false, true] },
+      { label: "Core CRM (contacts, companies, conversations)", cells: [true, true, true] },
+      { label: "Sales (calendar, pipelines, opportunities)", cells: [true, true, true] },
+      { label: "Web Presence (forms, websites, files)", cells: [true, true, true] },
+      { label: "Financials (invoices, estimates, documents)", cells: [false, true, true] },
+      { label: "Marketing (campaigns, broadcasts, social)", cells: [false, true, true] },
+      { label: "Automation (workflows, reputation)", cells: [false, true, true] },
+      { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true] },
+      { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true] },
+      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, false, true] },
+      { label: "SaaS Reseller (usage rebilling + resale rights)", tip: "Resell Mercury CRM under your own brand and rebill client usage at your own markup.", cells: [false, false, true] },
     ],
   },
   {
     title: "Phone System",
     rows: [
-      { label: "AI Front Desk (inbound)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true, true] },
-      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
-      { label: "Local phone numbers", cells: [true, true, true, true] },
-      { label: "Call recording & transcripts", cells: [true, true, true, true] },
-      { label: "SMS messaging", cells: [true, true, true, true] },
-      { label: "40+ languages", cells: [true, true, true, true] },
-      { label: "DNC list, consent checks & calling hours", tip: "In-system DNC list, automatic consent checks, and calling-hour enforcement before every dial. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true, true] },
-      { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true, true] },
+      { label: "AI Front Desk (inbound)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true] },
+      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true] },
+      { label: "Local phone numbers", cells: [true, true, true] },
+      { label: "Call recording & transcripts", cells: [true, true, true] },
+      { label: "SMS messaging", cells: [true, true, true] },
+      { label: "40+ languages", cells: [true, true, true] },
+      { label: "DNC list, consent checks & calling hours", tip: "In-system DNC list, automatic consent checks, and calling-hour enforcement before every dial. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true] },
+      { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true] },
     ],
   },
 ];
@@ -206,7 +200,7 @@ export const pricingFaq = [
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
-  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr, Agencies $3,970/yr, Enterprise $12,500/yr." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $2,970/yr. Enterprise is quoted to fit your account." },
 ];
 
 export const whyChoose = [
@@ -214,6 +208,6 @@ export const whyChoose = [
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
   { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic consent checks, calling-hour enforcement, automatic opt-outs, and A2P 10DLC registration handled." },
-  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks white-label sub-accounts; Enterprise adds usage rebilling." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks unlimited white-label sub-accounts, usage rebilling and SaaS resale." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];

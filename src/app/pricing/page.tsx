@@ -21,14 +21,13 @@ function UsageTable() {
   const rows = usageRates;
   return (
     <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-      <table className="w-full min-w-[640px] text-left text-sm">
+      <table className="w-full min-w-[520px] text-left text-sm">
         <thead>
           <tr className="border-b border-mcd-line bg-mcd-surface">
             <th className="px-5 py-4 font-bold text-mcd-navy">Usage</th>
             <th className="px-5 py-4 font-bold text-mcd-navy">Starter</th>
             <th className="px-5 py-4 font-bold text-mcd-navy">Professional</th>
             <th className="px-5 py-4 font-bold text-mcd-navy">Agencies</th>
-            <th className="px-5 py-4 font-bold text-mcd-navy">Enterprise</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +37,6 @@ function UsageTable() {
               <td className="px-5 py-4 font-semibold text-mcd-ink">{r.starter}</td>
               <td className="px-5 py-4 font-semibold text-mcd-ink">{r.professional}</td>
               <td className="px-5 py-4 font-semibold text-mcd-ink">{r.agencies}</td>
-              <td className="px-5 py-4 font-semibold text-mcd-ink">{r.enterprise}</td>
             </tr>
           ))}
         </tbody>
@@ -61,6 +59,7 @@ export default function PricingPage() {
         <div className="container-x">
           <SectionHeading eyebrow="Transparent Usage" title="Published rates. No surprise overages." body="Most AI phone vendors advertise a low monthly price, then bill shocking per-minute overages. We print our rates. Your plan's monthly credits apply first." />
           <div className="mt-10"><UsageTable /></div>
+          <p className="mt-3 text-sm text-mcd-muted">Enterprise accounts get volume rates quoted to their usage.</p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {usageExplainers.map((u) => (
               <div key={u.title} className="rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm">
@@ -74,7 +73,7 @@ export default function PricingPage() {
 
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Compare Plans" title="Everything in every plan" body="Swipe the table on mobile to compare all four tiers." />
+          <SectionHeading eyebrow="Compare Plans" title="Everything in every plan" body="Swipe the table on mobile to compare every plan." />
           <div className="mt-10"><PricingCompare /></div>
         </div>
       </section>

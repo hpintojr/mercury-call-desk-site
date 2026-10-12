@@ -103,10 +103,10 @@ export default function AgenciesPage() {
         </div>
       </section>
 
-      {/* What's in the $397 */}
+      {/* What's in the $297 */}
       <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x">
-          <p className="eyebrow">What $397 gets your agency</p>
+          <p className="eyebrow">What $297 gets your agency</p>
           <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">The stack you&apos;re paying three vendors for, in one plan</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {included.map((o) => (
