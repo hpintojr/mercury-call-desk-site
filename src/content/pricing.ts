@@ -1,5 +1,5 @@
 /**
- * Mercury CRM platform pricing — updated 2026-10-12 (Agencies to $297 with rebilling + SaaS; Enterprise quote-only).
+ * Mercury CRM platform pricing — updated 2026-10-12 (Agencies $397 with rebilling + SaaS; Enterprise quote-only).
  * Monthly platform fee + transparent usage (published per-tier rates).
  * Annual billing = 2 months free.
  */
@@ -63,8 +63,8 @@ export const tiers: Tier[] = [
     id: "agencies",
     name: "Agencies",
     blurb: "For agencies reselling the platform under their own brand",
-    monthly: 297,
-    annualTotal: 2970,
+    monthly: 397,
+    annualTotal: 3970,
     badge: "Agency SaaS",
     cta: "Start with Agencies",
     features: [
@@ -200,7 +200,7 @@ export const pricingFaq = [
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
-  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $2,970/yr. Enterprise is quoted to fit your account." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $3,970/yr. Enterprise is quoted to fit your account." },
 ];
 
 export const whyChoose = [
