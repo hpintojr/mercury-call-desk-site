@@ -9,7 +9,7 @@ import { dialerHero, dialerFeatures, complianceItems, dialerFaq } from "@/conten
 
 export const metadata: Metadata = {
   title: "Dialer",
-  description: "A 10:1 parallel dialer built into Mercury CRM: local numbers, call recording, transcripts, and SMS for your team and your AI assistants.",
+  description: "A full outbound dialer built into Mercury CRM: local numbers, recordings, SMS, and natively enforced TCPA, DNC, and timezone compliance.",
 };
 
 const featureIcons: IconName[] = ["zap", "phone", "chat", "chat"];
@@ -37,7 +37,7 @@ export default function DialerPage() {
       {/* ── Compliance ── */}
       <section id="compliance" className="scroll-mt-24 bg-mcd-navy py-14 text-white sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Compliance" title="Who handles what on outbound calls" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. The platform keeps a built-in DNC list for you. Registry scrubbing, consent, and calling hours are your responsibility." />
+          <SectionHeading eyebrow="Compliance, Native" title="Built for regulated outreach" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. The dialer enforces the controls natively instead of leaving them to a checklist." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {complianceItems.map((c) => (
               <div key={c.title} className="rounded-xl2 border border-white/10 bg-white/5 p-6">
@@ -63,7 +63,7 @@ export default function DialerPage() {
         <div className="container-x text-center">
           <p className="eyebrow text-mcd-blue">Hear It In Action</p>
           <h2 className="mx-auto mt-3 max-w-2xl text-2xl font-extrabold text-mcd-navy sm:text-3xl lg:text-4xl">Call the AI line at {aiLine.display}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-mcd-muted">Experience an AI-handled call yourself, then book a walkthrough of the dialer.</p>
+          <p className="mx-auto mt-4 max-w-xl text-mcd-muted">Experience an AI-handled call yourself, then book a walkthrough of the dialer and compliance controls.</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button href={links.demoCall} size="lg"><Icon name="phone" className="h-4 w-4" /> Talk to {site.shortName} now</Button>
             <Button href={links.demo} size="lg" variant="outline">Schedule a Custom Demo</Button>

@@ -66,10 +66,10 @@ export const oneBill = {
 };
 
 export const compliancePoints = [
-  "10:1 parallel dialer",
-  "Call recording + transcripts",
+  "Native TCPA controls",
+  "AI call disclosure",
+  "DNC scrubbing",
   "A2P 10DLC handled",
-  "Built-in DNC list",
 ];
 
 export const featureRows = [

@@ -221,13 +221,13 @@ export default function HomePage() {
       {/* ── Compliance strip ── */}
       <section className="bg-mcd-navy py-10 text-white">
         <div className="container-x flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
-          <p className="text-center text-sm font-semibold text-white/85 lg:text-left">Built for outbound: a built-in DNC list blocks opted-out contacts, and you bring consented, registry-scrubbed lists.</p>
+          <p className="text-center text-sm font-semibold text-white/85 lg:text-left">Built for regulated outreach: compliance controls are native, not an add-on.</p>
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {compliancePoints.map((c) => (
               <li key={c} className="flex items-center gap-2 text-sm font-semibold"><Icon name="check" className="h-4 w-4 text-mcd-cyan" />{c}</li>
             ))}
           </ul>
-          <Link href="/dialer#compliance" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-mcd-cyan hover:underline">Who handles compliance <Icon name="arrow" className="h-4 w-4" /></Link>
+          <Link href="/dialer#compliance" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-mcd-cyan hover:underline">How we handle compliance <Icon name="arrow" className="h-4 w-4" /></Link>
         </div>
       </section>
 
