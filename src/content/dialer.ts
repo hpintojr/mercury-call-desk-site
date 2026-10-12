@@ -31,8 +31,12 @@ export const dialerFeatures = [
 
 export const complianceItems = [
   {
-    title: "You scrub your lists",
-    body: "The dialer does not scrub against the National Do Not Call Registry, state lists, or your internal DNC list. Scrub every list before you upload it, and keep your internal do-not-call list current.",
+    title: "Built-in DNC list",
+    body: "Mark any contact Do Not Call and the platform blocks calls and texts to them across every campaign, the same way GoHighLevel's DND works. Opt-outs and removal requests go straight onto the list.",
+  },
+  {
+    title: "You scrub against the registries",
+    body: "The in-system DNC list does not check the National Do Not Call Registry or state lists. Scrub every list against those registries before you upload it.",
   },
   {
     title: "You get consent",
@@ -53,9 +57,9 @@ export const complianceItems = [
 ];
 
 export const dialerFaq = [
-  { q: "Do you scrub my lists against the Do Not Call registry?", a: "No. The dialer does not scrub lists, so scrub every list against the National Do Not Call Registry, any state lists, and your internal DNC list before you upload it." },
+  { q: "Do you have a Do Not Call list?", a: "Yes. Every account has a built-in DNC list. Contacts on it are blocked from calls and texts across all campaigns. It does not check the National Do Not Call Registry or state lists, so scrub your lists against those before you upload them." },
   { q: "Do I need consent before the AI calls someone?", a: "For AI-placed or automated marketing calls to mobile numbers, yes: prior express written consent is required under the TCPA. Getting and keeping that consent is your responsibility, so only upload contacts who have given it." },
   { q: "Can my human team use the dialer too?", a: "Yes. The dialer works for human agents, AI assistants, or a mix. Recordings, transcripts, and dispositions are identical either way." },
   { q: "How does the parallel dialer work?", a: "It dials up to 10 numbers at once for each rep and connects the rep to the first person who answers, so your team spends its time talking instead of listening to rings." },
-  { q: "What happens if someone asks to be removed?", a: "Add them to your internal do-not-call list right away and remove them from every campaign. Revocations must be honored within 10 business days, by any reasonable means the person uses to ask." },
+  { q: "What happens if someone asks to be removed?", a: "Mark them Do Not Call and the platform stops calling and texting them across every campaign. Revocations must be honored within 10 business days, by any reasonable means the person uses to ask." },
 ];

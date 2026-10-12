@@ -69,7 +69,7 @@ export const compliancePoints = [
   "10:1 parallel dialer",
   "Call recording + transcripts",
   "A2P 10DLC handled",
-  "Bring your own scrubbed lists",
+  "Built-in DNC list",
 ];
 
 export const featureRows = [

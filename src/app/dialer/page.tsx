@@ -37,7 +37,7 @@ export default function DialerPage() {
       {/* ── Compliance ── */}
       <section id="compliance" className="scroll-mt-24 bg-mcd-navy py-14 text-white sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Compliance" title="Who handles what on outbound calls" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. List scrubbing, consent, and calling hours are your responsibility. Here is what that means and what we handle." />
+          <SectionHeading eyebrow="Compliance" title="Who handles what on outbound calls" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. The platform keeps a built-in DNC list for you. Registry scrubbing, consent, and calling hours are your responsibility." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {complianceItems.map((c) => (
               <div key={c.title} className="rounded-xl2 border border-white/10 bg-white/5 p-6">

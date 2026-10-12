@@ -221,7 +221,7 @@ export default function HomePage() {
       {/* ── Compliance strip ── */}
       <section className="bg-mcd-navy py-10 text-white">
         <div className="container-x flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
-          <p className="text-center text-sm font-semibold text-white/85 lg:text-left">Built for outbound: you bring consented, DNC-scrubbed lists, and we power the dialing.</p>
+          <p className="text-center text-sm font-semibold text-white/85 lg:text-left">Built for outbound: a built-in DNC list blocks opted-out contacts, and you bring consented, registry-scrubbed lists.</p>
           <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
             {compliancePoints.map((c) => (
               <li key={c} className="flex items-center gap-2 text-sm font-semibold"><Icon name="check" className="h-4 w-4 text-mcd-cyan" />{c}</li>
