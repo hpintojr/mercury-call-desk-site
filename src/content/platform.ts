@@ -44,10 +44,10 @@ export const platformSections = [
   },
   {
     eyebrow: "Migration",
-    title: "Bring your data with you",
-    body: "Moving from GoHighLevel or another CRM? Agencies-tier and up include guided data migration with HighLevel import and custom MCP data tools, so your contacts, pipelines, and history come along.",
+    title: "Switch from GoHighLevel in days, not months",
+    body: "We built the API to transfer your GoHighLevel data straight into Sulus: contacts, pipelines, workflows, and history. During setup we rework your workflows so they run cleaner and faster than before, and you get MCP access to connect your own data tools. Most migrations finish in days.",
     icon: "plug",
-    points: ["HighLevel import on Agencies and Enterprise", "Custom MCP data tools on Enterprise", "White-glove migration support"],
+    points: ["Direct GHL data transfer via our migration API", "Workflows rebuilt and optimized during setup", "MCP access for your own data tools", "White-glove migration on Agencies and Enterprise"],
   },
 ];
 
