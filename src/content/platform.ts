@@ -54,6 +54,6 @@ export const platformSections = [
 export const tierGating = [
   { tier: "Starter", detail: "Core CRM, Sales, and Web Presence modules. Everything a solo operator needs." },
   { tier: "Professional", detail: "Adds Financials, Marketing, and Automation. The growth engine for most businesses." },
-  { tier: "Agencies", detail: "Adds Advanced Tools and Data Migration. Multi-location reporting and HighLevel import." },
-  { tier: "Enterprise", detail: "Adds SaaS Reseller: white-label sub-accounts and rebilling under your own brand." },
+  { tier: "Agencies", detail: "Adds white-label sub-accounts with rebilling, Advanced Tools and HighLevel data migration." },
+  { tier: "Enterprise", detail: "Unlimited white-label sub-accounts, users and storage, plus the best usage rates." },
 ];

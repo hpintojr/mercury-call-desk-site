@@ -60,9 +60,9 @@ export const tiers: Tier[] = [
   {
     id: "agencies",
     name: "Agencies",
-    blurb: "For multi-location businesses and teams",
-    monthly: 497,
-    annualTotal: 4970,
+    blurb: "For agencies reselling under their own brand",
+    monthly: 397,
+    annualTotal: 3970,
     cta: "Start with Agencies",
     features: [
       { title: "Everything in Professional", detail: "All Professional features plus the Agencies benefits below" },
@@ -71,6 +71,7 @@ export const tiers: Tier[] = [
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
+      { title: "White-label sub-accounts + rebilling", detail: "Brand client accounts as your own and rebill them at your price" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
     ],
@@ -87,7 +88,7 @@ export const tiers: Tier[] = [
       { title: "Everything in Agencies", detail: "All Agencies features plus the Enterprise benefits below" },
       { title: "Unlimited users, contacts & storage", detail: "No caps as you scale" },
       { title: "$50 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "SaaS reseller / sub-account rebilling", detail: "Resell Sulus CRM under your own brand and keep the margin" },
+      { title: "Unlimited white-label sub-accounts", detail: "Resell under your own brand at any volume and keep the margin" },
       { title: "White-label sub-account deployment", detail: "Spin up branded client accounts in minutes" },
       { title: "Custom MCP data tools", detail: "Connect the platform to your own data and systems" },
       { title: "Best usage rates", detail: "1.95x wholesale on SMS and voice" },
@@ -200,7 +201,7 @@ export const pricingFaq = [
   { q: "Is there a setup fee?", a: "No setup fees and no long-term contracts. Monthly billing, cancel anytime." },
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
-  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr, Agencies $4,970/yr, Enterprise $12,500/yr." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr, Agencies $3,970/yr, Enterprise $12,500/yr." },
 ];
 
 export const whyChoose = [
