@@ -188,12 +188,12 @@ export const compare: CompareGroup[] = [
     title: "Phone System",
     rows: [
       { label: "AI Front Desk (inbound)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true, true] },
-      { label: "Outbound dialer", tip: "Full dialer for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
+      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
       { label: "Local phone numbers", cells: [true, true, true, true] },
       { label: "Call recording & transcripts", cells: [true, true, true, true] },
       { label: "SMS messaging", cells: [true, true, true, true] },
       { label: "40+ languages", cells: [true, true, true, true] },
-      { label: "Native TCPA / DNC / timezone controls", tip: "Consent checks, DNC scrubbing, and timezone-aware calling windows enforced natively.", cells: [true, true, true, true] },
+      { label: "In-system DNC list & opt-out handling", tip: "Opt-outs and do-not-call requests are suppressed across calls and texts. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true, true] },
       { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true, true] },
     ],
   },
@@ -213,7 +213,7 @@ export const whyChoose = [
   { title: "One Platform, One Bill", body: "CRM, phone system, dialer, and AI assistants in a single subscription. No stitching vendors together." },
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
-  { title: "Built-In Compliance", body: "Native TCPA controls, DNC scrubbing, timezone-aware calling, AI call disclosure, and A2P 10DLC registration handled." },
+  { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic opt-outs, consent stored on every contact, and A2P 10DLC registration handled." },
   { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks white-label sub-accounts and rebilling." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];
