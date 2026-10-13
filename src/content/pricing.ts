@@ -57,6 +57,7 @@ export const tiers: Tier[] = [
       { title: "Financials", detail: "Invoices, estimates, and documents" },
       { title: "Marketing", detail: "Campaigns, broadcasts, and social" },
       { title: "Automation", detail: "Workflows and reputation management" },
+      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
     ],
   },
   {
@@ -75,7 +76,6 @@ export const tiers: Tier[] = [
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
-      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
       { title: "Usage rebilling", detail: "Rebill your clients' calls and texts at your own markup" },
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
@@ -174,7 +174,7 @@ export const compare: CompareGroup[] = [
       { label: "Automation (workflows, reputation)", cells: [false, true, true] },
       { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true] },
       { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true] },
-      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, false, true] },
+      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, true, true] },
       { label: "SaaS Reseller (usage rebilling + resale rights)", tip: "Resell Mercury CRM under your own brand and rebill client usage at your own markup.", cells: [false, false, true] },
     ],
   },
@@ -208,6 +208,6 @@ export const whyChoose = [
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
   { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic consent checks, calling-hour enforcement, automatic opt-outs, and A2P 10DLC registration handled." },
-  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks unlimited white-label sub-accounts, usage rebilling and SaaS resale." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Professional unlocks unlimited white-label sub-accounts; Agencies adds usage rebilling and SaaS resale." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];
