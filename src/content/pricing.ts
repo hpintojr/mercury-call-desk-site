@@ -1,5 +1,5 @@
 /**
- * Mercury CRM platform pricing — updated 2026-10-12 (Agencies to $297 with rebilling + SaaS; Enterprise quote-only).
+ * Mercury CRM platform pricing — updated 2026-10-12 (Agencies $397 with rebilling + SaaS; Enterprise quote-only).
  * Monthly platform fee + transparent usage (published per-tier rates).
  * Annual billing = 2 months free.
  */
@@ -57,14 +57,15 @@ export const tiers: Tier[] = [
       { title: "Financials", detail: "Invoices, estimates, and documents" },
       { title: "Marketing", detail: "Campaigns, broadcasts, and social" },
       { title: "Automation", detail: "Workflows and reputation management" },
+      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
     ],
   },
   {
     id: "agencies",
     name: "Agencies",
     blurb: "For agencies reselling the platform under their own brand",
-    monthly: 297,
-    annualTotal: 2970,
+    monthly: 397,
+    annualTotal: 3970,
     badge: "Agency SaaS",
     cta: "Start with Agencies",
     features: [
@@ -75,7 +76,6 @@ export const tiers: Tier[] = [
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
-      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
       { title: "Usage rebilling", detail: "Rebill your clients' calls and texts at your own markup" },
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
@@ -118,7 +118,7 @@ export const usageRates: UsageRate[] = [
   {
     label: "SMS",
     unit: "per segment",
-    starter: "$0.0375",
+    starter: "$0.045",
     professional: "$0.0375",
     agencies: "$0.030",
     wholesale: "$0.015",
@@ -126,7 +126,7 @@ export const usageRates: UsageRate[] = [
   {
     label: "Voice",
     unit: "per minute",
-    starter: "$0.0625",
+    starter: "$0.075",
     professional: "$0.0625",
     agencies: "$0.050",
     wholesale: "$0.025",
@@ -174,7 +174,7 @@ export const compare: CompareGroup[] = [
       { label: "Automation (workflows, reputation)", cells: [false, true, true] },
       { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true] },
       { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true] },
-      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, false, true] },
+      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, true, true] },
       { label: "SaaS Reseller (usage rebilling + resale rights)", tip: "Resell Mercury CRM under your own brand and rebill client usage at your own markup.", cells: [false, false, true] },
     ],
   },
@@ -200,7 +200,7 @@ export const pricingFaq = [
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
-  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $2,970/yr. Enterprise is quoted to fit your account." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $3,970/yr. Enterprise is quoted to fit your account." },
 ];
 
 export const whyChoose = [
@@ -208,6 +208,6 @@ export const whyChoose = [
   { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
   { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
   { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic consent checks, calling-hour enforcement, automatic opt-outs, and A2P 10DLC registration handled." },
-  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Agencies unlocks unlimited white-label sub-accounts, usage rebilling and SaaS resale." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Professional unlocks unlimited white-label sub-accounts; Agencies adds usage rebilling and SaaS resale." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];

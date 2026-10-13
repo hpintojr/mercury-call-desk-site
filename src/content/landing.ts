@@ -281,7 +281,7 @@ export const landingPages: LandingConfig[] = [
     stats: [
       { value: "$97", label: "Starter · AI front desk, dialer + Mercury CRM", basis: "Per month plus published usage rates; no setup fee" },
       { value: "$297", label: "Professional · 5 users, marketing + automation", basis: "Most popular; per month plus published usage rates" },
-      { value: "$297", label: "Agencies · unlimited white-label sub-accounts + SaaS resale", basis: "Per month plus published usage rates" },
+      { value: "$397", label: "Agencies · unlimited white-label sub-accounts + SaaS resale", basis: "Per month plus published usage rates" },
     ],
     bookEyebrow: "Pick a time",
     bookTitle: "Book your Front-Desk Audit",
