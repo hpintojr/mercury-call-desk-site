@@ -37,9 +37,9 @@ export const links = {
   partnerCall: "https://crm.sulus.ai/b/agency-partner-call", // Sulus CRM "Agency Partner Call" booking page (/partner)
   demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
   login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
-  /** Affiliate program (footer). TODO: signup form URL and the published affiliate agreement. */
+  /** Affiliate program (footer). */
   affiliate: "/partner",
-  affiliateAgreement: "#", // TODO: affiliate agreement page or PDF
+  affiliateAgreement: "/affiliate-agreement",
   /**
    * Sulus CRM "Account Setup" form — the front door of the purchase flow.
    * Collects minimal info, pre-selects package/billing via query params
