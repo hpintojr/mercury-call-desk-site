@@ -17,16 +17,16 @@ export const agenciesMeta = {
 export const agenciesHero = {
   eyebrow: "For agencies running on GoHighLevel",
   headline: "White-label CRM, AI receptionists and a 10-line dialer. $397 a month, unlimited sub-accounts.",
-  sub: "GoHighLevel's $297 plan gives you unlimited sub-accounts, but rebilling client usage and SaaS mode start at $497, the AI Employee is $50 to $97 a month for every client that uses it, and dialing more than one line at a time means paying another vendor. Mercury CRM's Agencies plan is $397, $100 less than GoHighLevel's $497 Agency Pro, with unlimited white-label sub-accounts, usage rebilling, SaaS resale rights, an AI front desk and a 10-line parallel dialer.",
+  sub: "GoHighLevel's Agency Pro plan is $497 a month for SaaS mode and usage rebilling, and that's before the AI Employee at $50 to $97 a month for every client that uses it, plus another vendor if you want to dial more than one line at a time. Mercury CRM's Agencies plan is $397 with unlimited white-label sub-accounts, usage rebilling, SaaS resale rights, an AI front desk and a 10-line parallel dialer.",
 };
 
 /**
  * Calculator inputs: the agency's monthly software cost, before usage on either platform.
- * GHL = Unlimited plan + AI Employee per sub-account on AI + one parallel-dialer bolt-on.
+ * GHL = Agency Pro plan (the GHL tier with SaaS mode + rebilling, matching our Agencies) + AI Employee per sub-account on AI + one parallel-dialer bolt-on.
  * MCD = Agencies plan flat (no per-account fee, AI front desk and dialer included).
  */
 export const calc = {
-  ghlPlan: { item: "GoHighLevel Unlimited", price: 297 },
+  ghlPlan: { item: "GoHighLevel Agency Pro", price: 497 },
   ghlAi: [
     { id: "unlimited", label: "AI Employee Unlimited", price: 97 },
     { id: "growth", label: "AI Employee Growth", price: 50 },
@@ -40,7 +40,7 @@ export const calc = {
 
 export type CompareCell = { text: string; good?: boolean };
 export const compareRows: { label: string; ghl: CompareCell; mcd: CompareCell }[] = [
-  { label: "Plan price", ghl: { text: "$297/mo (Unlimited)" }, mcd: { text: "$397/mo (Agencies)" } },
+  { label: "Plan price", ghl: { text: "$497/mo (Agency Pro)" }, mcd: { text: "$397/mo (Agencies)", good: true } },
   { label: "White-label client sub-accounts", ghl: { text: "Unlimited", good: true }, mcd: { text: "Unlimited, no per-account fee", good: true } },
   {
     label: "AI receptionist",
@@ -59,19 +59,19 @@ export const compareRows: { label: string; ghl: CompareCell; mcd: CompareCell }[
   },
   {
     label: "Rebill client usage at a markup",
-    ghl: { text: "Agency Pro plan, $497/mo" },
-    mcd: { text: "Included in Agencies", good: true },
+    ghl: { text: "Included", good: true },
+    mcd: { text: "Included", good: true },
   },
   {
     label: "SaaS mode: resell the platform under your brand",
-    ghl: { text: "Agency Pro plan, $497/mo" },
-    mcd: { text: "Included in Agencies", good: true },
+    ghl: { text: "Included", good: true },
+    mcd: { text: "Included", good: true },
   },
 ];
 
 export const included: { icon: IconName; title: string; body: string }[] = [
   { icon: "users", title: "Unlimited white-label sub-accounts", body: "Give every client a branded account under your agency. No per-account fee, so adding a client doesn't add to your bill." },
-  { icon: "chart", title: "Rebilling and SaaS resale", body: "Rebill each client's calls and texts at your own markup and sell the platform under your brand at whatever price you set. On GoHighLevel that takes the $497 plan." },
+  { icon: "chart", title: "Rebilling and SaaS resale", body: "Rebill each client's calls and texts at your own markup and sell the platform under your brand at whatever price you set, for $100 a month less than GoHighLevel Agency Pro." },
   { icon: "mic", title: "AI front desk", body: "AI assistants that answer every call 24/7 in 40+ languages, book appointments and text follow-ups. Part of the plan, not a per-client add-on." },
   { icon: "zap", title: "10-line parallel dialer", body: "Each rep dials up to 10 lines at once. When someone answers, the call connects and the other lines drop. Lists, dispositions and callbacks stay in the CRM." },
   { icon: "shield", title: "Compliance built into the dialer", body: "Built-in DNC list, automatic consent checks and calling-hour enforcement before every dial. You scrub lists against the National DNC Registry before upload." },
