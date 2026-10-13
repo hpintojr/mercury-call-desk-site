@@ -3,6 +3,6 @@ import { site } from "@/config/site";
 import { allLandingSlugs } from "@/content/landing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/features", "/integrations", "/pricing", "/faq", "/contact", "/terms", "/privacy", ...allLandingSlugs.map((s) => "/" + s)];
+  const routes = ["", "/features", "/integrations", "/pricing", "/faq", "/contact", "/terms", "/privacy", "/partner", "/affiliate-agreement", ...allLandingSlugs.map((s) => "/" + s)];
   return routes.map((r) => ({ url: `${site.url}${r}`, lastModified: new Date(), changeFrequency: "monthly", priority: r === "" ? 1 : 0.8 }));
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PageHero({ title, body, crumb }: { title: string; body: string; crumb: string }) {
+export default function PageHero({ title, body, crumb, children }: { title: string; body: string; crumb: string; children?: React.ReactNode }) {
   return (
     <section className="bg-hero text-white">
       <div className="container-x py-14 sm:py-20 lg:py-24">
@@ -13,6 +13,7 @@ export default function PageHero({ title, body, crumb }: { title: string; body: 
         </nav>
         <h1 className="max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">{title}</h1>
         <p className="mt-4 max-w-2xl text-base text-white/75 sm:text-lg">{body}</p>
+        {children}
       </div>
     </section>
   );
