@@ -59,7 +59,7 @@ export default function AgenciesPage() {
           {[
             { value: "$0", label: "per client account", basis: "Add clients without adding to your Mercury CRM bill" },
             { value: "10 lines", label: "per rep, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
-            { value: `$${minGap}+`, label: "a month less than GoHighLevel with just one AI client", basis: "Unlimited plan + AI Employee Growth + dialer bolt-on, before usage" },
+            { value: `$${minGap}+`, label: "a month less than GoHighLevel with just one AI client", basis: "Agency Pro + AI Employee Growth + dialer bolt-on, before usage" },
           ].map((s) => (
             <div key={s.label} className="text-center sm:text-left">
               <p className="text-3xl font-extrabold text-mcd-navy tabular-nums">{s.value}</p>
@@ -74,13 +74,13 @@ export default function AgenciesPage() {
       <section id="compare" className="scroll-mt-24 py-14 sm:py-20">
         <div className="container-x max-w-5xl">
           <p className="eyebrow">Side by side</p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">GoHighLevel Unlimited vs Mercury CRM Agencies</h2>
+          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">GoHighLevel Agency Pro vs Mercury CRM Agencies</h2>
           <div className="mt-8 overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
             <table className="w-full min-w-[640px] text-left text-sm">
               <thead>
                 <tr className="border-b border-mcd-line bg-mcd-surface">
                   <th scope="col" className="w-1/3 px-5 py-4 font-semibold text-mcd-muted"><span className="sr-only">Feature</span></th>
-                  <th scope="col" className="w-1/3 px-5 py-4 font-bold text-mcd-ink">GoHighLevel Unlimited</th>
+                  <th scope="col" className="w-1/3 px-5 py-4 font-bold text-mcd-ink">GoHighLevel Agency Pro</th>
                   <th scope="col" className="w-1/3 px-5 py-4 font-extrabold text-mcd-blue">Mercury CRM Agencies</th>
                 </tr>
               </thead>
