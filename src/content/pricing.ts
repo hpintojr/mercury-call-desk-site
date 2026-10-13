@@ -118,7 +118,7 @@ export const usageRates: UsageRate[] = [
   {
     label: "SMS",
     unit: "per segment",
-    starter: "$0.0375",
+    starter: "$0.045",
     professional: "$0.0375",
     agencies: "$0.030",
     wholesale: "$0.015",
@@ -126,7 +126,7 @@ export const usageRates: UsageRate[] = [
   {
     label: "Voice",
     unit: "per minute",
-    starter: "$0.0625",
+    starter: "$0.075",
     professional: "$0.0625",
     agencies: "$0.050",
     wholesale: "$0.025",
