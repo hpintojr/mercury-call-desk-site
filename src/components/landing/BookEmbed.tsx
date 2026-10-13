@@ -8,7 +8,7 @@ import { track } from "@/lib/track";
  * The Sulus CRM booking calendar embedded inline (not linked) so the conversion happens on
  * this page. Loads when scrolled near, fires book_open once when it comes into view.
  */
-export default function BookEmbed({ slug }: { slug: string }) {
+export default function BookEmbed({ slug, src = links.demo }: { slug: string; src?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [load, setLoad] = useState(false);
   const fired = useRef(false);
@@ -34,7 +34,7 @@ export default function BookEmbed({ slug }: { slug: string }) {
   return (
     <div ref={ref} className="relative min-h-[640px] overflow-hidden rounded-xl2 border border-mcd-line bg-white shadow-sm">
       {load ? (
-        <iframe src={links.demo} title="Book a time with Mercury Call Desk" className="absolute inset-0 h-full w-full" allow="payment" loading="lazy" />
+        <iframe src={src} title="Book a time with Mercury Call Desk" className="absolute inset-0 h-full w-full" allow="payment" loading="lazy" />
       ) : (
         <div className="flex h-[640px] items-center justify-center text-sm text-mcd-muted">Loading calendar…</div>
       )}
