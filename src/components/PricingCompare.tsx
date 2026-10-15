@@ -1,7 +1,7 @@
 import Icon from "./Icon";
 import { compare } from "@/content/pricing";
 
-const cols = ["Starter", "Professional", "Agencies"];
+const cols = ["Starter", "Professional", "Agencies", "Enterprise"];
 
 function Cell({ v }: { v: string | boolean }) {
   if (v === true) return <Icon name="check" className="mx-auto h-5 w-5 text-mcd-blue" />;
@@ -20,7 +20,7 @@ export default function PricingCompare() {
         <section key={g.title} aria-labelledby={g.title.replace(/\s+/g, "-")}>
           <h3 id={g.title.replace(/\s+/g, "-")} className="mb-3 text-lg font-extrabold text-mcd-navy sm:text-xl">{g.title}</h3>
           <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-            <table className="w-full min-w-[600px] border-collapse text-sm">
+            <table className="w-full min-w-[760px] border-collapse text-sm">
               <thead>
                 <tr className="bg-mcd-surface text-mcd-navy">
                   <th scope="col" className="sticky left-0 z-10 w-48 bg-mcd-surface px-4 py-3 text-left text-xs font-bold uppercase tracking-wider sm:w-64">Feature</th>

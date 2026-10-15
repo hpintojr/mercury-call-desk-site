@@ -1,5 +1,5 @@
 /**
- * Mercury CRM platform pricing — updated 2026-10-12 (Agencies $397 with rebilling + SaaS; Enterprise quote-only).
+ * Mercury CRM platform pricing — updated 2026-10-15 (Starter $99/5 sub-accounts; Professional $299 with usage rebilling; Agencies $399 limited-time with dispatch; Enterprise 4th column).
  * Monthly platform fee + transparent usage (published per-tier rates).
  * Annual billing = 2 months free.
  */
@@ -24,58 +24,67 @@ export const tiers: Tier[] = [
     id: "starter",
     name: "Starter",
     blurb: "For solo operators getting started",
-    monthly: 97,
-    annualTotal: 970,
+    monthly: 99,
+    annualTotal: 990,
     cta: "Start with Starter",
     features: [
       { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "1 user", detail: "One seat for the owner-operator" },
       { title: "2,500 contacts", detail: "Contacts, companies, and conversations in Mercury CRM" },
+      { title: "5 sub-accounts", detail: "GoHighLevel gives you 3 at $97. We give you 5 at $99." },
       { title: "10 GB storage", detail: "Call recordings, files, and documents" },
       { title: "$5 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "AI Front Desk", detail: "AI assistant answers every call 24/7, books appointments, sends SMS follow-ups" },
+      { title: "AI voice", detail: "AI front desk answers every call 24/7, books appointments, sends SMS follow-ups" },
       { title: "Full dialer + phone system", detail: "Outbound dialing, local numbers, call recording and transcripts" },
       { title: "40+ languages", detail: "Automatic language detection and seamless switching" },
+      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
+      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
     ],
   },
   {
     id: "professional",
     name: "Professional",
     blurb: "For growing businesses that run on their phones",
-    monthly: 297,
-    annualTotal: 2970,
+    monthly: 299,
+    annualTotal: 2990,
     cta: "Start with Professional",
     ctaShort: "Start Professional",
     popular: true,
     features: [
       { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "Everything in Starter", detail: "All Starter features plus the Professional benefits below" },
-      { title: "5 users", detail: "Seats for your whole front office" },
+      { title: "5 users", detail: "5 seats total for your whole front office" },
       { title: "10,000 contacts", detail: "Room to grow your database" },
       { title: "50 GB storage", detail: "More recordings, files, and documents" },
       { title: "$15 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
       { title: "Financials", detail: "Invoices, estimates, and documents" },
       { title: "Marketing", detail: "Campaigns, broadcasts, and social" },
-      { title: "Automation", detail: "Workflows and reputation management" },
+      { title: "AI automation", detail: "Workflows, campaigns, and reputation management" },
       { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
+      { title: "Usage rebilling", detail: "Mark up phone, email, SMS, and AI usage for your clients. GoHighLevel makes agencies absorb the cost; we let you profit from it." },
+      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
+      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
     ],
   },
   {
     id: "agencies",
     name: "Agencies",
-    blurb: "For agencies reselling the platform under their own brand",
-    monthly: 397,
-    annualTotal: 3970,
-    badge: "Agency SaaS",
+    blurb: "For agencies reselling the platform under their own brand. Limited-time pricing.",
+    monthly: 399,
+    annualTotal: 3990,
+    badge: "Limited Time",
     cta: "Start with Agencies",
     features: [
       { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
       { title: "Everything in Professional", detail: "All Professional features plus the Agencies benefits below" },
-      { title: "10 users", detail: "Seats across locations and departments" },
+      { title: "10 users", detail: "10 seats total across locations and departments" },
       { title: "50,000 contacts", detail: "High-volume database capacity" },
       { title: "100 GB storage", detail: "Deep recording and file retention" },
       { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "Advanced tools", detail: "Reporting, products, and dispatch" },
+      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel hasn't shipped theirs." },
+      { title: "AI agentic", detail: "AI agents that get work done: build workflows, manage dispatch, and handle follow-ups autonomously." },
+      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
+      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
       { title: "Usage rebilling", detail: "Rebill your clients' calls and texts at your own markup" },
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
@@ -148,47 +157,54 @@ export const usageExplainers = [
   },
 ];
 
-/** Feature comparison table (Pricing page). Column order: Starter, Professional, Agencies. */
+/** Feature comparison table (Pricing page). Column order: Starter, Professional, Agencies, Enterprise. */
 export type CompareCell = string | boolean;
-export type CompareRow = { label: string; tip?: string; cells: [CompareCell, CompareCell, CompareCell] };
+export type CompareRow = { label: string; tip?: string; cells: [CompareCell, CompareCell, CompareCell, CompareCell] };
 export type CompareGroup = { title: string; rows: CompareRow[] };
 
 export const compare: CompareGroup[] = [
   {
     title: "Platform",
     rows: [
-      { label: "Users", cells: ["1", "5", "10"] },
-      { label: "Contacts", cells: ["2,500", "10,000", "50,000"] },
-      { label: "Storage", cells: ["10 GB", "50 GB", "100 GB"] },
-      { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30"] },
+      { label: "Users", cells: ["1", "5", "10", "Unlimited"] },
+      { label: "Contacts", cells: ["2,500", "10,000", "50,000", "Unlimited"] },
+      { label: "Storage", cells: ["10 GB", "50 GB", "100 GB", "Unlimited"] },
+      { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30", "Custom"] },
+      { label: "Sub-accounts", tip: "Separate client or location accounts under your agency.", cells: ["5", "Unlimited", "Unlimited", "Unlimited"] },
     ],
   },
   {
     title: "Modules",
     rows: [
-      { label: "Core CRM (contacts, companies, conversations)", cells: [true, true, true] },
-      { label: "Sales (calendar, pipelines, opportunities)", cells: [true, true, true] },
-      { label: "Web Presence (forms, websites, files)", cells: [true, true, true] },
-      { label: "Financials (invoices, estimates, documents)", cells: [false, true, true] },
-      { label: "Marketing (campaigns, broadcasts, social)", cells: [false, true, true] },
-      { label: "Automation (workflows, reputation)", cells: [false, true, true] },
-      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, true, true] },
-      { label: "Advanced Tools (reporting, products, dispatch)", cells: [false, false, true] },
-      { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true] },
-      { label: "SaaS Reseller (usage rebilling + resale rights)", tip: "Resell Mercury CRM under your own brand and rebill client usage at your own markup.", cells: [false, false, true] },
+      { label: "Core CRM (contacts, companies, conversations)", cells: [true, true, true, true] },
+      { label: "Sales (calendar, pipelines, opportunities)", cells: [true, true, true, true] },
+      { label: "Web Presence (forms, websites, files)", cells: [true, true, true, true] },
+      { label: "Financials (invoices, estimates, documents)", cells: [false, true, true, true] },
+      { label: "Marketing (campaigns, broadcasts, social)", cells: [false, true, true, true] },
+      { label: "AI automation (workflows, reputation)", cells: [false, true, true, true] },
+      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, true, true, true] },
+      { label: "Dispatch (job tracking, technician updates)", tip: "Track jobs and technicians; AI notifies customers automatically.", cells: [false, false, true, true] },
+      { label: "AI agentic (autonomous agents)", cells: [false, false, true, true] },
+      { label: "Advanced API access", cells: [true, true, true, true] },
+      { label: "Advanced MCP access", cells: [true, true, true, true] },
+      { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true, true] },
+      { label: "Usage rebilling (markup phone, SMS, email, AI)", tip: "Rebill client usage at your own markup instead of absorbing the cost.", cells: [false, true, true, true] },
+      { label: "SaaS resale rights", tip: "Resell Mercury CRM under your own brand at whatever price you set.", cells: [false, false, true, true] },
+      { label: "Dedicated account manager", cells: [false, false, false, true] },
+      { label: "Volume usage rates", cells: [false, false, false, true] },
     ],
   },
   {
     title: "Phone System",
     rows: [
-      { label: "AI Front Desk (inbound)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true] },
-      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true] },
-      { label: "Local phone numbers", cells: [true, true, true] },
-      { label: "Call recording & transcripts", cells: [true, true, true] },
-      { label: "SMS messaging", cells: [true, true, true] },
-      { label: "40+ languages", cells: [true, true, true] },
-      { label: "DNC list, consent checks & calling hours", tip: "In-system DNC list, automatic consent checks, and calling-hour enforcement before every dial. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true] },
-      { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true] },
+      { label: "AI voice (24/7 front desk)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true, true] },
+      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
+      { label: "Local phone numbers", cells: [true, true, true, true] },
+      { label: "Call recording & transcripts", cells: [true, true, true, true] },
+      { label: "SMS messaging", cells: [true, true, true, true] },
+      { label: "40+ languages", cells: [true, true, true, true] },
+      { label: "DNC list, consent checks & calling hours", tip: "In-system DNC list, automatic consent checks, and calling-hour enforcement before every dial. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true, true] },
+      { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true, true] },
     ],
   },
 ];
@@ -200,7 +216,7 @@ export const pricingFaq = [
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
   { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
-  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $970/yr, Professional $2,970/yr and Agencies $3,970/yr. Enterprise is quoted to fit your account." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $990/yr, Professional $2,990/yr and Agencies $3,990/yr. Enterprise is quoted to fit your account." },
 ];
 
 export const whyChoose = [

@@ -12,7 +12,7 @@ import { pricingFaq, whyChoose, usageRates, usageExplainers } from "@/content/pr
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Mercury CRM plans from $97/mo plus transparent usage rates. CRM, phone system, dialer, and AI assistants in one platform. Annual billing includes 2 months free.",
+  description: "Mercury CRM plans from $99/mo plus transparent usage rates. CRM, phone system, dialer, and AI assistants in one platform. Annual billing includes 2 months free.",
 };
 
 const icons: IconName[] = ["star", "bolt", "zap", "clock", "chart", "users"];
@@ -48,7 +48,7 @@ function UsageTable() {
 export default function PricingPage() {
   return (
     <>
-      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $97/mo plus transparent, published usage rates. Every tier includes Mercury CRM, the AI front desk, and the full dialer. Already have a CRM? Keep it and we connect to it. Annual billing includes 2 months free." />
+      <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $99/mo plus transparent, published usage rates. Every tier includes Mercury CRM, the AI front desk, and the full dialer. Already have a CRM? Keep it and we connect to it. Annual billing includes 2 months free." />
 
       <section className="py-14 sm:py-20">
         <div className="container-x"><PricingCards /></div>

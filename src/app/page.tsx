@@ -138,7 +138,7 @@ export default function HomePage() {
       {/* ── Pricing teaser ── */}
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Plans That Scale With You" title="Clear pricing, no surprises" body="Platform plans from $97/mo plus transparent usage rates. Every tier includes the AI front desk, the full dialer, and Mercury CRM." />
+          <SectionHeading eyebrow="Plans That Scale With You" title="Clear pricing, no surprises" body="Platform plans from $99/mo plus transparent usage rates. Every tier includes the AI front desk, the full dialer, and Mercury CRM." />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {tiers.map((t) => (
               <div key={t.id} className={`relative rounded-xl2 border bg-white p-6 shadow-sm ${t.popular ? "border-mcd-sky ring-2 ring-mcd-sky/40" : "border-mcd-line"}`}>
