@@ -91,7 +91,7 @@ export const agenciesFaq = [
   },
   {
     q: "How many users and contacts does the Agencies plan include?",
-    a: "Unlimited client sub-accounts, plus 10 users, 50,000 contacts and 100 GB of storage on your agency account. If you need more than that, our Enterprise plan is custom-built around your volume; talk to our team.",
+    a: "Unlimited client sub-accounts, unlimited users and contacts, and 100 GB of storage on your agency account. If you need more than that, our Enterprise plan is custom-built around your volume; talk to our team.",
   },
   {
     q: "Can I rebill my clients for their usage?",

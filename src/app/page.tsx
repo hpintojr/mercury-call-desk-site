@@ -26,7 +26,7 @@ export default function HomePage() {
               Your entire phone operation. One platform.
             </h1>
             <p className="mt-5 max-w-xl text-base text-white/75 sm:text-lg">
-              Mercury CRM combines your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up — 24/7.
+              Mercury CRM combines your customer database, a full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up, 24/7.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href={links.demo} size="lg">Schedule a Custom Demo</Button>
@@ -44,7 +44,7 @@ export default function HomePage() {
                 <span className="ml-auto rounded-full bg-white/10 px-2 py-0.5 text-[11px]">Español detected</span>
               </div>
               <ul className="mt-4 space-y-3 text-sm">
-                <li className="rounded-2xl rounded-tl-sm bg-white/10 px-4 py-2">Hi, I need a plumber tonight — my water heater is leaking.</li>
+                <li className="rounded-2xl rounded-tl-sm bg-white/10 px-4 py-2">Hi, I need a plumber tonight. My water heater is leaking.</li>
                 <li className="ml-6 rounded-2xl rounded-tr-sm bg-gradient-to-r from-mcd-blue to-mcd-sky px-4 py-2 text-mcd-navy">I can help right away. What&apos;s the address? I&apos;ll dispatch our on-call tech and text you an ETA.</li>
               </ul>
               <ul className="mt-4 grid grid-cols-3 gap-2 text-center text-[11px] text-white/70">
@@ -150,7 +150,7 @@ export default function HomePage() {
             ))}
             <div className="relative rounded-xl2 bg-mcd-navy p-6 text-white shadow-sm">
               <h3 className="text-lg font-extrabold">{enterprise.name}</h3>
-              <p className="mt-1 text-sm text-white/70">Custom tailored for high-volume businesses and agencies</p>
+              <p className="mt-1 text-sm text-white/70">{enterprise.blurb}</p>
               <p className="mt-4"><a href={links.demo} className="text-lg font-extrabold text-mcd-cyan hover:underline">Talk to our team</a></p>
             </div>
           </div>

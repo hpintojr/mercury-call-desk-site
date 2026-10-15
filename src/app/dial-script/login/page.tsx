@@ -24,7 +24,7 @@ export default async function DialScriptLogin({ searchParams }: { searchParams: 
         <input id="password" name="password" type="password" autoComplete="current-password" autoFocus required disabled={!configured} />
         {error === "1" ? <p className="err">That password didn&apos;t match. Try again.</p> : null}
         {!configured || error === "config" ? (
-          <p className="err">The team password hasn&apos;t been set yet — add DIAL_SCRIPT_PASSWORD in Vercel and redeploy.</p>
+          <p className="err">The team password hasn&apos;t been set yet. Add DIAL_SCRIPT_PASSWORD in Vercel and redeploy.</p>
         ) : null}
         <button type="submit" disabled={!configured}>Open the dial script</button>
         <p className="foot">Internal use only. Ask Hamilton if you need the password.</p>

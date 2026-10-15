@@ -25,7 +25,7 @@ export const benefitWords = [
 export const frontLines = [
   { title: "Smart Call Handling 24/7", body: "Understands and responds to real customer requests, not just keywords. No more missed calls, long hold times, or clunky menus." },
   { title: "Workflow-Ready Automation", body: "Books appointments, sends reminders, processes payments, and updates your systems. From CRMs to custom workflows." },
-  { title: "Built for Your Business", body: "Whether it's home services to healthcare, Mercury Call Desk adapts to how you work — fast setup, no technical headaches." },
+  { title: "Built for Your Business", body: "Whether it's home services to healthcare, Mercury Call Desk adapts to how you work, with fast setup, no technical headaches." },
 ];
 
 export const pillars = [
@@ -95,7 +95,7 @@ export const featureRows = [
 
 export const homeIntegrations = [
   { name: "Google Calendar", body: "Book appointments instantly and sync your availability without lifting a finger." },
-  { name: "Stripe", body: "Take secure payments mid-conversation — no handoffs, no friction." },
+  { name: "Stripe", body: "Take secure payments mid-conversation, no handoffs, no friction." },
   { name: "Microsoft Outlook", body: "Coordinate schedules and conversations without ever leaving your inbox." },
   { name: "Zapier", body: "Link your Mercury Call Desk assistant to 7,000+ tools and automate tasks your team used to do manually." },
 ];

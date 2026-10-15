@@ -2,6 +2,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import Icon, { type IconName } from "./Icon";
 import { site, nav, links } from "@/config/site";
+import { comparisons } from "@/content/comparisons";
 
 const socials: { label: string; href: string; icon: IconName }[] = [
   { label: "Facebook", href: site.social.facebook, icon: "facebook" },
@@ -17,7 +18,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-mcd-navy text-white">
-      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
         <div className="lg:col-span-2">
           <Logo />
           <p className="mt-4 max-w-sm text-sm text-white/70">
@@ -51,6 +52,13 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-white/70">
             <li><a href={links.affiliate} className="hover:text-mcd-cyan">Become an Affiliate</a></li>
             <li><a href={links.affiliateAgreement} className="hover:text-mcd-cyan">Affiliate Agreement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className={heading}>Compare</h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/70">
+            {comparisons.map((c) => <li key={c.slug}><Link href={`/vs/${c.slug}`} className="hover:text-mcd-cyan">Mercury vs {c.competitor}</Link></li>)}
           </ul>
         </div>
 

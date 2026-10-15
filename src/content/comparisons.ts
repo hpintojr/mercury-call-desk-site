@@ -44,7 +44,7 @@ const mercuryRows = (competitorCells: CompareCell[]): CompareRow[] => [
   { label: "Outbound dialer", mercury: true, competitor: competitorCells[1] },
   { label: "Dispatch", mercury: true, competitor: competitorCells[2] },
   { label: "Usage rebilling for agencies", mercury: true, competitor: competitorCells[3] },
-  { label: "Unlimited sub-accounts", mercury: "Pro and up", competitor: competitorCells[4] },
+  { label: "Unlimited sub-accounts", mercury: "Professional and up", competitor: competitorCells[4] },
   { label: "Published usage rates", mercury: true, competitor: competitorCells[5] },
   { label: "MCP access", mercury: true, competitor: competitorCells[6] },
   { label: "Setup fees", mercury: "None", competitor: competitorCells[7] },

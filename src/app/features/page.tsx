@@ -42,7 +42,7 @@ export default function FeaturesPage() {
 
       <section className="py-14 sm:py-20">
         <div className="container-x">
-          <SectionHeading align="left" eyebrow="Complete Solution" title="Discover everything your business needs for professional phone coverage" body="From basic call handling to advanced business automation—all the tools you need to never miss an opportunity." />
+          <SectionHeading align="left" eyebrow="Complete Solution" title="Discover everything your business needs for professional phone coverage" body="From basic call handling to advanced business automation, all the tools you need to never miss an opportunity." />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {outcomes.map((c) => (
               <li key={c.title} className="flex gap-4 rounded-xl2 border border-mcd-line bg-white p-5 shadow-sm">

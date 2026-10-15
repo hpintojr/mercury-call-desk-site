@@ -5,6 +5,7 @@ import Icon, { type IconName } from "./Icon";
 import FeatureCard from "./FeatureCard";
 import { links, site, aiLine } from "@/config/site";
 import type { Comparison, CompareCell } from "../content/comparisons";
+import { tiers } from "../content/pricing";
 
 const cardIcons: IconName[] = ["mic", "phone", "zap", "chart"];
 
@@ -13,11 +14,12 @@ function Cell({ value }: { value: CompareCell }) {
     return (
       <span className="inline-flex items-center">
         <Icon name="check" className="h-5 w-5 text-green-600" />
+        <span className="sr-only">Included</span>
       </span>
     );
   }
   if (value === false) {
-    return <span className="text-mcd-muted">-</span>;
+    return <span className="text-mcd-muted"><span aria-hidden="true">-</span><span className="sr-only">Not included</span></span>;
   }
   return <span className="text-sm font-medium text-mcd-ink">{value}</span>;
 }
@@ -31,26 +33,31 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
 
   return (
     <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-      <table className="w-full min-w-[560px] text-left text-sm">
+      <table className="w-full min-w-[420px] table-fixed border-collapse text-left text-sm">
+        <colgroup>
+          <col className="w-[38%]" />
+          <col className="w-[31%]" />
+          <col className="w-[31%]" />
+        </colgroup>
         <thead>
-          <tr className="border-b border-mcd-line bg-mcd-surface">
-            <th className="px-5 py-4 font-bold text-mcd-navy">Feature</th>
-            <th className="px-5 py-4 font-bold" style={headerStyle}>
+          <tr className="border-b border-mcd-line">
+            <th scope="col" className="sticky left-0 z-10 bg-mcd-surface px-3 py-4 sm:px-5 text-xs font-bold uppercase tracking-wider text-mcd-navy">Feature</th>
+            <th scope="col" className="px-3 py-4 sm:px-5 text-center font-bold" style={headerStyle}>
               {comparison.competitor}
             </th>
-            <th className="px-5 py-4 font-bold text-mcd-navy">Mercury Call Desk</th>
+            <th scope="col" className="bg-mcd-navy px-3 py-4 sm:px-5 text-center font-bold text-white">Mercury Call Desk</th>
           </tr>
         </thead>
         <tbody>
           {comparison.rows.map((row) => (
             <tr key={row.label} className="border-b border-mcd-line last:border-0">
-              <td className="px-5 py-4">
-                <span className="font-bold text-mcd-navy">{row.label}</span>
-              </td>
-              <td className="px-5 py-4" style={cellTint}>
+              <th scope="row" className="sticky left-0 z-10 bg-white px-3 py-4 sm:px-5 font-bold text-mcd-navy">
+                {row.label}
+              </th>
+              <td className="px-3 py-4 sm:px-5 text-center" style={cellTint}>
                 <Cell value={row.competitor} />
               </td>
-              <td className="px-5 py-4">
+              <td className="bg-green-50/40 px-3 py-4 sm:px-5 text-center">
                 <Cell value={row.mercury} />
               </td>
             </tr>
@@ -60,6 +67,13 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
     </div>
   );
 }
+
+/** One-line summary per tier for the pricing strip; prices come from src/content/pricing.ts. */
+const stripNotes: Record<(typeof tiers)[number]["id"], string> = {
+  starter: "5 sub-accounts",
+  professional: "unlimited sub-accounts and usage rebilling",
+  agencies: "limited time, dispatch and SaaS resale",
+};
 
 function PricingStrip({ comparison }: { comparison: Comparison }) {
   const { brandColor, darkHeader } = comparison;
@@ -71,9 +85,9 @@ function PricingStrip({ comparison }: { comparison: Comparison }) {
           title="Simple math"
           body="One flat monthly rate against per-seat, per-agent, and per-product pricing."
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
           <div
-            className="rounded-xl2 border border-mcd-line bg-white p-8 shadow-sm"
+            className="flex flex-col rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm sm:p-8"
             style={{ borderTop: `4px solid ${brandColor}` }}
           >
             <p
@@ -90,26 +104,22 @@ function PricingStrip({ comparison }: { comparison: Comparison }) {
               a real dialer, and dispatch.
             </p>
           </div>
-          <div className="rounded-xl2 border-2 border-mcd-navy bg-white p-8 shadow-md">
+          <div className="flex flex-col rounded-xl2 border-2 border-mcd-navy bg-white p-6 shadow-md sm:p-8">
             <p className="eyebrow">Mercury Call Desk</p>
-            <ul className="mt-4 space-y-2 text-sm text-mcd-ink">
-              <li>
-                <span className="font-extrabold text-mcd-navy">$99/mo</span> Starter,
-                5 sub-accounts
-              </li>
-              <li>
-                <span className="font-extrabold text-mcd-navy">$299/mo</span> Professional,
-                unlimited sub-accounts and usage rebilling
-              </li>
-              <li>
-                <span className="font-extrabold text-mcd-navy">$399/mo</span> Agencies,
-                limited time, dispatch and SaaS resale
-              </li>
+            <ul className="mt-4 space-y-3 text-sm text-mcd-ink">
+              {tiers.map((t) => (
+                <li key={t.id} className="flex gap-3">
+                  <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                  <span>
+                    <span className="font-extrabold text-mcd-navy">${t.monthly}/mo</span> {t.name}, {stripNotes[t.id]}
+                  </span>
+                </li>
+              ))}
             </ul>
             <p className="mt-4 text-sm text-mcd-muted">
-              No setup fees. Published usage rates. Enterprise custom.
+              Unlimited users and contacts on every plan. No setup fees. Published usage rates. Enterprise custom.
             </p>
-            <div className="mt-6">
+            <div className="mt-auto pt-6">
               <Button href="/pricing" variant="primary">
                 See full pricing
               </Button>

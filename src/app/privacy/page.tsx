@@ -42,12 +42,12 @@ export default function PrivacyPage() {
 
           <H>Information We Collect</H>
           <H3>Personal data</H3>
-          <P>When you use the Service — for example, by booking a demo, filling out our contact form, or creating a dashboard account — we may collect:</P>
+          <P>When you use the Service, for example, by booking a demo, filling out our contact form, or creating a dashboard account, we may collect:</P>
           <UL items={[
             "Name and business name",
             "Phone number",
             "Email address",
-            "Billing address and payment details (processed securely by Stripe — we do not store full card numbers)",
+            "Billing address and payment details (processed securely by Stripe; we do not store full card numbers)",
             "Any information you choose to share in a form, call, or message to us",
           ]} />
 

@@ -46,10 +46,10 @@ export default function CallbackForm({ slug, industry }: { slug: string; industr
   if (state === "sent") {
     return (
       <div className="rounded-xl2 border border-mcd-cyan/50 bg-mcd-surface p-8 text-center" role="status" aria-live="polite">
-        <p className="eyebrow">Pick up — it&apos;s us</p>
+        <p className="eyebrow">Pick up: it&apos;s us</p>
         <h3 className="mt-2 text-xl font-extrabold text-mcd-navy">Our AI is calling you in about a minute from {aiLine.display}.</h3>
         <p className="mt-3 text-sm text-mcd-muted">
-          You&apos;ll get a text first so you know it&apos;s coming. If it&apos;s outside 8 am–8 pm your time, the call comes first thing in the morning — or skip the wait and <a href={aiLine.href} data-placement="callback-sent" className="font-semibold text-mcd-blue underline">call it now</a>.
+          You&apos;ll get a text first so you know it&apos;s coming. If it&apos;s outside 8 am–8 pm your time, the call comes first thing in the morning, or skip the wait and <a href={aiLine.href} data-placement="callback-sent" className="font-semibold text-mcd-blue underline">call it now</a>.
         </p>
       </div>
     );

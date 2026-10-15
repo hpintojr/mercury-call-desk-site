@@ -35,7 +35,7 @@ export default function ContactForm() {
   if (state === "sent") {
     return (
       <div className="rounded-xl2 border border-mcd-cyan/50 bg-mcd-surface p-8 text-center">
-        <h3 className="text-xl font-extrabold text-mcd-navy">Thanks — we got it.</h3>
+        <h3 className="text-xl font-extrabold text-mcd-navy">Thanks, we got it.</h3>
         <p className="mt-2 text-sm text-mcd-muted">Our team will reach out shortly. Want to skip the wait? <a href={links.demo} className="font-semibold text-mcd-blue underline">Book a demo</a> or call {site.phone}.</p>
       </div>
     );
