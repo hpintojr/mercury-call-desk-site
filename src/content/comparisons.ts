@@ -394,6 +394,35 @@ export const comparisons: Comparison[] = [
     verdict:
       "Salesforce is built for enterprises with implementation budgets to match. Mercury is built for businesses that run on the phone: answered calls, worked leads, and dispatched jobs, live in days for a flat monthly rate.",
   },
+  {
+    slug: "zoho",
+    competitor: "Zoho",
+    brandColor: "#0060A9",
+    tagline:
+      "A giant suite of apps is not a phone system. Mercury answers your calls, dials your leads, and dispatches your techs out of the box.",
+    competitorPrice: "Per-user pricing across 45+ apps",
+    differentiators: [
+      {
+        title: "Built for the phone, not the suite",
+        body: "Zoho CRM is one app inside a 45+ product suite. Mercury is built around the phone: AI voice agents, a full outbound dialer, and dispatch, native on every plan.",
+      },
+      {
+        title: "Flat rate vs per seat",
+        body: "Zoho pricing multiplies with every user and every add-on. Mercury plans are flat monthly rates, so the bill stays predictable as you grow.",
+      },
+      {
+        title: "Live in days, not projects",
+        body: "Numbers provisioned, AI assistants trained on your business, CRM configured. No implementation project, no consultants to get the basics working.",
+      },
+      {
+        title: "Agencies keep their margin",
+        body: "Mercury Professional includes usage rebilling, so agencies mark up phone, SMS, email, and AI instead of absorbing the cost. Zoho offers no equivalent.",
+      },
+    ],
+    rows: mercuryRows(standardCells),
+    verdict:
+      "Zoho is a sprawling suite that does a little of everything. Mercury does one thing better than anyone: it runs the phones for local and service businesses, with AI voice, dialer, and dispatch included at a flat monthly rate.",
+  },
 ];
 
 export function getComparison(slug: string): Comparison | undefined {
