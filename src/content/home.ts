@@ -60,7 +60,7 @@ export const oneBill = {
   ],
   newWay: {
     name: "Mercury CRM",
-    price: "from $97/mo + usage",
+    price: "from $99/mo + usage",
     detail: "CRM, phone system, dialer, and AI assistants. One vendor, one bill, one login.",
   },
 };
