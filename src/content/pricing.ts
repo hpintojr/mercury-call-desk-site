@@ -1,5 +1,5 @@
 /**
- * Mercury CRM platform pricing — updated 2026-10-15 (Starter $99/5 sub-accounts; Professional $299 with usage rebilling; Agencies $399 limited-time with dispatch; Enterprise 4th column).
+ * Mercury CRM platform pricing, updated 2026-10-15 (Starter $99/5 sub-accounts; Professional $299 with usage rebilling; Agencies $399 limited-time with dispatch; Enterprise 4th column).
  * Monthly platform fee + transparent usage (published per-tier rates).
  * Annual billing = 2 months free.
  */
@@ -16,8 +16,21 @@ export type Tier = {
   ctaShort?: string;
   popular?: boolean;
   badge?: string;
-  features: { title: string; detail: string; muted?: boolean }[];
+  /** Line above the card's list, e.g. "Everything in Starter, plus:" */
+  lead: string;
+  /** What this tier adds. Items every plan shares live in `everyPlan`; full detail lives in `compare`. */
+  features: { title: string; detail: string }[];
 };
+
+/** Shown once above the pricing cards so each card only lists what its tier adds. */
+export const everyPlan: { title: string; detail: string }[] = [
+  { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
+  { title: "Unlimited users and contacts", detail: "Add your whole team and grow your database with no caps" },
+  { title: "AI voice", detail: "AI front desk answers every call 24/7, books appointments, sends SMS follow-ups" },
+  { title: "Full dialer + phone system", detail: "Outbound dialing, local numbers, call recording and transcripts" },
+  { title: "40+ languages", detail: "Automatic language detection and seamless switching" },
+  { title: "Advanced API and MCP access", detail: "Full API access, and connect Claude, ChatGPT, and AI agents directly to your CRM. Never gated behind an upsell." },
+];
 
 export const tiers: Tier[] = [
   {
@@ -27,18 +40,11 @@ export const tiers: Tier[] = [
     monthly: 99,
     annualTotal: 990,
     cta: "Start with Starter",
+    lead: "Starter includes:",
     features: [
-      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
-      { title: "1 user", detail: "One seat for the owner-operator" },
-      { title: "2,500 contacts", detail: "Contacts, companies, and conversations in Mercury CRM" },
       { title: "5 sub-accounts", detail: "GoHighLevel gives you 3 at $97. We give you 5 at $99." },
       { title: "10 GB storage", detail: "Call recordings, files, and documents" },
       { title: "$5 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "AI voice", detail: "AI front desk answers every call 24/7, books appointments, sends SMS follow-ups" },
-      { title: "Full dialer + phone system", detail: "Outbound dialing, local numbers, call recording and transcripts" },
-      { title: "40+ languages", detail: "Automatic language detection and seamless switching" },
-      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
-      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
     ],
   },
   {
@@ -50,20 +56,13 @@ export const tiers: Tier[] = [
     cta: "Start with Professional",
     ctaShort: "Start Professional",
     popular: true,
+    lead: "Everything in Starter, plus:",
     features: [
-      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
-      { title: "Everything in Starter", detail: "All Starter features plus the Professional benefits below" },
-      { title: "5 users", detail: "5 seats total for your whole front office" },
-      { title: "10,000 contacts", detail: "Room to grow your database" },
-      { title: "50 GB storage", detail: "More recordings, files, and documents" },
-      { title: "$15 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "Financials", detail: "Invoices, estimates, and documents" },
-      { title: "Marketing", detail: "Campaigns, broadcasts, and social" },
-      { title: "AI automation", detail: "Workflows, campaigns, and reputation management" },
       { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
       { title: "Usage rebilling", detail: "Mark up phone, email, SMS, and AI usage for your clients. GoHighLevel makes agencies absorb the cost; we let you profit from it." },
-      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
-      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
+      { title: "Financials, marketing and AI automation", detail: "Invoices and estimates; campaigns, broadcasts and social; workflows and reputation management" },
+      { title: "50 GB storage", detail: "More recordings, files, and documents" },
+      { title: "$15 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
     ],
   },
   {
@@ -74,37 +73,32 @@ export const tiers: Tier[] = [
     annualTotal: 3990,
     badge: "Limited Time",
     cta: "Start with Agencies",
+    lead: "Everything in Professional, plus:",
     features: [
-      { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
-      { title: "Everything in Professional", detail: "All Professional features plus the Agencies benefits below" },
-      { title: "10 users", detail: "10 seats total across locations and departments" },
-      { title: "50,000 contacts", detail: "High-volume database capacity" },
-      { title: "100 GB storage", detail: "Deep recording and file retention" },
-      { title: "$30 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
-      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel hasn't shipped theirs." },
-      { title: "AI agentic", detail: "AI agents that get work done: build workflows, manage dispatch, and handle follow-ups autonomously." },
-      { title: "Advanced API access", detail: "Full API access on every tier, never gated behind an upsell" },
-      { title: "Advanced MCP access", detail: "Connect Claude, ChatGPT, and AI agents directly to your CRM" },
-      { title: "Usage rebilling", detail: "Rebill your clients' calls and texts at your own markup" },
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
+      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel hasn't shipped theirs." },
+      { title: "AI agentic", detail: "AI agents that build workflows, manage dispatch, and handle follow-ups autonomously" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
+      { title: "100 GB storage + $30 monthly credits", detail: "Deep recording retention; credits applied automatically to SMS and voice" },
     ],
   },
 ];
 
 /**
  * Enterprise is quote-only (modeled on GoHighLevel's Enterprise block): no published price,
- * shown as a full-width "talk to us" block under the priced tiers.
+ * shown as the 4th pricing column next to the priced tiers.
  */
 export const enterprise = {
   name: "Enterprise",
   eyebrow: "Enterprise plan",
   title: "Built around your business",
+  blurb: "Custom tailored for high-volume businesses and agencies",
   body: "Designed for high-volume businesses and agencies, the Enterprise plan is custom tailored to each account. We price it to fit your volume and protect your margins, with the full platform and a team behind it.",
+  lead: "Everything in Agencies, plus:",
   points: [
     "Dedicated account manager",
-    "Unlimited users, contacts and storage",
+    "Unlimited storage",
     "Volume usage rates",
     "Custom builds, integrations and MCP data tools",
     "White-glove migration from HighLevel",
@@ -166,8 +160,8 @@ export const compare: CompareGroup[] = [
   {
     title: "Platform",
     rows: [
-      { label: "Users", cells: ["1", "5", "10", "Unlimited"] },
-      { label: "Contacts", cells: ["2,500", "10,000", "50,000", "Unlimited"] },
+      { label: "Users", cells: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+      { label: "Contacts", cells: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
       { label: "Storage", cells: ["10 GB", "50 GB", "100 GB", "Unlimited"] },
       { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30", "Custom"] },
       { label: "Sub-accounts", tip: "Separate client or location accounts under your agency.", cells: ["5", "Unlimited", "Unlimited", "Unlimited"] },
@@ -215,7 +209,7 @@ export const pricingFaq = [
   { q: "Is there a setup fee?", a: "No setup fees and no long-term contracts. Monthly billing, cancel anytime." },
   { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
   { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
-  { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Higher tiers add users, contacts, modules, and better usage rates." },
+  { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Every tier includes unlimited users and contacts. Higher tiers add storage, modules, and better usage rates." },
   { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $990/yr, Professional $2,990/yr and Agencies $3,990/yr. Enterprise is quoted to fit your account." },
 ];
 

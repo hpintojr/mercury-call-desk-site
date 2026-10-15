@@ -107,7 +107,7 @@ export default function LandingPage({ page }: { page: LandingConfig }) {
           </div>
           {page.integrations && (
             <p className="mt-8 text-center text-sm text-mcd-muted">
-              Connects to {page.integrations.join(" · ")} — <Link href="/integrations" className="font-semibold text-mcd-blue underline">see all integrations</Link>
+              Connects to {page.integrations.join(" · ")}, <Link href="/integrations" className="font-semibold text-mcd-blue underline">see all integrations</Link>
             </p>
           )}
         </div>
@@ -120,7 +120,7 @@ export default function LandingPage({ page }: { page: LandingConfig }) {
             <div className="lg:col-span-5">
               <p className="eyebrow text-mcd-cyan">Or let it call you</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">Drop your number. The AI calls you back in about 60 seconds.</h2>
-              <p className="mt-4 text-white/70">This is the same speed-to-lead your customers would get. It will introduce itself, answer your questions, and — if you want — book a time with our team while you&apos;re on the line.</p>
+              <p className="mt-4 text-white/70">This is the same speed-to-lead your customers would get. It will introduce itself, answer your questions, and, if you want, book a time with our team while you&apos;re on the line.</p>
               <p className="mt-6 text-sm text-white/60">Prefer to dial? <a href={aiLine.href} data-placement={`${page.slug}-callback`} className="font-semibold text-white underline">{aiLine.display}</a></p>
             </div>
             <div className="rounded-xl2 bg-white p-6 text-mcd-ink shadow-xl lg:col-span-7">

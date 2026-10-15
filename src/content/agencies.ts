@@ -11,13 +11,13 @@ export const agenciesSlug = "agencies";
 export const agenciesMeta = {
   title: "The GoHighLevel alternative for agencies | Mercury CRM",
   description:
-    "Unlimited white-label sub-accounts, usage rebilling and SaaS resale, plus AI receptionists and a 10-line parallel dialer, in one $397/mo plan. Compare it with your GoHighLevel bill.",
+    "Unlimited white-label sub-accounts, usage rebilling and SaaS resale, plus AI receptionists and a 10-line parallel dialer, in one $399/mo plan. Compare it with your GoHighLevel bill.",
 };
 
 export const agenciesHero = {
   eyebrow: "For agencies running on GoHighLevel",
-  headline: "White-label CRM, AI receptionists and a 10-line dialer. $397 a month, unlimited sub-accounts.",
-  sub: "GoHighLevel's Agency Pro plan is $497 a month for SaaS mode and usage rebilling, and that's before the AI Employee at $50 to $97 a month for every client that uses it, plus another vendor if you want to dial more than one line at a time. Mercury CRM's Agencies plan is $397 with unlimited white-label sub-accounts, usage rebilling, SaaS resale rights, an AI front desk and a 10-line parallel dialer.",
+  headline: "White-label CRM, AI receptionists and a 10-line dialer. $399 a month, unlimited sub-accounts.",
+  sub: "GoHighLevel's Agency Pro plan is $497 a month for SaaS mode and usage rebilling, and that's before the AI Employee at $50 to $97 a month for every client that uses it, plus another vendor if you want to dial more than one line at a time. Mercury CRM's Agencies plan is $399 with unlimited white-label sub-accounts, usage rebilling, SaaS resale rights, an AI front desk and a 10-line parallel dialer.",
 };
 
 /**
@@ -32,7 +32,7 @@ export const calc = {
     { id: "growth", label: "AI Employee Growth", price: 50 },
   ],
   ghlDialer: { item: "Parallel dialer bolt-on (Hot Prospector)", price: 137 },
-  mcdPlan: { item: "Mercury CRM Agencies", price: 397 },
+  mcdPlan: { item: "Mercury CRM Agencies", price: 399 },
   defaultClients: 5,
   maxClients: 30,
   note: "Monthly software fees before usage. Calls and texts bill separately on both platforms at published rates.",
@@ -40,7 +40,7 @@ export const calc = {
 
 export type CompareCell = { text: string; good?: boolean };
 export const compareRows: { label: string; ghl: CompareCell; mcd: CompareCell }[] = [
-  { label: "Plan price", ghl: { text: "$497/mo (Agency Pro)" }, mcd: { text: "$397/mo (Agencies)", good: true } },
+  { label: "Plan price", ghl: { text: "$497/mo (Agency Pro)" }, mcd: { text: "$399/mo (Agencies)", good: true } },
   { label: "White-label client sub-accounts", ghl: { text: "Unlimited", good: true }, mcd: { text: "Unlimited, no per-account fee", good: true } },
   {
     label: "AI receptionist",
@@ -91,11 +91,11 @@ export const agenciesFaq = [
   },
   {
     q: "How many users and contacts does the Agencies plan include?",
-    a: "Unlimited client sub-accounts, plus 10 users, 50,000 contacts and 100 GB of storage on your agency account. If you need more than that, our Enterprise plan is custom-built around your volume; talk to our team.",
+    a: "Unlimited client sub-accounts, unlimited users and contacts, and 100 GB of storage on your agency account. If you need more than that, our Enterprise plan is custom-built around your volume; talk to our team.",
   },
   {
     q: "Can I rebill my clients for their usage?",
-    a: "Yes. Usage rebilling is included in the $397 Agencies plan. Your usage bills to your agency at our published rates, and you rebill each client at whatever markup you set. SaaS resale rights are included too, so you can sell the platform itself under your brand.",
+    a: "Yes. Usage rebilling is included in the $399 Agencies plan. Your usage bills to your agency at our published rates, and you rebill each client at whatever markup you set. SaaS resale rights are included too, so you can sell the platform itself under your brand.",
   },
   {
     q: "Do I have to move every client at once?",

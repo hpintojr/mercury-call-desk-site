@@ -94,7 +94,7 @@ export const SECTIONS: Section[] = [
     blocks: [
       { t: "cue", text: "If there's any resistance (\"we don't get calls like that\"):" },
       { t: "say", text: "Yeah, I wasn't trying to sell you anything today. I'm only trying to help if you have a problem. What I was really trying to do is get you to listen to a demo I've already built for you. It's a voice agent that could handle your calls. I'd just loop it in on a conference call, kind of like right now, and you could hear it live." },
-      { t: "key", label: "Key line — reuse anywhere", text: "It wouldn't be a hard sales pitch. You either like it or you don't." },
+      { t: "key", label: "Key line: reuse anywhere", text: "It wouldn't be a hard sales pitch. You either like it or you don't." },
     ],
   },
   {
@@ -165,7 +165,7 @@ export const SECTIONS: Section[] = [
   },
   {
     id: "voicemail", n: "VM", title: "Voicemail script", tag: "When the call goes straight to voicemail",
-    goal: "Keep it short. No pause for a callback close — just plant the hook and leave the number once, naturally.",
+    goal: "Keep it short. No pause for a callback close. Just plant the hook and leave the number once, naturally.",
     blocks: [
       { t: "say", text: "Hello, my name is [name] with {brand}. I just wanted to see if you had anything in place other than this voicemail system for handling your overflow and after-hours calls? You might already be aware of this but, 80% of people who hit your voicemail just hang up and call the next company, so I've been helping other [industry] companies capture those calls with custom voice agents. If you're looking for an easy way to capture more calls, feel free to give me a call back, my number is [phone number]. Thank you!" },
     ],

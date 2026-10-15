@@ -140,11 +140,11 @@ function Calculator() {
         <p className="calcline">Per week: <b>{money(week)}</b></p>
         <p className="calcline">Per month: <b>{money(month)}</b> &nbsp;·&nbsp; Per year: <b>{money(year)}</b></p>
         <p className="calcline small">
-          At {money(price)}/mo that is <b>{month > 0 ? Math.round(month / price) + "x" : "—"}</b> the cost of the service.
+          At {money(price)}/mo that is <b>{month > 0 ? Math.round(month / price) + "x" : "-"}</b> the cost of the service.
         </p>
         {spend > 0 ? (
           <p className="calcline small">
-            Already spending <b>{money(spend)}</b>/mo to make the phone ring (phone + marketing) — {money(price)} is about{" "}
+            Already spending <b>{money(spend)}</b>/mo to make the phone ring (phone + marketing). {money(price)} is about{" "}
             <b>{Math.round((price / spend) * 100)}%</b> on top of that, and it&apos;s what makes the rest pay off.
           </p>
         ) : null}
@@ -433,7 +433,7 @@ export default function DialScript() {
               <h1>Dial Script</h1>
               <p className="lede">{subst(cfg.lede)}</p>
               <p className="legend">
-                Amber text like <span className="ph">[their close time]</span> is a placeholder — swap in the real detail, don&apos;t read it out.
+                Amber text like <span className="ph">[their close time]</span> is a placeholder. Swap in the real detail, don&apos;t read it out.
                 Anything in a <b>SAY</b> box is meant to be said close to word-for-word; grey text is coaching, not script.
               </p>
               <div className="stats">
@@ -454,7 +454,7 @@ export default function DialScript() {
                 <b>{results.length}</b> result{results.length === 1 ? "" : "s"} for &ldquo;{q.trim()}&rdquo;
               </p>
               {!results.length ? (
-                <p className="nores">Nothing matched. Try a shorter word — &ldquo;email&rdquo;, &ldquo;busy&rdquo;, &ldquo;price&rdquo;, &ldquo;google&rdquo;.</p>
+                <p className="nores">Nothing matched. Try a shorter word: &ldquo;email&rdquo;, &ldquo;busy&rdquo;, &ldquo;price&rdquo;, &ldquo;google&rdquo;.</p>
               ) : null}
               {objs.length ? <p className="resgrp">Objections &amp; brush-offs</p> : null}
               {objs.map((r) => (

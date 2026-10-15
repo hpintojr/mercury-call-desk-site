@@ -38,16 +38,16 @@ export const partnerBenefits: { icon: IconName; title: string; body: string }[] 
 export const partnerPlans = [
   {
     name: "Professional",
-    price: "$297/mo",
+    price: "$299/mo",
     blurb: "Start reselling under your brand",
-    points: ["Unlimited white-label sub-accounts", "No per-account fee", "AI front desk and 10-line dialer", "5 users, 10,000 contacts"],
+    points: ["Unlimited white-label sub-accounts", "No per-account fee", "AI front desk and 10-line dialer", "Unlimited users and contacts"],
     cta: "Book a partner call",
   },
   {
     name: "Agencies",
-    price: "$397/mo",
+    price: "$399/mo",
     blurb: "Run it as your own SaaS",
-    points: ["Everything in Professional", "Usage rebilling at your markup", "SaaS resale rights", "HighLevel data migration", "10 users, 50,000 contacts"],
+    points: ["Everything in Professional", "Usage rebilling at your markup", "SaaS resale rights", "HighLevel data migration", "Unlimited users and contacts"],
     cta: "Book a partner call",
     popular: true,
   },

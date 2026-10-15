@@ -4,8 +4,8 @@ import { compare } from "@/content/pricing";
 const cols = ["Starter", "Professional", "Agencies", "Enterprise"];
 
 function Cell({ v }: { v: string | boolean }) {
-  if (v === true) return <Icon name="check" className="mx-auto h-5 w-5 text-mcd-blue" />;
-  if (v === false) return <span className="block text-center text-mcd-muted/40">—</span>;
+  if (v === true) return <><Icon name="check" className="mx-auto h-5 w-5 text-mcd-blue" /><span className="sr-only">Included</span></>;
+  if (v === false) return <span className="block text-center text-mcd-muted/50"><span aria-hidden="true">-</span><span className="sr-only">Not included</span></span>;
   return <span className="block text-center text-xs font-medium leading-snug sm:text-sm">{v}</span>;
 }
 
@@ -20,11 +20,15 @@ export default function PricingCompare() {
         <section key={g.title} aria-labelledby={g.title.replace(/\s+/g, "-")}>
           <h3 id={g.title.replace(/\s+/g, "-")} className="mb-3 text-lg font-extrabold text-mcd-navy sm:text-xl">{g.title}</h3>
           <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-            <table className="w-full min-w-[760px] border-collapse text-sm">
+            <table className="w-full min-w-[760px] table-fixed border-collapse text-sm">
+              <colgroup>
+                <col className="w-[32%]" />
+                {cols.map((c) => <col key={c} className="w-[17%]" />)}
+              </colgroup>
               <thead>
                 <tr className="bg-mcd-surface text-mcd-navy">
-                  <th scope="col" className="sticky left-0 z-10 w-48 bg-mcd-surface px-4 py-3 text-left text-xs font-bold uppercase tracking-wider sm:w-64">Feature</th>
-                  {cols.map((c) => <th key={c} scope="col" className="px-3 py-3 text-center text-xs font-bold uppercase tracking-wider">{c}</th>)}
+                  <th scope="col" className="sticky left-0 z-10 bg-mcd-surface px-4 py-3 text-left text-xs font-bold uppercase tracking-wider">Feature</th>
+                  {cols.map((c) => <th key={c} scope="col" className={`px-3 py-3 text-center text-xs font-bold uppercase tracking-wider ${c === "Professional" ? "text-mcd-blue" : ""}`}>{c}</th>)}
                 </tr>
               </thead>
               <tbody>

@@ -28,14 +28,14 @@ export default function ContactPage() {
             <blockquote className="rounded-xl2 bg-mcd-navy p-6 text-white">
               {/* TODO: replace with Hamilton's approved founder quote */}
               <Icon name="quote" className="h-6 w-6 text-mcd-cyan" />
-              <p className="mt-3 text-lg font-semibold leading-snug">&ldquo;Missed calls are missed revenue. We built {site.name} so every business — big or small — can answer every call like their best employee, 24/7.&rdquo;</p>
+              <p className="mt-3 text-lg font-semibold leading-snug">&ldquo;Missed calls are missed revenue. We built {site.name} so every business, big or small, can answer every call like their best employee, 24/7.&rdquo;</p>
               <footer className="mt-4 text-sm text-white/70"><span className="font-bold text-white">Hamilton Pinto Jr.</span> · Founder</footer>
             </blockquote>
 
             {[
               { title: "Knowledge hub", body: `Guides, FAQs, and best practices to help you succeed with ${site.name}.`, href: "/faq", icon: "chat" as const },
               { title: "Talk to Sales", body: `Get tailored guidance on pricing, features, and how ${site.name} can work for your business. Our team is ready to help you find the right fit.`, href: links.demo, icon: "users" as const },
-              { title: `Talk to ${site.name}`, body: `Experience ${site.name} for yourself — call in and let our AI assistant answer your questions, just like it would for your customers.`, href: links.demoCall, icon: "phone" as const },
+              { title: `Talk to ${site.name}`, body: `Experience ${site.name} for yourself: call in and let our AI assistant answer your questions, just like it would for your customers.`, href: links.demoCall, icon: "phone" as const },
             ].map((c) => {
               const inner = (
                 <>
@@ -53,7 +53,7 @@ export default function ContactPage() {
       <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <SectionHeading align="left" eyebrow="Proudly US-Based" title="Founded in the USA. Built for Businesses Everywhere." body={`${site.name} is based in Riverside, California — built in the U.S. for businesses everywhere. Unlike companies that only claim a U.S. presence, we're proud to be truly based here, delivering trust and accountability you can count on.`} />
+            <SectionHeading align="left" eyebrow="Proudly US-Based" title="Founded in the USA. Built for Businesses Everywhere." body={`${site.name} is based in Riverside, California, built in the U.S. for businesses everywhere. Unlike companies that only claim a U.S. presence, we're proud to be truly based here, delivering trust and accountability you can count on.`} />
           </div>
           <dl className="grid gap-5 sm:grid-cols-2">
             <div className="rounded-xl2 border border-mcd-line bg-white p-6"><dt className="flex items-center gap-2 font-bold text-mcd-navy"><Icon name="pin" className="h-5 w-5 text-mcd-blue" />Address</dt><dd className="mt-2 text-sm text-mcd-muted">{site.address.map((l) => <span key={l} className="block">{l}</span>)}</dd></div>

@@ -27,9 +27,9 @@ export const platform = [
   { title: "Scalable Growth", body: "Mercury Call Desk can handle an unlimited call handling capacity with multiple AI assistants that grow with your business needs." },
   { title: "Outbound Calling", body: "Proactive AI-powered outreach for appointment reminders, follow-ups, lead nurturing, and customer retention campaigns." },
   { title: "Lead Intelligence", body: "Advanced lead tracking and attribution that reveals exactly how customers find you and what drives conversions." },
-  { title: "Website Chat Integration", body: "Not just any chatbot. Intelligent chatbot with instant voice calling—visitors can chat or speak with your AI assistant from your website." },
+  { title: "Website Chat Integration", body: "Not just any chatbot. Intelligent chatbot with instant voice calling: visitors can chat or speak with your AI assistant from your website." },
   { title: "Custom Integrations & Automations", body: "Custom workflow automations connecting your existing business systems for complete efficiency." },
   { title: "Emergency & After-Hours Support", body: "24/7 emergency call handling with intelligent escalation and urgent matter routing to the appropriate team members immediately." },
   { title: "Call Recording & Transcription", body: "Complete call recordings with AI-generated transcripts and searchable conversation summaries for quality and compliance." },
-  { title: "Real-Time Text Integration", body: "Interactive texting during calls—send secure links and receive confirmations, eliminating errors and streamlining complex conversations." },
+  { title: "Real-Time Text Integration", body: "Interactive texting during calls: send secure links and receive confirmations, eliminating errors and streamlining complex conversations." },
 ];

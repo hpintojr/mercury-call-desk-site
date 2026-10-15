@@ -8,13 +8,13 @@ import { integrations } from "@/content/integrations";
 
 export const metadata: Metadata = {
   title: "Integrations",
-  description: "Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows—all from phone conversations.",
+  description: "Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows, all from phone conversations.",
 };
 
 export default function IntegrationsPage() {
   return (
     <>
-      <PageHero crumb="Integrations" title="Powerful integrations that work with your existing business tools" body="Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows—all from phone conversations. No manual data entry required." />
+      <PageHero crumb="Integrations" title="Powerful integrations that work with your existing business tools" body="Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows, all from phone conversations. No manual data entry required." />
 
       <section className="py-14 sm:py-20">
         <div className="container-x">
