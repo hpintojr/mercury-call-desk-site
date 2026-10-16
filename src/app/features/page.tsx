@@ -11,7 +11,8 @@ import { dialerHero, dialerFeatures, complianceItems, dialerFaq } from "@/conten
 
 export const metadata: Metadata = {
   title: "Features",
-  description: "Finally, 24/7 professional phone coverage that works as hard as you do. Advanced AI phone assistants that handle every call professionally - without the cost of hiring additional staff.",
+  description: "Finally, 24/7 professional phone coverage that works as hard as you do. Advanced AI phone assistants that handle every call professionally - without the cost of hiring additional staff.",,
+  alternates: { canonical: "https://mercurycalldesk.com/features" },
 };
 
 const capIcons: IconName[] = ["phone", "zap", "plug", "chart", "globe", "shield"];

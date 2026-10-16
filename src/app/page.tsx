@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
@@ -10,6 +11,14 @@ import RoiCalculator from "@/components/RoiCalculator";
 import { links, site, aiLine } from "@/config/site";
 import { benefitWords, pillars, featureRows, homeIntegrations, insights, oneBill, compliancePoints } from "@/content/home";
 import { tiers, enterprise } from "@/content/pricing";
+
+export const metadata: Metadata = {
+  title: "Mercury Call Desk - Never miss a call again!",
+  description:
+    "Mercury CRM: your customer database, full dialer and phone system, and Mercury Call Desk AI assistants that answer, call, book, and follow up, 24/7.",
+  alternates: { canonical: "https://mercurycalldesk.com/" },
+};
+
 
 const pillarIcons: IconName[] = ["phone", "zap", "users"];
 const intSlugs: Record<string, string> = { "Google Calendar": "google-calendar", Stripe: "stripe", "Microsoft Outlook": "microsoft-outlook", Zapier: "zapier" };

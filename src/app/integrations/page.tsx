@@ -8,7 +8,8 @@ import { integrations } from "@/content/integrations";
 
 export const metadata: Metadata = {
   title: "Integrations",
-  description: "Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows, all from phone conversations.",
+  description: "Connect your AI phone assistant with the software you already use. Automatically sync customer data, schedule appointments, process payments, and trigger custom workflows, all from phone conversations.",,
+  alternates: { canonical: "https://mercurycalldesk.com/integrations" },
 };
 
 export default function IntegrationsPage() {

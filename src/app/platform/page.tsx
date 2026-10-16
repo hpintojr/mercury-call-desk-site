@@ -9,7 +9,8 @@ import { platformHero, platformSections, tierGating } from "@/content/platform";
 
 export const metadata: Metadata = {
   title: "Platform",
-  description: "Tour Mercury CRM: core CRM, AI front desk, phone system and dialer, automations, reporting, and migration. One platform, one bill.",
+  description: "Tour Mercury CRM: core CRM, AI front desk, phone system and dialer, automations, reporting, and migration. One platform, one bill.",,
+  alternates: { canonical: "https://mercurycalldesk.com/platform" },
 };
 
 export default function PlatformPage() {
