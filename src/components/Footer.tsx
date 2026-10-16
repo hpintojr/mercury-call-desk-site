@@ -18,8 +18,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-mcd-navy text-white">
-      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
-        <div className="lg:col-span-2">
+      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-12 xl:gap-8">
+        <div className="sm:col-span-2 md:col-span-4 xl:col-span-3">
           <Logo />
           <p className="mt-4 max-w-sm text-sm text-white/70">
             Mercury CRM, a full phone system and dialer, and AI assistants that answer every call, book the job and follow up. One platform, one bill.
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="xl:col-span-2">
           <h3 className={heading}>Quick Links</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/70">
             {nav.map((n) => <li key={n.href}><Link href={n.href} className="hover:text-mcd-cyan">{n.label}</Link></li>)}
@@ -42,7 +42,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="xl:col-span-2">
           <h3 className={heading}>Company</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/70">
             <li><Link href="/agencies" className="hover:text-mcd-cyan">For Agencies: GoHighLevel Alternative</Link></li>
@@ -55,19 +55,19 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="xl:col-span-2">
           <h3 className={heading}>Compare</h3>
           <ul className="mt-4 space-y-2 text-sm text-white/70">
             {comparisons.map((c) => <li key={c.slug}><Link href={`/vs/${c.slug}`} className="hover:text-mcd-cyan">Mercury vs {c.competitor}</Link></li>)}
           </ul>
         </div>
 
-        <div>
+        <div className="xl:col-span-3">
           <h3 className={heading}>Contact Us</h3>
           <address className="mt-4 space-y-3 text-sm not-italic text-white/70">
             <p>
               <span className="block font-semibold text-white/90">Corporate HQ</span>
-              {site.address.map((line) => <span key={line} className="block">{line}</span>)}
+              {site.address.map((line) => <span key={line} className="block whitespace-nowrap">{line}</span>)}
             </p>
             <p><a href={site.phoneHref} className="hover:text-mcd-cyan">{site.phone}</a></p>
             <p><a href={`mailto:${site.email}`} className="hover:text-mcd-cyan">{site.email}</a></p>
