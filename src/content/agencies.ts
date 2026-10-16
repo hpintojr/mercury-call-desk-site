@@ -35,17 +35,14 @@ export const agenciesHero = {
   sub: `On GoHighLevel's $${ghl.unlimited.price} Unlimited plan, client usage is rebilled at cost, so you earn nothing on it. Marking it up takes Agency Pro at $${ghl.agencyPro.price}. Mercury CRM Professional is $${pro.monthly} with unlimited white-label sub-accounts and markup on phone, SMS, email and AI usage, with AI voice and a parallel dialer included.`,
 };
 
-/** Usage markup calculator defaults. Usage is the agency's own number; we don't assume one. */
-export const calc = {
-  defaultClients: 10,
-  maxClients: 50,
-  defaultUsage: 75,
-  maxUsage: 500,
-  defaultMarkup: 50,
-  markups: [25, 50, 100],
-  /** Example cost per text used only to translate the usage dollars into a text count (Hamilton, 2026-10-16). Not a quoted rate. */
-  exampleTextCost: 0.04,
-  note: "Assumes the same client usage, at your cost, on both platforms. Per-unit rates differ: GoHighLevel's are lower than ours, and ours are published on the pricing page. Plan fees only; GoHighLevel's AI Employee add-on is not included.",
+/** Hero price card: plan fee and whether the plan lets an agency mark up client usage. No usage math. */
+export const priceCard = {
+  title: "Mark up your clients' usage",
+  rows: [
+    { name: ghl.unlimited.name, price: ghl.unlimited.price, cell: { text: "Rebilled at cost, no markup", no: true } },
+    { name: ghl.agencyPro.name, price: ghl.agencyPro.price, cell: { text: "Markup allowed", ok: true } },
+  ],
+  mcd: { name: "Mercury CRM Professional", price: pro.monthly, cell: { text: "Markup allowed", ok: true } },
 };
 
 export type PairCell = { text: string; ok?: boolean; no?: boolean };
