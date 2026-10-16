@@ -115,6 +115,7 @@ export const comparisons: Comparison[] = [
       { label: "Parallel dialing (multiple lines at once)", mercury: "Up to 10 lines per account", competitor: { text: "No parallel dialing documented", no: true } },
       { label: "Mark up client usage on a plan under $300", mercury: "Professional, $299", competitor: { text: "Rebilled at cost on $297 Unlimited", no: true } },
       { label: "SaaS resale under your brand for under $400", mercury: "Agencies, $399", competitor: { text: "Needs Agency Pro, $497", no: true } },
+      { label: "Build and edit workflows through API and MCP", mercury: "Every plan", competitor: { text: "MCP documents workflow lookup and enrollment only", no: true } },
     ],
     verdict:
       "GoHighLevel built the category and covers a lot of ground. Mercury matches the platform, includes AI voice and a parallel dialer instead of selling them per client, adds dispatch, and lets agencies mark up usage from the $299 plan.",
@@ -123,6 +124,7 @@ export const comparisons: Comparison[] = [
       { label: "LC Phone rates", url: "https://help.gohighlevel.com/en/support/solutions/articles/48001223556" },
       { label: "Phone dialer overview", url: "https://help.gohighlevel.com/support/solutions/articles/155000005807-the-phone-dialer-overview" },
       { label: "HighLevel MCP", url: "https://help.gohighlevel.com/support/solutions/articles/155000008391-highlevel-mcp-for-anthropic-increased-scopes" },
+      { label: "HighLevel MCP operations", url: "https://marketplace.gohighlevel.com/docs/other/mcp" },
     ],
     checked: CHECKED,
   },
