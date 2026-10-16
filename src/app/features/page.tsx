@@ -11,7 +11,7 @@ import { dialerHero, dialerFeatures, complianceItems, dialerFaq } from "@/conten
 
 export const metadata: Metadata = {
   title: "Features",
-  description: "Finally, 24/7 professional phone coverage that works as hard as you do. Advanced AI phone assistants that handle every call professionally - without the cost of hiring additional staff.",,
+  description: "Finally, 24/7 professional phone coverage that works as hard as you do. Advanced AI phone assistants that handle every call professionally - without the cost of hiring additional staff.",
   alternates: { canonical: "https://mercurycalldesk.com/features" },
 };
 
@@ -77,7 +77,7 @@ export default function FeaturesPage() {
       {/* ── Compliance ── */}
       <section id="compliance" className="scroll-mt-24 bg-mcd-navy py-14 text-white sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow="Compliance tools" title="Built for regulated outreach" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. Mercury CRM checks consent and enforces calling hours before it dials, and suppresses opt-outs automatically. Scrubbing your lists against the National DNC Registry stays your responsibility." />
+          <SectionHeading dark eyebrow="Compliance tools" title="Built for regulated outreach" body="Outbound AI calling carries real legal exposure: $500 to $1,500 per TCPA violation. Mercury CRM checks consent and enforces calling hours before it dials, and suppresses opt-outs automatically. Scrubbing your lists against the National DNC Registry stays your responsibility." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {complianceItems.map((c) => (
               <div key={c.title} className="rounded-xl2 border border-white/10 bg-white/5 p-6">
