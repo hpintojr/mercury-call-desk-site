@@ -6,8 +6,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CallbackForm from "./CallbackForm";
 import BookEmbed from "./BookEmbed";
 import { aiLine, links, site } from "@/config/site";
-import UsageCalculator from "./UsageCalculator";
-import { agenciesFaq, agenciesHero, agenciesSlug as slug, ghl, included, pairs, sources, steps, type PairCell } from "@/content/agencies";
+import { agenciesFaq, agenciesHero, agenciesSlug as slug, ghl, included, pairs, priceCard, sources, steps, type PairCell } from "@/content/agencies";
 import { tiers } from "@/content/pricing";
 
 const btn = "tap inline-flex items-center justify-center gap-2 rounded-full font-semibold transition active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-mcd-sky focus-visible:ring-offset-2 px-7 py-4 text-base";
@@ -69,7 +68,25 @@ export default function AgenciesPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <UsageCalculator />
+            <div className="rounded-xl2 border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+              <p className="text-sm font-bold text-white">{priceCard.title}</p>
+              <div className="mt-4 space-y-2">
+                {[...priceCard.rows, { ...priceCard.mcd, mcd: true }].map((r) => (
+                  <div key={r.name} className={`rounded-lg p-4 ${"mcd" in r ? "bg-white text-mcd-navy" : "bg-white/5 text-white"}`}>
+                    <div className="flex items-baseline justify-between gap-3">
+                      <p className="text-sm font-bold">{r.name}</p>
+                      <p className="text-2xl font-extrabold tabular-nums">${r.price}<span className={`text-xs font-semibold ${"mcd" in r ? "text-mcd-muted" : "text-white/60"}`}>/mo</span></p>
+                    </div>
+                    <div className="mt-2">
+                      <PairCellView cell={r.cell} dark={!("mcd" in r)} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-center text-base font-extrabold text-white">
+                Same markup rights as Agency Pro for ${ghl.agencyPro.price - priceCard.mcd.price} less a month
+              </p>
+            </div>
           </div>
         </div>
       </section>
