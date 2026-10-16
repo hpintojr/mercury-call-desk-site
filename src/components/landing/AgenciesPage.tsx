@@ -58,7 +58,7 @@ export default function AgenciesPage() {
         <div className="container-x grid gap-6 py-10 sm:grid-cols-3">
           {[
             { value: "$0", label: "per client account", basis: "Add clients without adding to your Mercury CRM bill" },
-            { value: "10 lines", label: "per rep, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
+            { value: "10 lines", label: "per account, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
             { value: `$${minGap}+`, label: "a month less than GoHighLevel with just one AI client", basis: "Agency Pro + AI Employee Growth + dialer bolt-on, before usage" },
           ].map((s) => (
             <div key={s.label} className="text-center sm:text-left">

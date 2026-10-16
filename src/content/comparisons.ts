@@ -56,7 +56,7 @@ export type Comparison = {
  */
 const mercuryRows = (competitorCells: CompareCell[]): CompareRow[] => [
   { label: "AI voice agents", mercury: true, competitor: competitorCells[0] },
-  { label: "Outbound dialer", mercury: "Native, 10 lines per rep", competitor: competitorCells[1] },
+  { label: "Outbound dialer", mercury: "Native, 10 lines per account", competitor: competitorCells[1] },
   { label: "Dispatch", mercury: "Agencies and up", competitor: competitorCells[2] },
   { label: "Usage rebilling for agencies", mercury: "Professional and up", competitor: competitorCells[3] },
   { label: "Unlimited sub-accounts", mercury: "Professional and up", competitor: competitorCells[4] },
@@ -139,7 +139,7 @@ export const comparisons: Comparison[] = [
       },
       {
         title: "A power dialer without Enterprise seats",
-        body: "HubSpot's power dialer needs Sales Hub Enterprise. Mercury's dialer runs up to 10 lines per rep on every plan.",
+        body: "HubSpot's power dialer needs Sales Hub Enterprise. Mercury's dialer runs up to 10 lines per account on every plan.",
       },
     ],
     rows: mercuryRows([
@@ -273,7 +273,7 @@ export const comparisons: Comparison[] = [
       },
       {
         title: "A real outbound dialer",
-        body: "Keap's business line supports manual calling. Mercury's dialer runs up to 10 lines per rep with local numbers, recording, and transcripts.",
+        body: "Keap's business line supports manual calling. Mercury's dialer runs up to 10 lines per account with local numbers, recording, and transcripts.",
       },
       {
         title: "No required implementation fee",
@@ -412,7 +412,7 @@ export const comparisons: Comparison[] = [
       },
       {
         title: "A native dialer",
-        body: "Vendasta connects outbound calling through a Kixie integration. Mercury's dialer is native, with up to 10 lines per rep.",
+        body: "Vendasta connects outbound calling through a Kixie integration. Mercury's dialer is native, with up to 10 lines per account.",
       },
       {
         title: "MCP access today",
@@ -455,7 +455,7 @@ export const comparisons: Comparison[] = [
       },
       {
         title: "Full outbound dialer",
-        body: "Parallel dialing with local numbers, recording, and transcripts built in, up to 10 lines per rep.",
+        body: "Parallel dialing with local numbers, recording, and transcripts built in, up to 10 lines per account.",
       },
       {
         title: "Published prices",

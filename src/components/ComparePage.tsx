@@ -56,8 +56,7 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
             <th scope="col" className="bg-mcd-navy px-3 py-4 sm:px-5 text-center font-bold text-white">
               <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/mcd-icon.svg" alt="" className="h-6 w-auto" />
-                <span>Mercury Call Desk</span>
+                <img src="/brand/mcd-logo-dark.svg" alt="Mercury Call Desk" className="-my-3 h-14 w-auto max-w-full object-contain sm:h-20 sm:max-w-[220px]" />
               </span>
             </th>
           </tr>

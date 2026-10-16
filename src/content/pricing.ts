@@ -192,7 +192,7 @@ export const compare: CompareGroup[] = [
     title: "Phone System",
     rows: [
       { label: "AI voice (24/7 front desk)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true, true] },
-      { label: "Outbound dialer (10 lines per rep)", tip: "Parallel dialer that runs up to 10 lines per rep at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
+      { label: "Outbound dialer (10 lines per account)", tip: "Parallel dialer that runs up to 10 lines per account at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
       { label: "Local phone numbers", cells: [true, true, true, true] },
       { label: "Call recording & transcripts", cells: [true, true, true, true] },
       { label: "SMS messaging", cells: [true, true, true, true] },

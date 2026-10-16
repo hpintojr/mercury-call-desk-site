@@ -50,7 +50,7 @@ export const compareRows: { label: string; ghl: CompareCell; mcd: CompareCell }[
   {
     label: "Outbound dialer",
     ghl: { text: "Single line: one call at a time from a manual call queue" },
-    mcd: { text: "10 lines per rep, dialing in parallel", good: true },
+    mcd: { text: "10 lines per account, dialing in parallel", good: true },
   },
   {
     label: "Multi-line dialing",
@@ -73,7 +73,7 @@ export const included: { icon: IconName; title: string; body: string }[] = [
   { icon: "users", title: "Unlimited white-label sub-accounts", body: "Give every client a branded account under your agency. No per-account fee, so adding a client doesn't add to your bill." },
   { icon: "chart", title: "Rebilling and SaaS resale", body: "Rebill each client's calls and texts at your own markup and sell the platform under your brand at whatever price you set, for $100 a month less than GoHighLevel Agency Pro." },
   { icon: "mic", title: "AI front desk", body: "AI assistants that answer every call 24/7 in 40+ languages, book appointments and text follow-ups. Part of the plan, not a per-client add-on." },
-  { icon: "zap", title: "10-line parallel dialer", body: "Each rep dials up to 10 lines at once. When someone answers, the call connects and the other lines drop. Lists, dispositions and callbacks stay in the CRM." },
+  { icon: "zap", title: "10-line parallel dialer", body: "Each account dials up to 10 lines at once. When someone answers, the call connects and the other lines drop. Lists, dispositions and callbacks stay in the CRM." },
   { icon: "shield", title: "Compliance built into the dialer", body: "Built-in DNC list, automatic consent checks and calling-hour enforcement before every dial. You scrub lists against the National DNC Registry before upload." },
   { icon: "plug", title: "Bring your HighLevel data", body: "HighLevel import tools are part of the Agencies plan, so contacts, pipelines and conversations come with you." },
 ];
