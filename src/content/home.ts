@@ -38,7 +38,7 @@ export const pillars = [
   {
     title: "Sales Dialer",
     body: "A 10-line parallel dialer with local numbers, call recording, transcripts, and SMS. Run it with your team, your AI, or both.",
-    href: "/dialer",
+    href: "/features#dialer",
     icon: "zap",
   },
   {

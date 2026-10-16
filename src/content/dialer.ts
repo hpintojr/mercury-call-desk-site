@@ -1,4 +1,4 @@
-/** Content for the /dialer page: the full dialer + compliance. */
+/** Dialer + compliance content, shown in the #dialer and #compliance sections of /features (/dialer redirects there). */
 
 export const dialerHero = {
   crumb: "Dialer",
