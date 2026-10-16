@@ -63,7 +63,7 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
         <thead>
           <tr className="bg-[#DCE9FD]">
             <th scope="col" className="px-3 py-5 text-center text-sm font-extrabold text-mcd-navy sm:px-6 sm:text-lg">Features</th>
-            <th scope="col" className="bg-white px-2 py-5 text-center sm:px-4">
+            <th scope="col" className="border-l border-mcd-line bg-white px-2 py-5 text-center sm:px-4">
               <span className="flex items-center justify-center">
                 {logo ? (
                   <span className={logo.onDark ? "inline-flex items-center rounded-lg bg-mcd-navy px-2 py-1.5" : "inline-flex items-center"}>
@@ -86,7 +86,7 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
               <th scope="row" className="px-3 py-5 text-xs font-medium text-mcd-navy sm:px-6 sm:text-base">
                 {row.label}
               </th>
-              <td className="px-2 py-4 text-center align-middle sm:px-4">
+              <td className="border-l border-mcd-line px-2 py-4 text-center align-middle sm:px-4">
                 <Cell value={row.competitor} side="competitor" label={row.label} />
               </td>
               <td className="border-t border-white/10 bg-[#0B1C3A] px-2 py-4 text-center align-middle sm:px-4">
