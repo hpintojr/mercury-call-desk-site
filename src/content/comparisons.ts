@@ -8,7 +8,8 @@
  * /mnt/project-files/research/vs-pages/<slug>.md). Re-check before changing a cell.
  */
 
-export type CompareCell = string | boolean;
+/** A `{ text, no: true }` cell shows the text under a red X: the competitor lacks the feature, with a sourced detail. */
+export type CompareCell = string | boolean | { text: string; no: true };
 
 export type CompareRow = {
   label: string;
@@ -46,6 +47,8 @@ export type Comparison = {
   competitorPrice: string;
   differentiators: Differentiator[];
   rows: CompareRow[];
+  /** Competitor-specific rows shown after the shared ones. Same sourcing rule. */
+  extraRows?: CompareRow[];
   /** 2-3 sentence close, shown above the final CTA. */
   verdict: string;
 };
@@ -99,7 +102,7 @@ export const comparisons: Comparison[] = [
     rows: mercuryRows([
       "Add-on, $50 or $97/mo per sub-account",
       "Web dialer, no parallel lines",
-      "Via Jobber or marketplace apps",
+      { text: "Not native; Jobber or marketplace apps", no: true },
       "At cost on $297; markup on $497",
       "3 on Starter; unlimited from $297",
       true,
@@ -107,6 +110,12 @@ export const comparisons: Comparison[] = [
       "None listed",
       "Free concierge migration",
     ]),
+    extraRows: [
+      { label: "AI voice included in the plan", mercury: "Every plan", competitor: { text: "Paid add-on for each sub-account", no: true } },
+      { label: "Parallel dialing (multiple lines at once)", mercury: "Up to 10 lines per account", competitor: { text: "No parallel dialing documented", no: true } },
+      { label: "Mark up client usage on a plan under $300", mercury: "Professional, $299", competitor: { text: "Rebilled at cost on $297 Unlimited", no: true } },
+      { label: "SaaS resale under your brand for under $400", mercury: "Agencies, $399", competitor: { text: "Needs Agency Pro, $497", no: true } },
+    ],
     verdict:
       "GoHighLevel built the category and covers a lot of ground. Mercury matches the platform, includes AI voice and a parallel dialer instead of selling them per client, adds dispatch, and lets agencies mark up usage from the $299 plan.",
     sources: [
