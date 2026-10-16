@@ -9,19 +9,31 @@ import { tiers } from "../content/pricing";
 
 const cardIcons: IconName[] = ["mic", "phone", "zap", "chart"];
 
-function Cell({ value }: { value: CompareCell }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center">
-        <Icon name="check" className="h-5 w-5 text-green-600" />
-        <span className="sr-only">Included</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return <span className="text-mcd-muted"><span aria-hidden="true">-</span><span className="sr-only">Not included</span></span>;
-  }
-  return <span className="text-xs font-medium text-mcd-ink sm:text-sm">{value}</span>;
+/** Competitor cells that state the feature is missing get the red X; partial or add-on answers stay plain text. */
+const missing = /^(Not offered|Not native|Not listed|Not published|None found|Planned, not live)/;
+
+function Badge({ ok }: { ok: boolean }) {
+  return (
+    <span aria-hidden="true" className={`inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${ok ? "bg-green-600" : "bg-red-600"}`}>
+      <Icon name={ok ? "check" : "x"} className="h-3.5 w-3.5 text-white" />
+    </span>
+  );
+}
+
+function Cell({ value, side }: { value: CompareCell; side: "mercury" | "competitor" }) {
+  const ok = value === true || (side === "mercury" && value !== false);
+  const no = value === false || (side === "competitor" && typeof value === "string" && missing.test(value));
+  const text = typeof value === "string" ? value : null;
+  return (
+    <span className="inline-flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-2">
+      {(ok || no) && <Badge ok={ok} />}
+      {text ? (
+        <span className="text-xs font-medium text-mcd-ink sm:text-sm">{text}</span>
+      ) : (
+        <span className="sr-only">{ok ? "Included" : "Not included"}</span>
+      )}
+    </span>
+  );
 }
 
 function CompareTable({ comparison }: { comparison: Comparison }) {
@@ -68,10 +80,10 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
                 {row.label}
               </th>
               <td className="px-3 py-4 sm:px-5 text-center" style={cellTint}>
-                <Cell value={row.competitor} />
+                <Cell value={row.competitor} side="competitor" />
               </td>
               <td className="bg-green-50/40 px-3 py-4 sm:px-5 text-center">
-                <Cell value={row.mercury} />
+                <Cell value={row.mercury} side="mercury" />
               </td>
             </tr>
           ))}
