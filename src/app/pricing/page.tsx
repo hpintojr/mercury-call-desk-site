@@ -8,7 +8,7 @@ import FeatureCard from "@/components/FeatureCard";
 import Button from "@/components/Button";
 import Icon, { type IconName } from "@/components/Icon";
 import { links, site, aiLine } from "@/config/site";
-import { pricingFaq, whyChoose, usageRates, usageExplainers } from "@/content/pricing";
+import { pricingFaq, whyChoose, usageRates, usageExplainers, carrierFeeMarkup } from "@/content/pricing";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -60,6 +60,9 @@ export default function PricingPage() {
           <SectionHeading eyebrow="Transparent Usage" title="Published rates. No surprise overages." body="Most AI phone vendors advertise a low monthly price, then bill shocking per-minute overages. We print our rates. Your plan's monthly credits apply first." />
           <div className="mt-10"><UsageTable /></div>
           <p className="mt-3 text-sm text-mcd-muted">Enterprise accounts get volume rates quoted to their usage.</p>
+          <p className="mt-2 text-sm text-mcd-muted">
+            Carrier pass-through fees are billed on top of these rates, plus {carrierFeeMarkup.starter}% on Starter, {carrierFeeMarkup.professional}% on Professional and {carrierFeeMarkup.agencies.toFixed(1)}% on Agencies. Enterprise pays carrier fees at cost.
+          </p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {usageExplainers.map((u) => (
               <div key={u.title} className="rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm">
