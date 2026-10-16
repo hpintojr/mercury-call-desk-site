@@ -69,7 +69,7 @@ export default function PlatformPage() {
             <Button href={links.demo} size="lg" variant="ghost">Schedule a Custom Demo</Button>
           </div>
           <p className="mt-8 text-sm text-white/50">
-            <Link href="/dialer" className="font-semibold text-mcd-cyan hover:underline">Tour the dialer next</Link>
+            <Link href="/features#dialer" className="font-semibold text-mcd-cyan hover:underline">Tour the dialer next</Link>
           </p>
         </div>
       </section>

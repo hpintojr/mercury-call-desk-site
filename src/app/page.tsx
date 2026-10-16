@@ -232,7 +232,7 @@ export default function HomePage() {
               <li key={c} className="flex items-center gap-2 text-sm font-semibold"><Icon name="check" className="h-4 w-4 text-mcd-cyan" />{c}</li>
             ))}
           </ul>
-          <Link href="/dialer#compliance" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-mcd-cyan hover:underline">How we handle compliance <Icon name="arrow" className="h-4 w-4" /></Link>
+          <Link href="/features#compliance" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-mcd-cyan hover:underline">How we handle compliance <Icon name="arrow" className="h-4 w-4" /></Link>
         </div>
       </section>
 

@@ -62,7 +62,6 @@ export const links = {
 
 export const nav = [
   { label: "Platform", href: "/platform" },
-  { label: "Dialer", href: "/dialer" },
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "FAQ's", href: "/faq" },
