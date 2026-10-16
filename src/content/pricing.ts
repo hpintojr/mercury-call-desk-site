@@ -59,7 +59,7 @@ export const tiers: Tier[] = [
     lead: "Everything in Starter, plus:",
     features: [
       { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
-      { title: "Usage rebilling", detail: "Mark up phone, email, SMS, and AI usage for your clients. GoHighLevel makes agencies absorb the cost; we let you profit from it." },
+      { title: "Usage rebilling", detail: "Mark up phone, email, SMS, and AI usage for your clients. GoHighLevel rebills at cost unless you're on its $497 plan; we let you profit from it here." },
       { title: "Financials, marketing and AI automation", detail: "Invoices and estimates; campaigns, broadcasts and social; workflows and reputation management" },
       { title: "50 GB storage", detail: "More recordings, files, and documents" },
       { title: "$15 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
@@ -76,7 +76,7 @@ export const tiers: Tier[] = [
     lead: "Everything in Professional, plus:",
     features: [
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
-      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel hasn't shipped theirs." },
+      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel relies on Jobber or marketplace apps." },
       { title: "AI agentic", detail: "AI agents that build workflows, manage dispatch, and handle follow-ups autonomously" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
