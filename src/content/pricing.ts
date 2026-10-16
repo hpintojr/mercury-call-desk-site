@@ -1,1 +1,223 @@
-LyoqCiAqIE1lcmN1cnkgQ1JNIHBsYXRmb3JtIHByaWNpbmcsIHVwZGF0ZWQgMjAyNi0xMC0xNSAoU3RhcnRlciAkOTkvNSBzdWItYWNjb3VudHM7IFByb2Zlc3Npb25hbCAkMjk5IHdpdGggdXNhZ2UgcmViaWxsaW5nOyBBZ2VuY2llcyAkMzk5IGxpbWl0ZWQtdGltZSB3aXRoIGRpc3BhdGNoOyBFbnRlcnByaXNlIDR0aCBjb2x1bW4pLgogKiBNb250aGx5IHBsYXRmb3JtIGZlZSArIHRyYW5zcGFyZW50IHVzYWdlIChwdWJsaXNoZWQgcGVyLXRpZXIgcmF0ZXMpLgogKiBBbm51YWwgYmlsbGluZyA9IDIgbW9udGhzIGZyZWUuCiAqLwpleHBvcnQgdHlwZSBUaWVySWQgPSAic3RhcnRlciIgfCAicHJvZmVzc2lvbmFsIiB8ICJhZ2VuY2llcyI7CgpleHBvcnQgdHlwZSBUaWVyID0gewogIGlkOiBUaWVySWQ7CiAgbmFtZTogc3RyaW5nOwogIGJsdXJiOiBzdHJpbmc7CiAgbW9udGhseTogbnVtYmVyOwogIGFubnVhbFRvdGFsOiBudW1iZXI7CiAgY3RhOiBzdHJpbmc7CiAgLyoqIFNob3J0ZXIgbGFiZWwgdXNlZCBvbiBjb21wYWN0IGNhcmRzICovCiAgY3RhU2hvcnQ/OiBzdHJpbmc7CiAgcG9wdWxhcj86IGJvb2xlYW47CiAgYmFkZ2U/OiBzdHJpbmc7CiAgLyoqIExpbmUgYWJvdmUgdGhlIGNhcmQncyBsaXN0LCBlLmcuICJFdmVyeXRoaW5nIGluIFN0YXJ0ZXIsIHBsdXM6IiAqLwogIGxlYWQ6IHN0cmluZzsKICAvKiogV2hhdCB0aGlzIHRpZXIgYWRkcy4gSXRlbXMgZXZlcnkgcGxhbiBzaGFyZXMgbGl2ZSBpbiBgZXZlcnlQbGFuYDsgZnVsbCBkZXRhaWwgbGl2ZXMgaW4gYGNvbXBhcmVgLiAqLwogIGZlYXR1cmVzOiB7IHRpdGxlOiBzdHJpbmc7IGRldGFpbDogc3RyaW5nIH1bXTsKfTsKCi8qKiBTaG93biBvbmNlIGFib3ZlIHRoZSBwcmljaW5nIGNhcmRzIHNvIGVhY2ggY2FyZCBvbmx5IGxpc3RzIHdoYXQgaXRzIHRpZXIgYWRkcy4gKi8KZXhwb3J0IGNvbnN0IGV2ZXJ5UGxhbjogeyB0aXRsZTogc3RyaW5nOyBkZXRhaWw6IHN0cmluZyB9W10gPSBbCiAgeyB0aXRsZTogIk1lcmN1cnkgQ1JNIGluY2x1ZGVkIiwgZGV0YWlsOiAiT3Iga2VlcCB0aGUgQ1JNIHlvdSBhbHJlYWR5IHVzZTogd2UgY29ubmVjdCB0byBIdWJTcG90LCBTYWxlc2ZvcmNlLCBQaXBlZHJpdmUsIFpvaG8gQ1JNIGFuZCBtb3JlIiB9LAogIHsgdGl0bGU6ICJVbmxpbWl0ZWQgdXNlcnMgYW5kIGNvbnRhY3RzIiwgZGV0YWlsOiAiQWRkIHlvdXIgd2hvbGUgdGVhbSBhbmQgZ3JvdyB5b3VyIGRhdGFiYXNlIHdpdGggbm8gY2FwcyIgfSwKICB7IHRpdGxlOiAiQUkgdm9pY2UiLCBkZXRhaWw6ICJBSSBmcm9udCBkZXNrIGFuc3dlcnMgZXZlcnkgY2FsbCAyNC83LCBib29rcyBhcHBvaW50bWVudHMsIHNlbmRzIFNNUyBmb2xsb3ctdXBzIiB9LAogIHsgdGl0bGU6ICJGdWxsIGRpYWxlciArIHBob25lIHN5c3RlbSIsIGRldGFpbDogIk91dGJvdW5kIGRpYWxpbmcsIGxvY2FsIG51bWJlcnMsIGNhbGwgcmVjb3JkaW5nIGFuZCB0cmFuc2NyaXB0cyIgfSwKICB7IHRpdGxlOiAiNDArIGxhbmd1YWdlcyIsIGRldGFpbDogIkF1dG9tYXRpYyBsYW5ndWFnZSBkZXRlY3Rpb24gYW5kIHNlYW1sZXNzIHN3aXRjaGluZyIgfSwKICB7IHRpdGxlOiAiQWR2YW5jZWQgQVBJIGFuZCBNQ1AgYWNjZXNzIiwgZGV0YWlsOiAiRnVsbCBBUEkgYWNjZXNzLCBhbmQgY29ubmVjdCBDbGF1ZGUsIENoYXRHUFQsIGFuZCBBSSBhZ2VudHMgZGlyZWN0bHkgdG8geW91ciBDUk0uIE5ldmVyIGdhdGVkIGJlaGluZCBhbiB1cHNlbGwuIiB9LApdOwoKZXhwb3J0IGNvbnN0IHRpZXJzOiBUaWVyW10gPSBbCiAgewogICAgaWQ6ICJzdGFydGVyIiwKICAgIG5hbWU6ICJTdGFydGVyIiwKICAgIGJsdXJiOiAiRm9yIHNvbG8gb3BlcmF0b3JzIGdldHRpbmcgc3RhcnRlZCIsCiAgICBtb250aGx5OiA5OSwKICAgIGFubnVhbFRvdGFsOiA5OTAsCiAgICBjdGE6ICJTdGFydCB3aXRoIFN0YXJ0ZXIiLAogICAgbGVhZDogIlN0YXJ0ZXIgaW5jbHVkZXM6IiwKICAgIGZlYXR1cmVzOiBbCiAgICAgIHsgdGl0bGU6ICI1IHN1Yi1hY2NvdW50cyIsIGRldGFpbDogIkdvSGlnaExldmVsIGdpdmVzIHlvdSAzIGF0ICQ5Ny4gV2UgZ2l2ZSB5b3UgNSBhdCAkOTkuIiB9LAogICAgICB7IHRpdGxlOiAiMTAgR0Igc3RvcmFnZSIsIGRldGFpbDogIkNhbGwgcmVjb3JkaW5ncywgZmlsZXMsIGFuZCBkb2N1bWVudHMiIH0sCiAgICAgIHsgdGl0bGU6ICIkNSBtb250aGx5IHVzYWdlIGNyZWRpdHMiLCBkZXRhaWw6ICJBcHBsaWVkIGF1dG9tYXRpY2FsbHkgdG8gU01TIGFuZCB2b2ljZSB1c2FnZSIgfSwKICAgIF0sCiAgfSwKICB7CiAgICBpZDogInByb2Zlc3Npb25hbCIsCiAgICBuYW1lOiAiUHJvZmVzc2lvbmFsIiwKICAgIGJsdXJiOiAiRm9yIGdyb3dpbmcgYnVzaW5lc3NlcyB0aGF0IHJ1biBvbiB0aGVpciBwaG9uZXMiLAogICAgbW9udGhseTogMjk5LAogICAgYW5udWFsVG90YWw6IDI5OTAsCiAgICBjdGE6ICJTdGFydCB3aXRoIFByb2Zlc3Npb25hbCIsCiAgICBjdGFTaG9ydDogIlN0YXJ0IFByb2Zlc3Npb25hbCIsCiAgICBwb3B1bGFyOiB0cnVlLAogICAgbGVhZDogIkV2ZXJ5dGhpbmcgaW4gU3RhcnRlciwgcGx1czoiLAogICAgZmVhdHVyZXM6IFsKICAgICAgeyB0aXRsZTogIlVubGltaXRlZCB3aGl0ZS1sYWJlbCBzdWItYWNjb3VudHMiLCBkZXRhaWw6ICJCcmFuZCBjbGllbnQgYWNjb3VudHMgYXMgeW91ciBvd24sIHdpdGggbm8gcGVyLWFjY291bnQgZmVlIiB9LAogICAgICB7IHRpdGxlOiAiVXNhZ2UgcmViaWxsaW5nIiwgZGV0YWlsOiAiTWFyayB1cCBwaG9uZSwgZW1haWwsIFNNUywgYW5kIEFJIHVzYWdlIGZvciB5b3VyIGNsaWVudHMuIEdvSGlnaExldmVsIHJlYmlsbHMgYXQgY29zdCB1bmxlc3MgeW91J3JlIG9uIGl0cyAkNDk3IHBsYW47IHdlIGxldCB5b3UgcHJvZml0IGZyb20gaXQgaGVyZS4iIH0sCiAgICAgIHsgdGl0bGU6ICJGaW5hbmNpYWxzLCBtYXJrZXRpbmcgYW5kIEFJIGF1dG9tYXRpb24iLCBkZXRhaWw6ICJJbnZvaWNlcyBhbmQgZXN0aW1hdGVzOyBjYW1wYWlnbnMsIGJyb2FkY2FzdHMgYW5kIHNvY2lhbDsgd29ya2Zsb3dzIGFuZCByZXB1dGF0aW9uIG1hbmFnZW1lbnQiIH0sCiAgICAgIHsgdGl0bGU6ICI1MCBHQiBzdG9yYWdlIiwgZGV0YWlsOiAiTW9yZSByZWNvcmRpbmdzLCBmaWxlcywgYW5kIGRvY3VtZW50cyIgfSwKICAgICAgeyB0aXRsZTogIiQxNSBtb250aGx5IHVzYWdlIGNyZWRpdHMiLCBkZXRhaWw6ICJBcHBsaWVkIGF1dG9tYXRpY2FsbHkgdG8gU01TIGFuZCB2b2ljZSB1c2FnZSIgfSwKICAgIF0sCiAgfSwKICB7CiAgICBpZDogImFnZW5jaWVzIiwKICAgIG5hbWU6ICJBZ2VuY2llcyIsCiAgICBibHVyYjogIkZvciBhZ2VuY2llcyByZXNlbGxpbmcgdGhlIHBsYXRmb3JtIHVuZGVyIHRoZWlyIG93biBicmFuZC4gTGltaXRlZC10aW1lIHByaWNpbmcuIiwKICAgIG1vbnRobHk6IDM5OSwKICAgIGFubnVhbFRvdGFsOiAzOTkwLAogICAgYmFkZ2U6ICJMaW1pdGVkIFRpbWUiLAogICAgY3RhOiAiU3RhcnQgd2l0aCBBZ2VuY2llcyIsCiAgICBsZWFkOiAiRXZlcnl0aGluZyBpbiBQcm9mZXNzaW9uYWwsIHBsdXM6IiwKICAgIGZlYXR1cmVzOiBbCiAgICAgIHsgdGl0bGU6ICJTYWFTIHJlc2FsZSByaWdodHMiLCBkZXRhaWw6ICJTZWxsIHRoZSBwbGF0Zm9ybSB1bmRlciB5b3VyIGJyYW5kIGF0IHdoYXRldmVyIHByaWNlIHlvdSBzZXQiIH0sCiAgICAgIHsgdGl0bGU6ICJEaXNwYXRjaCIsIGRldGFpbDogIkpvYiB0cmFja2luZywgdGVjaG5pY2lhbiAnSSdtIG9uIG15IHdheScgc3RhdHVzIHVwZGF0ZXMsIGFuZCBBSSBjdXN0b21lciBub3RpZmljYXRpb25zLiBHb0hpZ2hMZXZlbCBhbm5vdW5jZWQgZGlzcGF0Y2ggYnV0IGhhcyBub3Qgc2hpcHBlZCBpdC4iIH0sCiAgICAgIHsgdGl0bGU6ICJBSSBhZ2VudGljIiwgZGV0YWlsOiAiQUkgYWdlbnRzIHRoYXQgYnVpbGQgd29ya2Zsb3dzLCBtYW5hZ2UgZGlzcGF0Y2gsIGFuZCBoYW5kbGUgZm9sbG93LXVwcyBhdXRvbm9tb3VzbHkiIH0sCiAgICAgIHsgdGl0bGU6ICJEYXRhIG1pZ3JhdGlvbiIsIGRldGFpbDogIkhpZ2hMZXZlbCBpbXBvcnQgYW5kIGN1c3RvbSBNQ1AgZGF0YSB0b29scyIgfSwKICAgICAgeyB0aXRsZTogIkxvd2VyIHVzYWdlIHJhdGVzIiwgZGV0YWlsOiAiMi4wMHggd2hvbGVzYWxlIG9uIFNNUyBhbmQgdm9pY2UiIH0sCiAgICAgIHsgdGl0bGU6ICIxMDAgR0Igc3RvcmFnZSArICQzMCBtb250aGx5IGNyZWRpdHMiLCBkZXRhaWw6ICJEZWVwIHJlY29yZGluZyByZXRlbnRpb247IGNyZWRpdHMgYXBwbGllZCBhdXRvbWF0aWNhbGx5IHRvIFNNUyBhbmQgdm9pY2UiIH0sCiAgICBdLAogIH0sCl07CgovKioKICogRW50ZXJwcmlzZSBpcyBxdW90ZS1vbmx5IChtb2RlbGVkIG9uIEdvSGlnaExldmVsJ3MgRW50ZXJwcmlzZSBibG9jayk6IG5vIHB1Ymxpc2hlZCBwcmljZSwKICogc2hvd24gYXMgdGhlIDR0aCBwcmljaW5nIGNvbHVtbiBuZXh0IHRvIHRoZSBwcmljZWQgdGllcnMuCiAqLwpleHBvcnQgY29uc3QgZW50ZXJwcmlzZSA9IHsKICBuYW1lOiAiRW50ZXJwcmlzZSIsCiAgZXllYnJvdzogIkVudGVycHJpc2UgcGxhbiIsCiAgdGl0bGU6ICJCdWlsdCBhcm91bmQgeW91ciBidXNpbmVzcyIsCiAgYmx1cmI6ICJDdXN0b20gdGFpbG9yZWQgZm9yIGhpZ2gtdm9sdW1lIGJ1c2luZXNzZXMgYW5kIGFnZW5jaWVzIiwKICBib2R5OiAiRGVzaWduZWQgZm9yIGhpZ2gtdm9sdW1lIGJ1c2luZXNzZXMgYW5kIGFnZW5jaWVzLCB0aGUgRW50ZXJwcmlzZSBwbGFuIGlzIGN1c3RvbSB0YWlsb3JlZCB0byBlYWNoIGFjY291bnQuIFdlIHByaWNlIGl0IHRvIGZpdCB5b3VyIHZvbHVtZSBhbmQgcHJvdGVjdCB5b3VyIG1hcmdpbnMsIHdpdGggdGhlIGZ1bGwgcGxhdGZvcm0gYW5kIGEgdGVhbSBiZWhpbmQgaXQuIiwKICBsZWFkOiAiRXZlcnl0aGluZyBpbiBBZ2VuY2llcywgcGx1czoiLAogIHBvaW50czogWwogICAgIkRlZGljYXRlZCBhY2NvdW50IG1hbmFnZXIiLAogICAgIlVubGltaXRlZCBzdG9yYWdlIiwKICAgICJWb2x1bWUgdXNhZ2UgcmF0ZXMiLAogICAgIkN1c3RvbSBidWlsZHMsIGludGVncmF0aW9ucyBhbmQgTUNQIGRhdGEgdG9vbHMiLAogICAgIldoaXRlLWdsb3ZlIG1pZ3JhdGlvbiBmcm9tIEhpZ2hMZXZlbCIsCiAgICAiUHJpb3JpdHkgc3VwcG9ydCIsCiAgXSwKICBjdGE6ICJTcGVhayB3aXRoIE91ciBFbnRlcnByaXNlIFRlYW0iLAp9OwoKLyoqIFB1Ymxpc2hlZCB1c2FnZSByYXRlcyDigJQgdHJhbnNwYXJlbnQgd2hvbGVzYWxlLXBsdXMgcHJpY2luZyBwZXIgdGllci4gKi8KZXhwb3J0IHR5cGUgVXNhZ2VSYXRlID0gewogIGxhYmVsOiBzdHJpbmc7CiAgdW5pdDogc3RyaW5nOwogIHN0YXJ0ZXI6IHN0cmluZzsKICBwcm9mZXNzaW9uYWw6IHN0cmluZzsKICBhZ2VuY2llczogc3RyaW5nOwogIHdob2xlc2FsZTogc3RyaW5nOwp9OwoKZXhwb3J0IGNvbnN0IHVzYWdlUmF0ZXM6IFVzYWdlUmF0ZVtdID0gWwogIHsKICAgIGxhYmVsOiAiU01TIiwKICAgIHVuaXQ6ICJwZXIgc2VnbWVudCIsCiAgICBzdGFydGVyOiAiJDAuMDQ1IiwKICAgIHByb2Zlc3Npb25hbDogIiQwLjAzNzUiLAogICAgYWdlbmNpZXM6ICIkMC4wMzAiLAogICAgd2hvbGVzYWxlOiAiJDAuMDE1IiwKICB9LAogIHsKICAgIGxhYmVsOiAiVm9pY2UiLAogICAgdW5pdDogInBlciBtaW51dGUiLAogICAgc3RhcnRlcjogIiQwLjA3NSIsCiAgICBwcm9mZXNzaW9uYWw6ICIkMC4wNjI1IiwKICAgIGFnZW5jaWVzOiAiJDAuMDUwIiwKICAgIHdob2xlc2FsZTogIiQwLjAyNSIsCiAgfSwKXTsKCmV4cG9ydCBjb25zdCB1c2FnZUV4cGxhaW5lcnMgPSBbCiAgewogICAgdGl0bGU6ICJTTVMgc2VnbWVudHMiLAogICAgYm9keTogIk9uZSBzZWdtZW50IGNvdmVycyB1cCB0byAxNjAgY2hhcmFjdGVycyBvZiBwbGFpbiB0ZXh0LiBMb25nZXIgbWVzc2FnZXMgdXNlIG11bHRpcGxlIHNlZ21lbnRzLiBZb3VyIHBsYW4ncyBtb250aGx5IGNyZWRpdHMgYXBwbHkgZmlyc3QsIHRoZW4gdXNhZ2UgYmlsbHMgYXQgeW91ciB0aWVyJ3MgcHVibGlzaGVkIHJhdGUuIiwKICB9LAogIHsKICAgIHRpdGxlOiAiVm9pY2UgbWludXRlcyIsCiAgICBib2R5OiAiQmlsbGVkIHBlciBtaW51dGUgb2YgdGFsayB0aW1lIG9uIGluYm91bmQgYW5kIG91dGJvdW5kIGNhbGxzLCBpbmNsdWRpbmcgQUkgYXNzaXN0YW50IGNvbnZlcnNhdGlvbnMuIFJlY29yZGluZ3MgYW5kIHRyYW5zY3JpcHRzIGFyZSBpbmNsdWRlZCBpbiB5b3VyIHN0b3JhZ2UsIG5vdCBiaWxsZWQgcGVyIG1pbnV0ZS4iLAogIH0sCiAgewogICAgdGl0bGU6ICJNb250aGx5IGNyZWRpdHMiLAogICAgYm9keTogIkV2ZXJ5IHBsYW4gaW5jbHVkZXMgbW9udGhseSB1c2FnZSBjcmVkaXRzICgkNSB0byAkMzAgZGVwZW5kaW5nIG9uIHRpZXIpIGFwcGxpZWQgYXV0b21hdGljYWxseS4gQ3JlZGl0cyByZXNldCBlYWNoIGJpbGxpbmcgY3ljbGUgYW5kIGRvIG5vdCByb2xsIG92ZXIuIiwKICB9LApdOwoKLyoqIEZlYXR1cmUgY29tcGFyaXNvbiB0YWJsZSAoUHJpY2luZyBwYWdlKS4gQ29sdW1uIG9yZGVyOiBTdGFydGVyLCBQcm9mZXNzaW9uYWwsIEFnZW5jaWVzLCBFbnRlcnByaXNlLiAqLwpleHBvcnQgdHlwZSBDb21wYXJlQ2VsbCA9IHN0cmluZyB8IGJvb2xlYW47CmV4cG9ydCB0eXBlIENvbXBhcmVSb3cgPSB7IGxhYmVsOiBzdHJpbmc7IHRpcD86IHN0cmluZzsgY2VsbHM6IFtDb21wYXJlQ2VsbCwgQ29tcGFyZUNlbGwsIENvbXBhcmVDZWxsLCBDb21wYXJlQ2VsbF0gfTsKZXhwb3J0IHR5cGUgQ29tcGFyZUdyb3VwID0geyB0aXRsZTogc3RyaW5nOyByb3dzOiBDb21wYXJlUm93W10gfTsKCmV4cG9ydCBjb25zdCBjb21wYXJlOiBDb21wYXJlR3JvdXBbXSA9IFsKICB7CiAgICB0aXRsZTogIlBsYXRmb3JtIiwKICAgIHJvd3M6IFsKICAgICAgeyBsYWJlbDogIlVzZXJzIiwgY2VsbHM6IFsiVW5saW1pdGVkIiwgIlVubGltaXRlZCIsICJVbmxpbWl0ZWQiLCAiVW5saW1pdGVkIl0gfSwKICAgICAgeyBsYWJlbDogIkNvbnRhY3RzIiwgY2VsbHM6IFsiVW5saW1pdGVkIiwgIlVubGltaXRlZCIsICJVbmxpbWl0ZWQiLCAiVW5saW1pdGVkIl0gfSwKICAgICAgeyBsYWJlbDogIlN0b3JhZ2UiLCBjZWxsczogWyIxMCBHQiIsICI1MCBHQiIsICIxMDAgR0IiLCAiVW5saW1pdGVkIl0gfSwKICAgICAgeyBsYWJlbDogIk1vbnRobHkgdXNhZ2UgY3JlZGl0cyIsIHRpcDogIkNyZWRpdHMgYXBwbGllZCBhdXRvbWF0aWNhbGx5IHRvIFNNUyBhbmQgdm9pY2UgdXNhZ2UgZWFjaCBiaWxsaW5nIGN5Y2xlLiIsIGNlbGxzOiBbIiQ1IiwgIiQxNSIsICIkMzAiLCAiQ3VzdG9tIl0gfSwKICAgICAgeyBsYWJlbDogIlN1Yi1hY2NvdW50cyIsIHRpcDogIlNlcGFyYXRlIGNsaWVudCBvciBsb2NhdGlvbiBhY2NvdW50cyB1bmRlciB5b3VyIGFnZW5jeS4iLCBjZWxsczogWyI1IiwgIlVubGltaXRlZCIsICJVbmxpbWl0ZWQiLCAiVW5saW1pdGVkIl0gfSwKICAgIF0sCiAgfSwKICB7CiAgICB0aXRsZTogIk1vZHVsZXMiLAogICAgcm93czogWwogICAgICB7IGxhYmVsOiAiQ29yZSBDUk0gKGNvbnRhY3RzLCBjb21wYW5pZXMsIGNvbnZlcnNhdGlvbnMpIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiU2FsZXMgKGNhbGVuZGFyLCBwaXBlbGluZXMsIG9wcG9ydHVuaXRpZXMpIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiV2ViIFByZXNlbmNlIChmb3Jtcywgd2Vic2l0ZXMsIGZpbGVzKSIsIGNlbGxzOiBbdHJ1ZSwgdHJ1ZSwgdHJ1ZSwgdHJ1ZV0gfSwKICAgICAgeyBsYWJlbDogIkZpbmFuY2lhbHMgKGludm9pY2VzLCBlc3RpbWF0ZXMsIGRvY3VtZW50cykiLCBjZWxsczogW2ZhbHNlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiTWFya2V0aW5nIChjYW1wYWlnbnMsIGJyb2FkY2FzdHMsIHNvY2lhbCkiLCBjZWxsczogW2ZhbHNlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiQUkgYXV0b21hdGlvbiAod29ya2Zsb3dzLCByZXB1dGF0aW9uKSIsIGNlbGxzOiBbZmFsc2UsIHRydWUsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJXaGl0ZS1sYWJlbCBzdWItYWNjb3VudHMgKHVubGltaXRlZCkiLCB0aXA6ICJCcmFuZCBjbGllbnQgYWNjb3VudHMgYXMgeW91ciBvd24sIHdpdGggbm8gcGVyLWFjY291bnQgZmVlLiIsIGNlbGxzOiBbZmFsc2UsIHRydWUsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJEaXNwYXRjaCAoam9iIHRyYWNraW5nLCB0ZWNobmljaWFuIHVwZGF0ZXMpIiwgdGlwOiAiVHJhY2sgam9icyBhbmQgdGVjaG5pY2lhbnM7IEFJIG5vdGlmaWVzIGN1c3RvbWVycyBhdXRvbWF0aWNhbGx5LiIsIGNlbGxzOiBbZmFsc2UsIGZhbHNlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiQUkgYWdlbnRpYyAoYXV0b25vbW91cyBhZ2VudHMpIiwgY2VsbHM6IFtmYWxzZSwgZmFsc2UsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJBZHZhbmNlZCBBUEkgYWNjZXNzIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiQWR2YW5jZWQgTUNQIGFjY2VzcyIsIGNlbGxzOiBbdHJ1ZSwgdHJ1ZSwgdHJ1ZSwgdHJ1ZV0gfSwKICAgICAgeyBsYWJlbDogIkRhdGEgTWlncmF0aW9uIChIaWdoTGV2ZWwgaW1wb3J0LCBNQ1ApIiwgY2VsbHM6IFtmYWxzZSwgZmFsc2UsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJVc2FnZSByZWJpbGxpbmcgKG1hcmt1cCBwaG9uZSwgU01TLCBlbWFpbCwgQUkpIiwgdGlwOiAiUmViaWxsIGNsaWVudCB1c2FnZSBhdCB5b3VyIG93biBtYXJrdXAgaW5zdGVhZCBvZiBhYnNvcmJpbmcgdGhlIGNvc3QuIiwgY2VsbHM6IFtmYWxzZSwgdHJ1ZSwgdHJ1ZSwgdHJ1ZV0gfSwKICAgICAgeyBsYWJlbDogIlNhYVMgcmVzYWxlIHJpZ2h0cyIsIHRpcDogIlJlc2VsbCBNZXJjdXJ5IENSTSB1bmRlciB5b3VyIG93biBicmFuZCBhdCB3aGF0ZXZlciBwcmljZSB5b3Ugc2V0LiIsIGNlbGxzOiBbZmFsc2UsIGZhbHNlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiRGVkaWNhdGVkIGFjY291bnQgbWFuYWdlciIsIGNlbGxzOiBbZmFsc2UsIGZhbHNlLCBmYWxzZSwgdHJ1ZV0gfSwKICAgICAgeyBsYWJlbDogIlZvbHVtZSB1c2FnZSByYXRlcyIsIGNlbGxzOiBbZmFsc2UsIGZhbHNlLCBmYWxzZSwgdHJ1ZV0gfSwKICAgIF0sCiAgfSwKICB7CiAgICB0aXRsZTogIlBob25lIFN5c3RlbSIsCiAgICByb3dzOiBbCiAgICAgIHsgbGFiZWw6ICJBSSB2b2ljZSAoMjQvNyBmcm9udCBkZXNrKSIsIHRpcDogIkFJIGFzc2lzdGFudHMgYW5zd2VyIGV2ZXJ5IGluYm91bmQgY2FsbCwgYm9vayBhcHBvaW50bWVudHMsIGFuZCBmb2xsb3cgdXAuIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiT3V0Ym91bmQgZGlhbGVyICgxMCBsaW5lcyBwZXIgYWNjb3VudCkiLCB0aXA6ICJQYXJhbGxlbCBkaWFsZXIgdGhhdCBydW5zIHVwIHRvIDEwIGxpbmVzIHBlciBhY2NvdW50IGF0IG9uY2UsIGZvciBmb2xsb3ctdXBzLCByZW1pbmRlcnMsIGFuZCBzYWxlcyBvdXRyZWFjaC4iLCBjZWxsczogW3RydWUsIHRydWUsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJMb2NhbCBwaG9uZSBudW1iZXJzIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiQ2FsbCByZWNvcmRpbmcgJiB0cmFuc2NyaXB0cyIsIGNlbGxzOiBbdHJ1ZSwgdHJ1ZSwgdHJ1ZSwgdHJ1ZV0gfSwKICAgICAgeyBsYWJlbDogIlNNUyBtZXNzYWdpbmciLCBjZWxsczogW3RydWUsIHRydWUsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICI0MCsgbGFuZ3VhZ2VzIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgICB7IGxhYmVsOiAiRE5DIGxpc3QsIGNvbnNlbnQgY2hlY2tzICYgY2FsbGluZyBob3VycyIsIHRpcDogIkluLXN5c3RlbSBETkMgbGlzdCwgYXV0b21hdGljIGNvbnNlbnQgY2hlY2tzLCBhbmQgY2FsbGluZy1ob3VyIGVuZm9yY2VtZW50IGJlZm9yZSBldmVyeSBkaWFsLiBTY3J1YiBsaXN0cyBhZ2FpbnN0IHRoZSBOYXRpb25hbCBETkMgUmVnaXN0cnkgYmVmb3JlIHVwbG9hZGluZy4iLCBjZWxsczogW3RydWUsIHRydWUsIHRydWUsIHRydWVdIH0sCiAgICAgIHsgbGFiZWw6ICJBMlAgMTBETEMgcmVnaXN0cmF0aW9uIiwgdGlwOiAiQnVzaW5lc3MgU01TIGNhbXBhaWduIHJlZ2lzdHJhdGlvbiBoYW5kbGVkIGZvciB5b3UuIiwgY2VsbHM6IFt0cnVlLCB0cnVlLCB0cnVlLCB0cnVlXSB9LAogICAgXSwKICB9LApdOwoKZXhwb3J0IGNvbnN0IHByaWNpbmdGYXEgPSBbCiAgeyBxOiAiV2hhdCBoYXBwZW5zIHdoZW4gbXkgdXNhZ2UgY3JlZGl0cyBydW4gb3V0PyIsIGE6ICJVc2FnZSBrZWVwcyB3b3JraW5nIHdpdGhvdXQgaW50ZXJydXB0aW9uIGFuZCBiaWxscyBhdCB5b3VyIHBsYW4ncyBwdWJsaXNoZWQgcGVyLXNlZ21lbnQgYW5kIHBlci1taW51dGUgcmF0ZXMuIEV2ZXJ5IGNoYXJnZSBpcyBpdGVtaXplZCBvbiB5b3VyIGludm9pY2UsIHNvIHRoZXJlIGFyZSBuZXZlciBzdXJwcmlzZSBmZWVzLiIgfSwKICB7IHE6ICJDYW4gSSBjaGFuZ2UgdGllcnMgbGF0ZXI/IiwgYTogIlllcy4gVXBncmFkZSBvciBkb3duZ3JhZGUgYW55dGltZSB0byBtYXRjaCB5b3VyIGJ1c2luZXNzLiBDaGFuZ2VzIHRha2UgZWZmZWN0IGltbWVkaWF0ZWx5IHdpdGggbm8gc2VydmljZSBpbnRlcnJ1cHRpb24uIiB9LAogIHsgcTogIklzIHRoZXJlIGEgc2V0dXAgZmVlPyIsIGE6ICJObyBzZXR1cCBmZWVzIGFuZCBubyBsb25nLXRlcm0gY29udHJhY3RzLiBNb250aGx5IGJpbGxpbmcsIGNhbmNlbCBhbnl0aW1lLiIgfSwKICB7IHE6ICJEbyB5b3UgaGVscCB3aXRoIEEyUCAxMERMQyByZWdpc3RyYXRpb24/IiwgYTogIlllcy4gQnVzaW5lc3MgU01TIHJlcXVpcmVzIHJlZ2lzdGVyZWQgY2FtcGFpZ25zLCBhbmQgb3VyIHRlYW0gaGFuZGxlcyB5b3VyIEEyUCAxMERMQyByZWdpc3RyYXRpb24gZm9yIHlvdSBzbyB5b3VyIG1lc3NhZ2VzIGdldCBkZWxpdmVyZWQuIiB9LAogIHsgcTogIkRvZXMgZXZlcnkgcGxhbiBpbmNsdWRlIGEgQ1JNPyBDYW4gSSBrZWVwIG15IGN1cnJlbnQgb25lPyIsIGE6ICJZZXMuIEV2ZXJ5IHBsYW4gaW5jbHVkZXMgTWVyY3VyeSBDUk0gYXQgbm8gZXh0cmEgY29zdDogY29udGFjdHMsIHBpcGVsaW5lcywgY29udmVyc2F0aW9ucyBhbmQgYXV0b21hdGlvbnMuIElmIHlvdSBhbHJlYWR5IHJ1biBvbiBIdWJTcG90LCBTYWxlc2ZvcmNlLCBQaXBlZHJpdmUsIFpvaG8gQ1JNIG9yIGFub3RoZXIgc3lzdGVtLCB5b3UgY2FuIGtlZXAgaXQuIFdlIGNvbm5lY3QgdGhlIEFJIGZyb250IGRlc2sgYW5kIGRpYWxlciB0byB5b3VyIGV4aXN0aW5nIENSTSBpbnN0ZWFkLiIgfSwKICB7IHE6ICJJcyBvdXRib3VuZCBkaWFsaW5nIGluY2x1ZGVkIG9uIGV2ZXJ5IHRpZXI/IiwgYTogIlllcy4gRXZlcnkgdGllciBpbmNsdWRlcyB0aGUgZnVsbCBkaWFsZXI6IG91dGJvdW5kIGNhbGxpbmcsIGxvY2FsIG51bWJlcnMsIGNhbGwgcmVjb3JkaW5nLCB0cmFuc2NyaXB0cywgYW5kIFNNUy4gRXZlcnkgdGllciBpbmNsdWRlcyB1bmxpbWl0ZWQgdXNlcnMgYW5kIGNvbnRhY3RzLiBIaWdoZXIgdGllcnMgYWRkIHN0b3JhZ2UsIG1vZHVsZXMsIGFuZCBiZXR0ZXIgdXNhZ2UgcmF0ZXMuIiB9LAogIHsgcTogIkhvdyBkb2VzIGFubnVhbCBiaWxsaW5nIHdvcms/IiwgYTogIlBheSBhbm51YWxseSBhbmQgZ2V0IDIgbW9udGhzIGZyZWUuIFN0YXJ0ZXIgaXMgJDk5MC95ciwgUHJvZmVzc2lvbmFsICQyLDk5MC95ciBhbmQgQWdlbmNpZXMgJDMsOTkwL3lyLiBFbnRlcnByaXNlIGlzIHF1b3RlZCB0byBmaXQgeW91ciBhY2NvdW50LiIgfSwKXTsKCmV4cG9ydCBjb25zdCB3aHlDaG9vc2UgPSBbCiAgeyB0aXRsZTogIk9uZSBQbGF0Zm9ybSwgT25lIEJpbGwiLCBib2R5OiAiQ1JNLCBwaG9uZSBzeXN0ZW0sIGRpYWxlciwgYW5kIEFJIGFzc2lzdGFudHMgaW4gYSBzaW5nbGUgc3Vic2NyaXB0aW9uLiBObyBzdGl0Y2hpbmcgdmVuZG9ycyB0b2dldGhlci4iIH0sCiAgeyB0aXRsZTogIlRyYW5zcGFyZW50IFVzYWdlIFByaWNpbmciLCBib2R5OiAiUHVibGlzaGVkIHBlci1zZWdtZW50IGFuZCBwZXItbWludXRlIHJhdGVzIG9uIGV2ZXJ5IHRpZXIuIENvbXBldGl0b3JzIGhpZGUgb3ZlcmFnZXMgdW50aWwgdGhlIGludm9pY2U7IHdlIHByaW50IG91cnMuIiB9LAogIHsgdGl0bGU6ICJMaXZlIGluIERheXMsIE5vdCBNb250aHMiLCBib2R5OiAiQUkgYXNzaXN0YW50cyB0cmFpbmVkIG9uIHlvdXIgYnVzaW5lc3MsIG51bWJlcnMgcHJvdmlzaW9uZWQsIENSTSBjb25maWd1cmVkLiBObyBjb21wbGV4IGluc3RhbGxhdGlvbnMuIiB9LAogIHsgdGl0bGU6ICJCdWlsdC1JbiBDb21wbGlhbmNlIFRvb2xzIiwgYm9keTogIkFuIGluLXN5c3RlbSBETkMgbGlzdCwgYXV0b21hdGljIGNvbnNlbnQgY2hlY2tzLCBjYWxsaW5nLWhvdXIgZW5mb3JjZW1lbnQsIGF1dG9tYXRpYyBvcHQtb3V0cywgYW5kIEEyUCAxMERMQyByZWdpc3RyYXRpb24gaGFuZGxlZC4iIH0sCiAgeyB0aXRsZTogIlNjYWxlcyB0byBXaGl0ZS1MYWJlbCIsIGJvZHk6ICJHcm93IGZyb20gYSBzaW5nbGUgbG9jYXRpb24gdG8gYSByZXNvbGQgU2FhUyBwcm9kdWN0LiBQcm9mZXNzaW9uYWwgdW5sb2NrcyB1bmxpbWl0ZWQgd2hpdGUtbGFiZWwgc3ViLWFjY291bnRzOyBBZ2VuY2llcyBhZGRzIHVzYWdlIHJlYmlsbGluZyBhbmQgU2FhUyByZXNhbGUuIiB9LAogIHsgdGl0bGU6ICJSZWFsIEh1bWFuIEJhY2t1cCIsIGJvZHk6ICJBSSBoYW5kbGVzIHRoZSByb3V0aW5lOyB5b3VyIHRlYW0gaGFuZGxlcyB0aGUgZXhjZXB0aW9ucy4gQ2FsbCB0cmFuc2ZlciBhbmQgcm91dGluZyBrZWVwIGh1bWFucyBvbmUgdGFwIGF3YXkuIiB9LApdOwo=
+/**
+ * Mercury CRM platform pricing, updated 2026-10-15 (Starter $99/5 sub-accounts; Professional $299 with usage rebilling; Agencies $399 limited-time with dispatch; Enterprise 4th column).
+ * Monthly platform fee + transparent usage (published per-tier rates).
+ * Annual billing = 2 months free.
+ */
+export type TierId = "starter" | "professional" | "agencies";
+
+export type Tier = {
+  id: TierId;
+  name: string;
+  blurb: string;
+  monthly: number;
+  annualTotal: number;
+  cta: string;
+  /** Shorter label used on compact cards */
+  ctaShort?: string;
+  popular?: boolean;
+  badge?: string;
+  /** Line above the card's list, e.g. "Everything in Starter, plus:" */
+  lead: string;
+  /** What this tier adds. Items every plan shares live in `everyPlan`; full detail lives in `compare`. */
+  features: { title: string; detail: string }[];
+};
+
+/** Shown once above the pricing cards so each card only lists what its tier adds. */
+export const everyPlan: { title: string; detail: string }[] = [
+  { title: "Mercury CRM included", detail: "Or keep the CRM you already use: we connect to HubSpot, Salesforce, Pipedrive, Zoho CRM and more" },
+  { title: "Unlimited users and contacts", detail: "Add your whole team and grow your database with no caps" },
+  { title: "AI voice", detail: "AI front desk answers every call 24/7, books appointments, sends SMS follow-ups" },
+  { title: "Full dialer + phone system", detail: "Outbound dialing, local numbers, call recording and transcripts" },
+  { title: "40+ languages", detail: "Automatic language detection and seamless switching" },
+  { title: "Advanced API and MCP access", detail: "Full API access, and connect Claude, ChatGPT, and AI agents directly to your CRM. Never gated behind an upsell." },
+];
+
+export const tiers: Tier[] = [
+  {
+    id: "starter",
+    name: "Starter",
+    blurb: "For solo operators getting started",
+    monthly: 99,
+    annualTotal: 990,
+    cta: "Start with Starter",
+    lead: "Starter includes:",
+    features: [
+      { title: "5 sub-accounts", detail: "GoHighLevel gives you 3 at $97. We give you 5 at $99." },
+      { title: "10 GB storage", detail: "Call recordings, files, and documents" },
+      { title: "$5 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
+    ],
+  },
+  {
+    id: "professional",
+    name: "Professional",
+    blurb: "For growing businesses that run on their phones",
+    monthly: 299,
+    annualTotal: 2990,
+    cta: "Start with Professional",
+    ctaShort: "Start Professional",
+    popular: true,
+    lead: "Everything in Starter, plus:",
+    features: [
+      { title: "Unlimited white-label sub-accounts", detail: "Brand client accounts as your own, with no per-account fee" },
+      { title: "Usage rebilling", detail: "Mark up phone, email, SMS, and AI usage for your clients. GoHighLevel rebills at cost unless you're on its $497 plan; we let you profit from it here." },
+      { title: "Financials, marketing and AI automation", detail: "Invoices and estimates; campaigns, broadcasts and social; workflows and reputation management" },
+      { title: "50 GB storage", detail: "More recordings, files, and documents" },
+      { title: "$15 monthly usage credits", detail: "Applied automatically to SMS and voice usage" },
+    ],
+  },
+  {
+    id: "agencies",
+    name: "Agencies",
+    blurb: "For agencies reselling the platform under their own brand. Limited-time pricing.",
+    monthly: 399,
+    annualTotal: 3990,
+    badge: "Limited Time",
+    cta: "Start with Agencies",
+    lead: "Everything in Professional, plus:",
+    features: [
+      { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
+      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel announced dispatch but has not shipped it." },
+      { title: "AI agentic", detail: "AI agents that build workflows, manage dispatch, and handle follow-ups autonomously" },
+      { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
+      { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
+      { title: "100 GB storage + $30 monthly credits", detail: "Deep recording retention; credits applied automatically to SMS and voice" },
+    ],
+  },
+];
+
+/**
+ * Enterprise is quote-only (modeled on GoHighLevel's Enterprise block): no published price,
+ * shown as the 4th pricing column next to the priced tiers.
+ */
+export const enterprise = {
+  name: "Enterprise",
+  eyebrow: "Enterprise plan",
+  title: "Built around your business",
+  blurb: "Custom tailored for high-volume businesses and agencies",
+  body: "Designed for high-volume businesses and agencies, the Enterprise plan is custom tailored to each account. We price it to fit your volume and protect your margins, with the full platform and a team behind it.",
+  lead: "Everything in Agencies, plus:",
+  points: [
+    "Dedicated account manager",
+    "Unlimited storage",
+    "Volume usage rates",
+    "Custom builds, integrations and MCP data tools",
+    "White-glove migration from HighLevel",
+    "Priority support",
+  ],
+  cta: "Speak with Our Enterprise Team",
+};
+
+/** Published usage rates — transparent wholesale-plus pricing per tier. */
+export type UsageRate = {
+  label: string;
+  unit: string;
+  starter: string;
+  professional: string;
+  agencies: string;
+  wholesale: string;
+};
+
+export const usageRates: UsageRate[] = [
+  {
+    label: "SMS",
+    unit: "per segment",
+    starter: "$0.045",
+    professional: "$0.0375",
+    agencies: "$0.030",
+    wholesale: "$0.015",
+  },
+  {
+    label: "Voice",
+    unit: "per minute",
+    starter: "$0.075",
+    professional: "$0.0625",
+    agencies: "$0.050",
+    wholesale: "$0.025",
+  },
+];
+
+export const usageExplainers = [
+  {
+    title: "SMS segments",
+    body: "One segment covers up to 160 characters of plain text. Longer messages use multiple segments. Your plan's monthly credits apply first, then usage bills at your tier's published rate.",
+  },
+  {
+    title: "Voice minutes",
+    body: "Billed per minute of talk time on inbound and outbound calls, including AI assistant conversations. Recordings and transcripts are included in your storage, not billed per minute.",
+  },
+  {
+    title: "Monthly credits",
+    body: "Every plan includes monthly usage credits ($5 to $30 depending on tier) applied automatically. Credits reset each billing cycle and do not roll over.",
+  },
+];
+
+/** Feature comparison table (Pricing page). Column order: Starter, Professional, Agencies, Enterprise. */
+export type CompareCell = string | boolean;
+export type CompareRow = { label: string; tip?: string; cells: [CompareCell, CompareCell, CompareCell, CompareCell] };
+export type CompareGroup = { title: string; rows: CompareRow[] };
+
+export const compare: CompareGroup[] = [
+  {
+    title: "Platform",
+    rows: [
+      { label: "Users", cells: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+      { label: "Contacts", cells: ["Unlimited", "Unlimited", "Unlimited", "Unlimited"] },
+      { label: "Storage", cells: ["10 GB", "50 GB", "100 GB", "Unlimited"] },
+      { label: "Monthly usage credits", tip: "Credits applied automatically to SMS and voice usage each billing cycle.", cells: ["$5", "$15", "$30", "Custom"] },
+      { label: "Sub-accounts", tip: "Separate client or location accounts under your agency.", cells: ["5", "Unlimited", "Unlimited", "Unlimited"] },
+    ],
+  },
+  {
+    title: "Modules",
+    rows: [
+      { label: "Core CRM (contacts, companies, conversations)", cells: [true, true, true, true] },
+      { label: "Sales (calendar, pipelines, opportunities)", cells: [true, true, true, true] },
+      { label: "Web Presence (forms, websites, files)", cells: [true, true, true, true] },
+      { label: "Financials (invoices, estimates, documents)", cells: [false, true, true, true] },
+      { label: "Marketing (campaigns, broadcasts, social)", cells: [false, true, true, true] },
+      { label: "AI automation (workflows, reputation)", cells: [false, true, true, true] },
+      { label: "White-label sub-accounts (unlimited)", tip: "Brand client accounts as your own, with no per-account fee.", cells: [false, true, true, true] },
+      { label: "Dispatch (job tracking, technician updates)", tip: "Track jobs and technicians; AI notifies customers automatically.", cells: [false, false, true, true] },
+      { label: "AI agentic (autonomous agents)", cells: [false, false, true, true] },
+      { label: "Advanced API access", cells: [true, true, true, true] },
+      { label: "Advanced MCP access", cells: [true, true, true, true] },
+      { label: "Data Migration (HighLevel import, MCP)", cells: [false, false, true, true] },
+      { label: "Usage rebilling (markup phone, SMS, email, AI)", tip: "Rebill client usage at your own markup instead of absorbing the cost.", cells: [false, true, true, true] },
+      { label: "SaaS resale rights", tip: "Resell Mercury CRM under your own brand at whatever price you set.", cells: [false, false, true, true] },
+      { label: "Dedicated account manager", cells: [false, false, false, true] },
+      { label: "Volume usage rates", cells: [false, false, false, true] },
+    ],
+  },
+  {
+    title: "Phone System",
+    rows: [
+      { label: "AI voice (24/7 front desk)", tip: "AI assistants answer every inbound call, book appointments, and follow up.", cells: [true, true, true, true] },
+      { label: "Outbound dialer (10 lines per account)", tip: "Parallel dialer that runs up to 10 lines per account at once, for follow-ups, reminders, and sales outreach.", cells: [true, true, true, true] },
+      { label: "Local phone numbers", cells: [true, true, true, true] },
+      { label: "Call recording & transcripts", cells: [true, true, true, true] },
+      { label: "SMS messaging", cells: [true, true, true, true] },
+      { label: "40+ languages", cells: [true, true, true, true] },
+      { label: "DNC list, consent checks & calling hours", tip: "In-system DNC list, automatic consent checks, and calling-hour enforcement before every dial. Scrub lists against the National DNC Registry before uploading.", cells: [true, true, true, true] },
+      { label: "A2P 10DLC registration", tip: "Business SMS campaign registration handled for you.", cells: [true, true, true, true] },
+    ],
+  },
+];
+
+export const pricingFaq = [
+  { q: "What happens when my usage credits run out?", a: "Usage keeps working without interruption and bills at your plan's published per-segment and per-minute rates. Every charge is itemized on your invoice, so there are never surprise fees." },
+  { q: "Can I change tiers later?", a: "Yes. Upgrade or downgrade anytime to match your business. Changes take effect immediately with no service interruption." },
+  { q: "Is there a setup fee?", a: "No setup fees and no long-term contracts. Monthly billing, cancel anytime." },
+  { q: "Do you help with A2P 10DLC registration?", a: "Yes. Business SMS requires registered campaigns, and our team handles your A2P 10DLC registration for you so your messages get delivered." },
+  { q: "Does every plan include a CRM? Can I keep my current one?", a: "Yes. Every plan includes Mercury CRM at no extra cost: contacts, pipelines, conversations and automations. If you already run on HubSpot, Salesforce, Pipedrive, Zoho CRM or another system, you can keep it. We connect the AI front desk and dialer to your existing CRM instead." },
+  { q: "Is outbound dialing included on every tier?", a: "Yes. Every tier includes the full dialer: outbound calling, local numbers, call recording, transcripts, and SMS. Every tier includes unlimited users and contacts. Higher tiers add storage, modules, and better usage rates." },
+  { q: "How does annual billing work?", a: "Pay annually and get 2 months free. Starter is $990/yr, Professional $2,990/yr and Agencies $3,990/yr. Enterprise is quoted to fit your account." },
+];
+
+export const whyChoose = [
+  { title: "One Platform, One Bill", body: "CRM, phone system, dialer, and AI assistants in a single subscription. No stitching vendors together." },
+  { title: "Transparent Usage Pricing", body: "Published per-segment and per-minute rates on every tier. Competitors hide overages until the invoice; we print ours." },
+  { title: "Live in Days, Not Months", body: "AI assistants trained on your business, numbers provisioned, CRM configured. No complex installations." },
+  { title: "Built-In Compliance Tools", body: "An in-system DNC list, automatic consent checks, calling-hour enforcement, automatic opt-outs, and A2P 10DLC registration handled." },
+  { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Professional unlocks unlimited white-label sub-accounts; Agencies adds usage rebilling and SaaS resale." },
+  { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
+];
