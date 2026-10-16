@@ -34,7 +34,8 @@ export type Comparison = {
    * Competitor logo in /public/vs-logos/ shown in the table header. `wordmark` = the logo
    * already spells the name, so the text label is visually hidden.
    */
-  logo?: { src: string; wordmark?: boolean };
+  /** onDark: the file is a light/white logo, so it sits on a dark pill instead of white. */
+  logo?: { src: string; wordmark?: boolean; onDark?: boolean };
   /** Where the competitor facts on this page come from; shown under the table. */
   sources?: { label: string; url: string }[];
   /** Month the competitor facts were last checked, e.g. "October 2026". */
@@ -71,6 +72,7 @@ const CHECKED = "October 2026";
 export const comparisons: Comparison[] = [
   {
     slug: "gohighlevel",
+    logo: { src: "/vs-logos/gohighlevel.svg", wordmark: true, onDark: true },
     competitor: "GoHighLevel",
     brandColor: "#2896FB",
     tagline:
@@ -258,6 +260,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "keap",
+    logo: { src: "/vs-logos/keap.svg", wordmark: true },
     competitor: "Keap",
     brandColor: "#36A635",
     tagline:
@@ -391,6 +394,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "vendasta",
+    logo: { src: "/vs-logos/vendasta.svg", wordmark: true, onDark: true },
     competitor: "Vendasta",
     brandColor: "#072338",
     darkHeader: true,
@@ -438,6 +442,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "sharpspring",
+    logo: { src: "/vs-logos/sharpspring.png", wordmark: true },
     competitor: "SharpSpring",
     brandColor: "#0062EA",
     tagline:
@@ -483,6 +488,7 @@ export const comparisons: Comparison[] = [
   },
   {
     slug: "klaviyo",
+    logo: { src: "/vs-logos/klaviyo.svg", wordmark: true },
     competitor: "Klaviyo",
     brandColor: "#232426",
     darkHeader: true,

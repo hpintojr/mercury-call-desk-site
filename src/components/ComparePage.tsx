@@ -45,7 +45,7 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
             <th scope="col" className="px-3 py-4 sm:px-5 text-center font-bold" style={headerStyle}>
               <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
                 {comparison.logo && (
-                  <span className="inline-flex h-9 items-center rounded-lg bg-white px-2 shadow-sm">
+                  <span className={`inline-flex h-9 items-center rounded-lg px-2 shadow-sm ${comparison.logo.onDark ? "bg-mcd-navy ring-1 ring-white/20" : "bg-white"}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={comparison.logo.src} alt={comparison.logo.wordmark ? comparison.competitor : ""} className={`${comparison.logo.wordmark ? "h-6 max-w-[120px]" : "h-6 w-6"} object-contain`} />
                   </span>
