@@ -32,6 +32,7 @@ function Badge({ mark }: { mark: Mark }) {
 function markFor(value: CompareCell, side: "mercury" | "competitor", label: string): Mark {
   if (value === true) return "yes";
   if (value === false) return "no";
+  if (typeof value === "object") return "no";
   if (side === "mercury") return "yes";
   if (label === "Setup fees") return /^None/.test(value) ? "yes" : "no";
   return missing.test(value) ? "no" : "partial";
@@ -39,7 +40,7 @@ function markFor(value: CompareCell, side: "mercury" | "competitor", label: stri
 
 function Cell({ value, side, label }: { value: CompareCell; side: "mercury" | "competitor"; label: string }) {
   const mark = markFor(value, side, label);
-  const text = typeof value === "string" && !missing.test(value) ? value : null;
+  const text = typeof value === "object" ? value.text : typeof value === "string" && !missing.test(value) ? value : null;
   return (
     <span className="flex flex-col items-center justify-center gap-1.5">
       <Badge mark={mark} />
@@ -80,7 +81,7 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
           </tr>
         </thead>
         <tbody>
-          {comparison.rows.map((row) => (
+          {[...comparison.rows, ...(comparison.extraRows ?? [])].map((row) => (
             <tr key={row.label} className="border-t border-mcd-line">
               <th scope="row" className="px-3 py-5 text-xs font-medium text-mcd-navy sm:px-6 sm:text-base">
                 {row.label}
