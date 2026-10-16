@@ -109,7 +109,7 @@ export const landingPages: LandingConfig[] = [
       { icon: "card", title: "Quotes and collects", body: "Gives your approved pricing for diagnostics and tune-ups, and can take a card for the trip charge before anyone rolls a truck." },
     ],
     stats: [
-      { value: "35–45%", label: "of home-service calls arrive outside office hours", basis: "Home-services call-timing studies" },
+      { value: "35-45%", label: "of home-service calls arrive outside office hours", basis: "Home-services call-timing studies" },
       { value: "$350+", label: "immediate revenue in a single missed tune-up call", basis: "HVAC industry averages; replacements run far higher" },
       { value: "40 of 168", label: "hours a week a full-time front desk actually covers", basis: "A 40-hour week vs. a 24/7 phone" },
     ],

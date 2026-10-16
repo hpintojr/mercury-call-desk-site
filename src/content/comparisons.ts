@@ -92,7 +92,7 @@ export const comparisons: Comparison[] = [
       },
       {
         title: "Dispatch built in",
-        body: "GoHighLevel points field-service businesses to a Jobber integration or marketplace apps. Mercury Agencies includes dispatch: job tracking, technician status updates, and AI customer notifications.",
+        body: "GoHighLevel announced dispatch but has not shipped it. Mercury Agencies includes dispatch: job tracking, technician status updates, and AI customer notifications.",
       },
       {
         title: "More room to start",
@@ -102,7 +102,7 @@ export const comparisons: Comparison[] = [
     rows: mercuryRows([
       "Add-on, $50 or $97/mo per sub-account",
       "Web dialer, no parallel lines",
-      { text: "Not native; Jobber or marketplace apps", no: true },
+      { text: "Announced, not shipped", no: true },
       "At cost on $297; markup on $497",
       "3 on Starter; unlimited from $297",
       true,
