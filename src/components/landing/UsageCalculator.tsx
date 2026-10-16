@@ -39,6 +39,9 @@ export default function UsageCalculator() {
         <span className="text-xl font-extrabold tabular-nums text-mcd-cyan">{usd(usage)}/mo</span>
       </label>
       <input id="usage" type="range" min={10} max={calc.maxUsage} step={5} value={usage} onChange={(e) => setUsage(Number(e.target.value))} className="mt-2 w-full accent-mcd-cyan" />
+      <p className="mt-1 text-xs text-white/60">
+        About {Math.round(usage / calc.exampleTextCost).toLocaleString("en-US")} texts a month at an example ${calc.exampleTextCost.toFixed(2)} per text
+      </p>
 
       <div className="mt-4 flex items-center justify-between gap-3 text-sm font-semibold text-white/90">
         <span>Your markup</span>

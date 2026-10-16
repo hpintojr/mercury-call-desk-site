@@ -43,6 +43,8 @@ export const calc = {
   maxUsage: 500,
   defaultMarkup: 50,
   markups: [25, 50, 100],
+  /** Example cost per text used only to translate the usage dollars into a text count (Hamilton, 2026-10-16). Not a quoted rate. */
+  exampleTextCost: 0.04,
   note: "Assumes the same client usage, at your cost, on both platforms. Per-unit rates differ: GoHighLevel's are lower than ours, and ours are published on the pricing page. Plan fees only; GoHighLevel's AI Employee add-on is not included.",
 };
 
