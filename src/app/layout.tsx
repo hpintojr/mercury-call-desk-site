@@ -53,7 +53,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </SiteChrome>
         </DemoDrawerProvider>
-      </body>
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Mercury Call Desk",
+            url: "https://mercurycalldesk.com",
+            description:
+              "AI phone agents, full dialer and phone system, and Mercury CRM for local service businesses and agencies.",
+            sameAs: [],
+          }),
+        }}
+      />
+    </body>
     </html>
   );
 }

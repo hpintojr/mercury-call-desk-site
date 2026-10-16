@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: `Mercury vs ${comparison.competitor}`,
     description: `Mercury vs ${comparison.competitor}: compare AI voice agents, dialer, dispatch, pricing, and agency features side by side.`,
+    alternates: { canonical: `https://mercurycalldesk.com/vs/${slug}` },
   };
 }
 

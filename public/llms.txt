@@ -1,0 +1,48 @@
+# Mercury Call Desk
+
+Mercury Call Desk (mercurycalldesk.com) sells AI phone agents and a full CRM
+for local service businesses and agencies. AI voice assistants answer every
+call 24/7, book appointments, and follow up by SMS. Includes a full outbound
+dialer (10 lines per account), dispatch with technician tracking, and
+Mercury CRM. No setup fees.
+
+## Pricing
+
+- Starter: $99/mo, 5 sub-accounts, unlimited users and contacts
+- Professional: $299/mo, unlimited white-label sub-accounts, usage rebilling
+  (mark up phone, SMS, email, AI for clients)
+- Agencies: $399/mo limited-time, dispatch, AI agentic, SaaS resale rights
+- Enterprise: custom quote, 4th column of the pricing table
+- Annual billing: 2 months free. Usage billed at published per-minute/per-segment rates.
+
+## Key pages
+
+- https://mercurycalldesk.com/ - Home
+- https://mercurycalldesk.com/pricing - Plans and usage rates
+- https://mercurycalldesk.com/platform - Platform overview
+- https://mercurycalldesk.com/features - Features
+- https://mercurycalldesk.com/agencies - For agencies (GoHighLevel comparison)
+- https://mercurycalldesk.com/integrations - Integrations
+- https://mercurycalldesk.com/faq - FAQ
+- https://mercurycalldesk.com/contact - Contact
+
+## Verticals
+
+- https://mercurycalldesk.com/hvac - HVAC, plumbing, electrical, roofing
+- https://mercurycalldesk.com/dental - Dental
+- https://mercurycalldesk.com/law - Law firms
+
+## Comparisons
+
+- https://mercurycalldesk.com/vs/gohighlevel
+- https://mercurycalldesk.com/vs/hubspot
+- https://mercurycalldesk.com/vs/salesforce
+- https://mercurycalldesk.com/vs/activecampaign
+- https://mercurycalldesk.com/vs/clickfunnels
+- https://mercurycalldesk.com/vs/keap
+- https://mercurycalldesk.com/vs/linktree
+- https://mercurycalldesk.com/vs/kartra
+- https://mercurycalldesk.com/vs/vendasta
+- https://mercurycalldesk.com/vs/sharpspring
+- https://mercurycalldesk.com/vs/klaviyo
+- https://mercurycalldesk.com/vs/zoho

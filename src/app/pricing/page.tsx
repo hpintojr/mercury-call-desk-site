@@ -13,6 +13,7 @@ import { pricingFaq, whyChoose, usageRates, usageExplainers, carrierFeeMarkup } 
 export const metadata: Metadata = {
   title: "Pricing",
   description: "Mercury CRM plans from $99/mo plus transparent usage rates. CRM, phone system, dialer, and AI assistants in one platform. Annual billing includes 2 months free.",
+  alternates: { canonical: "https://mercurycalldesk.com/pricing" },
 };
 
 const icons: IconName[] = ["star", "bolt", "zap", "clock", "chart", "users"];
@@ -45,9 +46,24 @@ function UsageTable() {
   );
 }
 
+const productLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Mercury CRM",
+  brand: { "@type": "Brand", name: "Mercury Call Desk" },
+  description:
+    "AI phone agents, full dialer and phone system, and Mercury CRM for local service businesses and agencies. No setup fees.",
+  offers: [
+    { "@type": "Offer", name: "Starter", price: "99", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+    { "@type": "Offer", name: "Professional", price: "299", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+    { "@type": "Offer", name: "Agencies", price: "399", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+  ],
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
       <PageHero crumb="Pricing" title="One platform. One bill. Clear pricing." body="Mercury CRM plans from $99/mo plus transparent, published usage rates. Every tier includes Mercury CRM, the AI front desk, and the full dialer. Already have a CRM? Keep it and we connect to it. Annual billing includes 2 months free." />
 
       <section className="py-14 sm:py-20">
