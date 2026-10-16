@@ -221,3 +221,6 @@ export const whyChoose = [
   { title: "Scales to White-Label", body: "Grow from a single location to a resold SaaS product. Professional unlocks unlimited white-label sub-accounts; Agencies adds usage rebilling and SaaS resale." },
   { title: "Real Human Backup", body: "AI handles the routine; your team handles the exceptions. Call transfer and routing keep humans one tap away." },
 ];
+
+/** Carrier pass-through fees are billed on top of usage rates, plus this markup (Hamilton, 2026-10-16). Enterprise pays them at cost. */
+export const carrierFeeMarkup = { starter: 2.5, professional: 2.25, agencies: 2.0 };
