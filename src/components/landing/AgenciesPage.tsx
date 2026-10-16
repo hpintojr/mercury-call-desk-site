@@ -6,15 +6,36 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CallbackForm from "./CallbackForm";
 import BookEmbed from "./BookEmbed";
 import { aiLine, links, site } from "@/config/site";
-import BillCalculator from "./BillCalculator";
-import { agenciesFaq, agenciesHero, agenciesSlug as slug, calc, compareRows, included, sources, steps } from "@/content/agencies";
+import UsageCalculator from "./UsageCalculator";
+import { agenciesFaq, agenciesHero, agenciesSlug as slug, ghl, included, pairs, sources, steps, type PairCell } from "@/content/agencies";
+import { tiers } from "@/content/pricing";
 
 const btn = "tap inline-flex items-center justify-center gap-2 rounded-full font-semibold transition active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-mcd-sky focus-visible:ring-offset-2 px-7 py-4 text-base";
 const btnPrimary = `${btn} bg-gradient-to-r from-mcd-blue via-mcd-sky to-mcd-cyan text-mcd-navy shadow-lg shadow-mcd-sky/30 hover:brightness-110`;
 const btnGhost = `${btn} border border-white/30 text-white hover:bg-white/10`;
 
-/** Smallest monthly gap the calculator can show: one client on the cheaper AI Employee plan. */
-const minGap = calc.ghlPlan.price + Math.min(...calc.ghlAi.map((a) => a.price)) + calc.ghlDialer.price - calc.mcdPlan.price;
+const pro = tiers.find((t) => t.id === "professional")!;
+
+/** GoHighLevel's own Nurture Blue, so their column reads as theirs. */
+const ghlBlue = "#2896FB";
+
+function Mark({ cell }: { cell: PairCell }) {
+  if (!cell.ok && !cell.no) return null;
+  return (
+    <span aria-hidden="true" className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${cell.ok ? "bg-green-600" : "bg-red-600"}`}>
+      <Icon name={cell.ok ? "check" : "x"} className="h-3.5 w-3.5 text-white" />
+    </span>
+  );
+}
+
+function PairCellView({ cell, dark }: { cell: PairCell; dark?: boolean }) {
+  return (
+    <span className={`flex items-start gap-2 text-sm ${dark ? "font-semibold text-white" : "text-mcd-ink"}`}>
+      <Mark cell={cell} />
+      <span>{cell.text}{cell.no && <span className="sr-only"> (not included)</span>}</span>
+    </span>
+  );
+}
 
 /**
  * Agency comparison landing page (/agencies). Same minimal chrome as LandingPage —
@@ -48,7 +69,7 @@ export default function AgenciesPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <BillCalculator />
+            <UsageCalculator />
           </div>
         </div>
       </section>
@@ -57,9 +78,9 @@ export default function AgenciesPage() {
       <section className="border-b border-mcd-line bg-mcd-surface">
         <div className="container-x grid gap-6 py-10 sm:grid-cols-3">
           {[
-            { value: "$0", label: "per client account", basis: "Add clients without adding to your Mercury CRM bill" },
-            { value: "10 lines", label: "per rep, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
-            { value: `$${minGap}+`, label: "a month less than GoHighLevel with just one AI client", basis: "Agency Pro + AI Employee Growth + dialer bolt-on, before usage" },
+            { value: `$${pro.monthly}`, label: "to mark up client usage", basis: `GoHighLevel needs Agency Pro at $${ghl.agencyPro.price} for markup` },
+            { value: "$0", label: "per client account", basis: "Unlimited white-label sub-accounts from Professional up" },
+            { value: "10 lines", label: "per account, dialing in parallel", basis: "GoHighLevel's native dialer works one call at a time" },
           ].map((s) => (
             <div key={s.label} className="text-center sm:text-left">
               <p className="text-3xl font-extrabold text-mcd-navy tabular-nums">{s.value}</p>
@@ -70,44 +91,56 @@ export default function AgenciesPage() {
         </div>
       </section>
 
-      {/* Comparison table */}
+      {/* Plan-to-plan pairs: GoHighLevel left in its own blue, Mercury right */}
       <section id="compare" className="scroll-mt-24 py-14 sm:py-20">
-        <div className="container-x max-w-5xl">
-          <p className="eyebrow">Side by side</p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">GoHighLevel Agency Pro vs Mercury CRM Agencies</h2>
-          <div className="mt-8 overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-            <table className="w-full min-w-[640px] text-left text-sm">
-              <thead>
-                <tr className="border-b border-mcd-line bg-mcd-surface">
-                  <th scope="col" className="w-1/3 px-5 py-4 font-semibold text-mcd-muted"><span className="sr-only">Feature</span></th>
-                  <th scope="col" className="w-1/3 px-5 py-4 font-bold text-mcd-ink">GoHighLevel Agency Pro</th>
-                  <th scope="col" className="w-1/3 px-5 py-4 font-extrabold text-mcd-blue">Mercury CRM Agencies</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-mcd-line">
-                {compareRows.map((r) => (
-                  <tr key={r.label}>
-                    <th scope="row" className="px-5 py-4 font-semibold text-mcd-navy">{r.label}</th>
-                    <td className="px-5 py-4 text-mcd-muted">{r.ghl.text}</td>
-                    <td className="px-5 py-4 font-semibold text-mcd-ink">
-                      <span className="flex items-start gap-2">{r.mcd.good && <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-blue" />}{r.mcd.text}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-xs text-mcd-muted">
-            GoHighLevel list prices and features as published in October 2026. Usage (calls, texts) bills separately on both platforms; GoHighLevel&apos;s per-minute rates are lower, and ours are <Link href="/pricing" className="underline">published here</Link>.
+        <div className="container-x max-w-5xl space-y-14">
+          {pairs.map((p) => (
+            <div key={p.title}>
+              <p className="eyebrow">{p.eyebrow}</p>
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight text-mcd-navy sm:text-3xl">{p.title}</h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                <div className="overflow-hidden rounded-xl2 border bg-white shadow-sm" style={{ borderColor: `${ghlBlue}55` }}>
+                  <div className="px-6 py-5 text-white" style={{ backgroundColor: ghlBlue }}>
+                    <p className="text-sm font-bold">{p.ghl.name}</p>
+                    <p className="mt-1 text-3xl font-extrabold tabular-nums">${p.ghl.price}<span className="text-base font-semibold text-white/80">/mo</span></p>
+                  </div>
+                  <dl className="divide-y divide-mcd-line">
+                    {p.rows.map((r) => (
+                      <div key={r.label} className="px-6 py-3.5">
+                        <dt className="text-xs font-semibold uppercase tracking-wide text-mcd-muted">{r.label}</dt>
+                        <dd className="mt-1"><PairCellView cell={r.ghl} /></dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <div className="overflow-hidden rounded-xl2 bg-mcd-navy shadow-xl ring-2 ring-mcd-cyan/60">
+                  <div className="bg-gradient-to-r from-mcd-blue via-mcd-sky to-mcd-cyan px-6 py-5 text-mcd-navy">
+                    <p className="flex items-center gap-2 text-sm font-bold">{p.mcd.name}{p.mcd.badge && <span className="rounded-full bg-mcd-navy px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">{p.mcd.badge}</span>}</p>
+                    <p className="mt-1 text-3xl font-extrabold tabular-nums">${p.mcd.price}<span className="text-base font-semibold text-mcd-navy/70">/mo</span></p>
+                  </div>
+                  <dl className="divide-y divide-white/10">
+                    {p.rows.map((r) => (
+                      <div key={r.label} className="px-6 py-3.5">
+                        <dt className="text-xs font-semibold uppercase tracking-wide text-white/50">{r.label}</dt>
+                        <dd className="mt-1"><PairCellView cell={r.mcd} dark /></dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </div>
+            </div>
+          ))}
+          <p className="text-xs text-mcd-muted">
+            GoHighLevel list prices and features as published in October 2026. Usage (calls, texts, AI) bills separately on both platforms; GoHighLevel&apos;s per-minute rates are lower, and ours are <Link href="/pricing" className="underline">published here</Link>.
           </p>
         </div>
       </section>
 
-      {/* What's in the $399 */}
+      {/* What's included */}
       <section className="bg-mcd-surface py-14 sm:py-20">
         <div className="container-x">
-          <p className="eyebrow">What $399 gets your agency</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">The stack you&apos;re paying three vendors for, in one plan</h2>
+          <p className="eyebrow">What your agency gets</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">Usage becomes revenue, and the AI and dialer come with it</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {included.map((o) => (
               <div key={o.title} className="rounded-xl2 border border-mcd-line bg-white p-6 shadow-sm">
@@ -157,8 +190,8 @@ export default function AgenciesPage() {
         <div className="container-x grid items-start gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <p className="eyebrow">Agency walkthrough</p>
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">Bring your GoHighLevel bill. We&apos;ll price your stack side by side.</h2>
-            <p className="mt-4 text-mcd-muted">In 20 minutes we&apos;ll go through your sub-accounts, AI and dialer setup, show the white-label client experience, and put your current monthly bill next to what it would be on Mercury CRM.</p>
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl">Bring your GoHighLevel setup. We&apos;ll map it plan to plan.</h2>
+            <p className="mt-4 text-mcd-muted">In 20 minutes we&apos;ll go through your sub-accounts, AI and dialer setup, show the white-label client experience and how usage markup works, and recommend the plan that fits.</p>
             <ul className="mt-6 space-y-2 text-sm text-mcd-ink">
               {["No setup fee, no long-term contract", "Plans and usage rates published on our pricing page", "Built and supported from Riverside, California"].map((t) => (
                 <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-blue" />{t}</li>

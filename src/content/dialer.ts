@@ -9,7 +9,7 @@ export const dialerHero = {
 export const dialerFeatures = [
   {
     title: "10-line parallel dialing",
-    body: "Each rep dials up to 10 lines at once (10:1), so they spend the hour talking instead of waiting on rings and voicemail. Lists, dispositions, and callbacks stay in the CRM.",
+    body: "Your account dials up to 10 lines at once (10:1), so reps spend the hour talking instead of waiting on rings and voicemail. Lists, dispositions, and callbacks stay in the CRM.",
     icon: "zap",
   },
   {
@@ -63,7 +63,7 @@ export const complianceItems = [
 export const dialerFaq = [
   { q: "Do I need consent before the AI calls someone?", a: "For AI-placed marketing calls to mobile numbers, yes: prior express written consent is required under the TCPA. The dialer checks for that consent on the contact before dialing and keeps the record. Collecting the consent in the first place is your responsibility." },
   { q: "Do you scrub my lists against the National Do Not Call Registry?", a: "No. Scrub any list against the federal registry and applicable state lists before you upload it. Once numbers are in, the in-system DNC list suppresses opt-outs and do-not-call requests across voice and SMS automatically." },
-  { q: "How many lines does the dialer run?", a: "Up to 10 lines per rep at once (a 10:1 ratio). When someone answers, the call connects to the rep and the other lines drop." },
+  { q: "How many lines does the dialer run?", a: "Up to 10 lines per account at once (a 10:1 ratio). When someone answers, the call connects to the rep and the other lines drop." },
   { q: "Can my human team use the dialer too?", a: "Yes. The dialer works for human agents, AI assistants, or a mix. Recordings, transcripts, and dispositions are identical either way." },
   { q: "What happens if someone asks to be removed?", a: "They're suppressed immediately across voice and SMS, and the revocation is logged for your records." },
 ];

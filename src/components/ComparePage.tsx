@@ -9,70 +9,87 @@ import { tiers } from "../content/pricing";
 
 const cardIcons: IconName[] = ["mic", "phone", "zap", "chart"];
 
-function Cell({ value }: { value: CompareCell }) {
-  if (value === true) {
-    return (
-      <span className="inline-flex items-center">
-        <Icon name="check" className="h-5 w-5 text-green-600" />
-        <span className="sr-only">Included</span>
-      </span>
-    );
-  }
-  if (value === false) {
-    return <span className="text-mcd-muted"><span aria-hidden="true">-</span><span className="sr-only">Not included</span></span>;
-  }
-  return <span className="text-xs font-medium text-mcd-ink sm:text-sm">{value}</span>;
+/** Competitor cells that state the feature is missing get the red X; add-on or partial answers get the amber dash. */
+const missing = /^(Not offered|Not native|Not listed|Not published|None found|Planned, not live)/;
+
+type Mark = "yes" | "no" | "partial";
+const markStyle: Record<Mark, { bg: string; icon: IconName | null; label: string }> = {
+  yes: { bg: "bg-[#22C55E]", icon: "check", label: "Included" },
+  no: { bg: "bg-[#EF4444]", icon: "x", label: "Not included" },
+  partial: { bg: "bg-amber-400", icon: null, label: "Partly, or as an add-on" },
+};
+
+function Badge({ mark }: { mark: Mark }) {
+  const m = markStyle[mark];
+  return (
+    <span aria-hidden="true" className={`inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${m.bg}`}>
+      {m.icon ? <Icon name={m.icon} className="h-4 w-4 text-white [stroke-width:3]" /> : <span className="h-[3px] w-3 rounded-full bg-white" />}
+    </span>
+  );
+}
+
+/** In the setup-fees row "None" is the good answer, so it gets the check and a required fee gets the X. */
+function markFor(value: CompareCell, side: "mercury" | "competitor", label: string): Mark {
+  if (value === true) return "yes";
+  if (value === false) return "no";
+  if (side === "mercury") return "yes";
+  if (label === "Setup fees") return /^None/.test(value) ? "yes" : "no";
+  return missing.test(value) ? "no" : "partial";
+}
+
+function Cell({ value, side, label }: { value: CompareCell; side: "mercury" | "competitor"; label: string }) {
+  const mark = markFor(value, side, label);
+  const text = typeof value === "string" && !missing.test(value) ? value : null;
+  return (
+    <span className="flex flex-col items-center justify-center gap-1.5">
+      <Badge mark={mark} />
+      <span className="sr-only">{markStyle[mark].label}{text ? ": " : ""}</span>
+      {text && <span className={`text-[11px] leading-snug sm:text-xs ${side === "mercury" ? "text-white/70" : "text-mcd-muted"}`}>{text}</span>}
+    </span>
+  );
 }
 
 function CompareTable({ comparison }: { comparison: Comparison }) {
-  const { brandColor, darkHeader } = comparison;
-  const headerStyle = darkHeader
-    ? { backgroundColor: brandColor, color: "#ffffff" }
-    : { backgroundColor: `${brandColor}1A`, color: brandColor };
-  const cellTint = { backgroundColor: `${brandColor}0D` };
-
+  const { logo } = comparison;
   return (
-    <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-      <table className="w-full min-w-[340px] table-fixed border-collapse text-left text-sm">
+    <div className="overflow-hidden rounded-[1.25rem] border border-mcd-line bg-white shadow-xl shadow-mcd-navy/5">
+      <table className="w-full table-fixed border-collapse text-left">
         <colgroup>
-          <col className="w-[32%] sm:w-[38%]" />
-          <col className="w-[31%]" />
-          <col className="w-[31%]" />
+          <col className="w-[34%] sm:w-[40%]" />
+          <col className="w-[33%] sm:w-[30%]" />
+          <col className="w-[33%] sm:w-[30%]" />
         </colgroup>
         <thead>
-          <tr className="border-b border-mcd-line">
-            <th scope="col" className="sticky left-0 z-10 bg-mcd-surface px-3 py-4 sm:px-5 text-xs font-bold uppercase tracking-wider text-mcd-navy">Feature</th>
-            <th scope="col" className="px-3 py-4 sm:px-5 text-center font-bold" style={headerStyle}>
-              <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
-                {comparison.logo && (
-                  <span className={`inline-flex h-9 items-center rounded-lg px-2 shadow-sm ${comparison.logo.onDark ? "bg-mcd-navy ring-1 ring-white/20" : "bg-white"}`}>
+          <tr className="bg-[#DCE9FD]">
+            <th scope="col" className="px-3 py-5 text-center text-sm font-extrabold text-mcd-navy sm:px-6 sm:text-lg">Features</th>
+            <th scope="col" className="px-2 py-5 text-center sm:px-4">
+              <span className="flex items-center justify-center">
+                {logo ? (
+                  <span className={logo.onDark ? "inline-flex items-center rounded-lg bg-mcd-navy px-2 py-1.5" : "inline-flex items-center"}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={comparison.logo.src} alt={comparison.logo.wordmark ? comparison.competitor : ""} className={`${comparison.logo.wordmark ? "h-6 max-w-[120px]" : "h-6 w-6"} object-contain`} />
+                    <img src={logo.src} alt={logo.wordmark ? comparison.competitor : ""} className={`${logo.wordmark ? "h-5 max-w-full sm:h-7 sm:max-w-[160px]" : "h-7 w-7"} object-contain`} />
                   </span>
-                )}
-                <span className={comparison.logo?.wordmark ? "sr-only" : ""}>{comparison.competitor}</span>
+                ) : null}
+                <span className={logo?.wordmark ? "sr-only" : "ml-2 text-sm font-extrabold text-mcd-navy sm:text-lg"}>{comparison.competitor}</span>
               </span>
             </th>
-            <th scope="col" className="bg-mcd-navy px-3 py-4 sm:px-5 text-center font-bold text-white">
-              <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/mcd-icon.svg" alt="" className="h-6 w-auto" />
-                <span>Mercury Call Desk</span>
-              </span>
+            <th scope="col" className="px-2 py-3 text-center sm:px-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/mcd-logo-light.svg" alt="Mercury Call Desk" className="mx-auto -my-4 h-12 w-auto max-w-full object-contain sm:h-20 sm:max-w-[240px]" />
             </th>
           </tr>
         </thead>
         <tbody>
           {comparison.rows.map((row) => (
-            <tr key={row.label} className="border-b border-mcd-line last:border-0">
-              <th scope="row" className="sticky left-0 z-10 bg-white px-3 py-4 text-xs font-bold text-mcd-navy sm:px-5 sm:text-sm">
+            <tr key={row.label} className="border-t border-mcd-line">
+              <th scope="row" className="px-3 py-5 text-xs font-medium text-mcd-navy sm:px-6 sm:text-base">
                 {row.label}
               </th>
-              <td className="px-3 py-4 sm:px-5 text-center" style={cellTint}>
-                <Cell value={row.competitor} />
+              <td className="px-2 py-4 text-center align-middle sm:px-4">
+                <Cell value={row.competitor} side="competitor" label={row.label} />
               </td>
-              <td className="bg-green-50/40 px-3 py-4 sm:px-5 text-center">
-                <Cell value={row.mercury} />
+              <td className="border-t border-white/10 bg-[#0B1C3A] px-2 py-4 text-center align-middle sm:px-4">
+                <Cell value={row.mercury} side="mercury" label={row.label} />
               </td>
             </tr>
           ))}
@@ -191,6 +208,11 @@ export default function ComparePage({ comparison }: { comparison: Comparison }) 
           />
           <div className="mt-10">
             <CompareTable comparison={comparison} />
+            <p className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-mcd-muted">
+              {(["yes", "partial", "no"] as const).map((m) => (
+                <span key={m} className="inline-flex items-center gap-2"><span className="scale-75"><Badge mark={m} /></span>{markStyle[m].label}</span>
+              ))}
+            </p>
           </div>
           {comparison.sources && comparison.sources.length > 0 && (
             <p className="mt-3 text-xs leading-relaxed text-mcd-muted">
