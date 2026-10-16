@@ -21,7 +21,7 @@ function Cell({ value }: { value: CompareCell }) {
   if (value === false) {
     return <span className="text-mcd-muted"><span aria-hidden="true">-</span><span className="sr-only">Not included</span></span>;
   }
-  return <span className="text-sm font-medium text-mcd-ink">{value}</span>;
+  return <span className="text-xs font-medium text-mcd-ink sm:text-sm">{value}</span>;
 }
 
 function CompareTable({ comparison }: { comparison: Comparison }) {
@@ -33,9 +33,9 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
 
   return (
     <div className="overflow-x-auto rounded-xl2 border border-mcd-line bg-white shadow-sm">
-      <table className="w-full min-w-[420px] table-fixed border-collapse text-left text-sm">
+      <table className="w-full min-w-[340px] table-fixed border-collapse text-left text-sm">
         <colgroup>
-          <col className="w-[38%]" />
+          <col className="w-[32%] sm:w-[38%]" />
           <col className="w-[31%]" />
           <col className="w-[31%]" />
         </colgroup>
@@ -43,15 +43,29 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
           <tr className="border-b border-mcd-line">
             <th scope="col" className="sticky left-0 z-10 bg-mcd-surface px-3 py-4 sm:px-5 text-xs font-bold uppercase tracking-wider text-mcd-navy">Feature</th>
             <th scope="col" className="px-3 py-4 sm:px-5 text-center font-bold" style={headerStyle}>
-              {comparison.competitor}
+              <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
+                {comparison.logo && (
+                  <span className={`inline-flex h-9 items-center rounded-lg px-2 shadow-sm ${comparison.logo.onDark ? "bg-mcd-navy ring-1 ring-white/20" : "bg-white"}`}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={comparison.logo.src} alt={comparison.logo.wordmark ? comparison.competitor : ""} className={`${comparison.logo.wordmark ? "h-6 max-w-[120px]" : "h-6 w-6"} object-contain`} />
+                  </span>
+                )}
+                <span className={comparison.logo?.wordmark ? "sr-only" : ""}>{comparison.competitor}</span>
+              </span>
             </th>
-            <th scope="col" className="bg-mcd-navy px-3 py-4 sm:px-5 text-center font-bold text-white">Mercury Call Desk</th>
+            <th scope="col" className="bg-mcd-navy px-3 py-4 sm:px-5 text-center font-bold text-white">
+              <span className="flex flex-col items-center justify-center gap-2 sm:flex-row">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/brand/mcd-icon.svg" alt="" className="h-6 w-auto" />
+                <span>Mercury Call Desk</span>
+              </span>
+            </th>
           </tr>
         </thead>
         <tbody>
           {comparison.rows.map((row) => (
             <tr key={row.label} className="border-b border-mcd-line last:border-0">
-              <th scope="row" className="sticky left-0 z-10 bg-white px-3 py-4 sm:px-5 font-bold text-mcd-navy">
+              <th scope="row" className="sticky left-0 z-10 bg-white px-3 py-4 text-xs font-bold text-mcd-navy sm:px-5 sm:text-sm">
                 {row.label}
               </th>
               <td className="px-3 py-4 sm:px-5 text-center" style={cellTint}>
@@ -178,6 +192,18 @@ export default function ComparePage({ comparison }: { comparison: Comparison }) 
           <div className="mt-10">
             <CompareTable comparison={comparison} />
           </div>
+          {comparison.sources && comparison.sources.length > 0 && (
+            <p className="mt-3 text-xs leading-relaxed text-mcd-muted">
+              {comparison.competitor} details from public sources{comparison.checked ? `, checked ${comparison.checked}` : ""}:{" "}
+              {comparison.sources.map((src, i) => (
+                <span key={src.url}>
+                  {i > 0 && ", "}
+                  <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-mcd-blue">{src.label}</a>
+                </span>
+              ))}
+              . Pricing and features change; check with {comparison.competitor} for current terms.
+            </p>
+          )}
           <p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-relaxed text-mcd-ink">
             {comparison.verdict}
           </p>
