@@ -9,7 +9,7 @@ import { links, site } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Whether you're exploring integrations, reseller opportunities, or custom partnerships, ${site.name} makes it easy to deliver smarter customer communication solutions that scale.`,,
+  description: `Whether you're exploring integrations, reseller opportunities, or custom partnerships, ${site.name} makes it easy to deliver smarter customer communication solutions that scale.`,
   alternates: { canonical: "https://mercurycalldesk.com/contact" },
 };
 

@@ -91,7 +91,7 @@ export default function HomePage() {
       {/* ── One bill, not three ── */}
       <section className="bg-mcd-navy py-14 text-white sm:py-20">
         <div className="container-x">
-          <SectionHeading eyebrow={oneBill.eyebrow} title={oneBill.title} body={oneBill.body} />
+          <SectionHeading dark eyebrow={oneBill.eyebrow} title={oneBill.title} body={oneBill.body} />
           <div className="mt-10 grid gap-5 lg:grid-cols-2">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-wider text-white/50">The old way</p>

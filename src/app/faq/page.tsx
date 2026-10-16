@@ -6,7 +6,7 @@ import { faqSections } from "@/content/faq";
 
 export const metadata: Metadata = {
   title: "Help & FAQ",
-  description: "Everything you need to know about your AI phone assistant, from setup to optimization. FAQs, quick fixes, and official info on every feature.",,
+  description: "Everything you need to know about your AI phone assistant, from setup to optimization. FAQs, quick fixes, and official info on every feature.",
   alternates: { canonical: "https://mercurycalldesk.com/faq" },
 };
 
