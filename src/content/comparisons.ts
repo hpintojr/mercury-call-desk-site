@@ -214,6 +214,7 @@ export const comparisons: Comparison[] = [
     competitor: "ClickFunnels",
     brandColor: "#080436",
     darkHeader: true,
+    logo: { src: "/vs-logos/clickfunnels.svg", wordmark: true },
     tagline:
       "Funnels capture leads. Mercury answers them, calls them back, and books the job.",
     competitorPrice: "From $97/mo",
@@ -346,6 +347,7 @@ export const comparisons: Comparison[] = [
     slug: "kartra",
     competitor: "Kartra",
     brandColor: "#26BDDE",
+    logo: { src: "/vs-logos/kartra.svg", wordmark: true },
     tagline:
       "Marketing all-in-one is not operations all-in-one. Mercury adds the phones, AI voice, and dispatch.",
     competitorPrice: "From $52/mo billed annually",
