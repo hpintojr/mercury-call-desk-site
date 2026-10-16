@@ -76,7 +76,7 @@ export const tiers: Tier[] = [
     lead: "Everything in Professional, plus:",
     features: [
       { title: "SaaS resale rights", detail: "Sell the platform under your brand at whatever price you set" },
-      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel announced dispatch but has not shipped it." },
+      { title: "Dispatch", detail: "Job tracking, technician 'I'm on my way' status updates, and AI customer notifications. GoHighLevel relies on Jobber or marketplace apps." },
       { title: "AI agentic", detail: "AI agents that build workflows, manage dispatch, and handle follow-ups autonomously" },
       { title: "Data migration", detail: "HighLevel import and custom MCP data tools" },
       { title: "Lower usage rates", detail: "2.00x wholesale on SMS and voice" },
