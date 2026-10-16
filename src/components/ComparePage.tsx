@@ -62,10 +62,6 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
         <thead>
           <tr className="bg-[#DCE9FD]">
             <th scope="col" className="px-3 py-5 text-center text-sm font-extrabold text-mcd-navy sm:px-6 sm:text-lg">Features</th>
-            <th scope="col" className="px-2 py-3 text-center sm:px-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/mcd-logo-light.svg" alt="Mercury Call Desk" className="mx-auto -my-4 h-12 w-auto max-w-full object-contain sm:h-20 sm:max-w-[240px]" />
-            </th>
             <th scope="col" className="px-2 py-5 text-center sm:px-4">
               <span className="flex items-center justify-center">
                 {logo ? (
@@ -77,6 +73,10 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
                 <span className={logo?.wordmark ? "sr-only" : "ml-2 text-sm font-extrabold text-mcd-navy sm:text-lg"}>{comparison.competitor}</span>
               </span>
             </th>
+            <th scope="col" className="px-2 py-3 text-center sm:px-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/mcd-logo-light.svg" alt="Mercury Call Desk" className="mx-auto -my-4 h-12 w-auto max-w-full object-contain sm:h-20 sm:max-w-[240px]" />
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -85,11 +85,11 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
               <th scope="row" className="px-3 py-5 text-xs font-medium text-mcd-navy sm:px-6 sm:text-base">
                 {row.label}
               </th>
-              <td className="border-t border-white/10 bg-[#0B1C3A] px-2 py-4 text-center align-middle sm:px-4">
-                <Cell value={row.mercury} side="mercury" label={row.label} />
-              </td>
               <td className="px-2 py-4 text-center align-middle sm:px-4">
                 <Cell value={row.competitor} side="competitor" label={row.label} />
+              </td>
+              <td className="border-t border-white/10 bg-[#0B1C3A] px-2 py-4 text-center align-middle sm:px-4">
+                <Cell value={row.mercury} side="mercury" label={row.label} />
               </td>
             </tr>
           ))}
