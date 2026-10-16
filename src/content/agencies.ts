@@ -79,7 +79,6 @@ export const pairs: PlanPair[] = [
       { label: "Dispatch", ghl: { text: "Not native; Jobber or marketplace apps", no: true }, mcd: { text: "Native job tracking and tech updates", ok: true } },
       { label: "AI voice agents", ghl: { text: "Add-on, $50 or $97/mo per sub-account" }, mcd: { text: "Included, usage applies", ok: true } },
       { label: "Parallel dialer", ghl: { text: "Not native", no: true }, mcd: { text: "10 lines per account", ok: true } },
-      { label: "Your usage cost", ghl: { text: "Published LC Phone rates" }, mcd: { text: "Agency rates: $0.030/SMS segment, $0.050/min", ok: true } },
     ],
   },
 ];
