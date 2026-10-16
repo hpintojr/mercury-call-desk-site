@@ -74,9 +74,9 @@ function CompareTable({ comparison }: { comparison: Comparison }) {
                 <span className={logo?.wordmark ? "sr-only" : "ml-2 text-sm font-extrabold text-mcd-navy sm:text-lg"}>{comparison.competitor}</span>
               </span>
             </th>
-            <th scope="col" className="px-2 py-3 text-center sm:px-4">
+            <th scope="col" className="bg-[#0B1C3A] px-2 py-3 text-center sm:px-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/mcd-logo-light.svg" alt="Mercury Call Desk" className="mx-auto -my-4 h-12 w-auto max-w-full object-contain sm:h-20 sm:max-w-[240px]" />
+              <img src="/brand/mcd-logo-dark.svg" alt="Mercury Call Desk" className="mx-auto -my-4 h-12 w-auto max-w-full object-contain sm:h-20 sm:max-w-[240px]" />
             </th>
           </tr>
         </thead>
