@@ -36,7 +36,7 @@ export const links = {
   demo: "https://crm.sulus.ai/b/demo-call-calendar", // Sulus CRM "Demo Call Calendar" public booking page
   partnerCall: "https://crm.sulus.ai/b/agency-partner-call", // Sulus CRM "Agency Partner Call" booking page (/partner)
   demoCall: "tel:+19497750451", // number that rings the MCD demo assistant
-  login: "#", // TODO: customer login URL (e.g. https://crm.sulus.ai)
+  login: "https://login.mercurycalldesk.com/", // customer dashboard login
   /** Affiliate program (footer). */
   affiliate: "/partner",
   affiliateAgreement: "/affiliate-agreement",
