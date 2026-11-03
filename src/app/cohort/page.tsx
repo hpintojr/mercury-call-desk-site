@@ -70,13 +70,13 @@ export default function CohortPage() {
 
               <div className="mt-6 flex items-end gap-3">
                 <span className="text-gradient text-6xl font-extrabold leading-none sm:text-7xl">$10</span>
-                <span className="pb-1 text-sm font-semibold text-white/70">to get started<br /><span className="font-normal text-white/50">credited to your wallet</span></span>
+                <span className="pb-1 text-sm font-semibold text-white/70">to get started<br /><span className="font-normal text-white/50">credited to your usage wallet</span></span>
               </div>
 
               <ul className="mt-6 space-y-2.5 text-sm text-white/85">
                 {[
                   "Full Agency access for 90 days",
-                  "Your $10 funds real SMS and email sends",
+                  "Your $10 covers real usage: SMS, email, voice, and AI",
                   "White-label workspaces for your clients",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-cyan" />{t}</li>
@@ -135,7 +135,7 @@ export default function CohortPage() {
             {aiTools.map((t) => <FeatureCard key={t.title} title={t.title} body={t.body} icon={t.icon} dark />)}
           </div>
           <p className="mt-8 text-center text-sm text-white/60">
-            AI Voice requires a connected voice account. The $10 wallet credit is for SMS and email usage.
+            AI Voice requires a connected voice account. Your $10 wallet credit applies to all usage on the account, including SMS, email, voice minutes, and AI.
           </p>
         </div>
       </section>
@@ -149,13 +149,13 @@ export default function CohortPage() {
               Try Agency access for 90 days with $10 upfront.
             </h2>
             <p className="mt-4 text-mcd-muted sm:text-lg">
-              Your $10 goes into your wallet for SMS and email usage. After the 90-day trial, cohort membership continues at <strong className="font-semibold text-mcd-ink">$333/month</strong>.
+              Your $10 goes into your usage wallet and covers whatever you use first: SMS, email, voice minutes, or AI. After the 90-day trial, cohort membership continues at <strong className="font-semibold text-mcd-ink">$333/month</strong>.
             </p>
             <p className="mt-4 text-mcd-muted">
               <strong className="font-semibold text-mcd-ink">A team of one?</strong> After the trial, you can request a move to the <Link href="/pricing" className="font-semibold text-mcd-blue underline">Starter plan at $99/month</Link> plus usage.
             </p>
             <ul className="mt-6 space-y-2 text-sm text-mcd-ink">
-              {["90 days of Agency access", "$10 upfront, credited to your SMS and email wallet", "$333/month cohort rate after the trial"].map((t) => (
+              {["90 days of Agency access", "$10 upfront, credited to your usage wallet (SMS, email, voice, AI)", "$333/month cohort rate after the trial"].map((t) => (
                 <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-blue" />{t}</li>
               ))}
             </ul>
