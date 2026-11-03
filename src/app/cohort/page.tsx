@@ -66,7 +66,7 @@ export default function CohortPage() {
                 <p className="eyebrow text-mcd-cyan">The Cohort II offer</p>
                 <span className="shrink-0 rounded-full bg-gradient-to-r from-mcd-blue to-mcd-cyan px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-mcd-navy">90-day trial</span>
               </div>
-              <h2 className="mt-4 text-2xl font-extrabold leading-tight sm:text-3xl">90 days to build a workflow you can use.</h2>
+              <h2 className="mt-4 text-2xl font-extrabold leading-tight text-balance sm:text-3xl">90 days to build a workflow <span className="whitespace-nowrap">you can use.</span></h2>
 
               <div className="mt-6 flex items-end gap-3">
                 <span className="text-gradient text-6xl font-extrabold leading-none sm:text-7xl">$10</span>
