@@ -35,8 +35,10 @@ export default function CohortPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-hero text-white">
-        <Image src="/brand/mcd-icon.svg" alt="" width={660} height={480} aria-hidden unoptimized className="pointer-events-none absolute -right-16 -top-10 w-64 opacity-10 sm:w-96 lg:w-[30rem]" />
-        <div className="container-x relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-12 lg:py-24">
+        {/* MasterClass-style block art, as on the original cohort page */}
+        <Image src="/brand/cohort/hero-blocks.svg" alt="" width={1200} height={200} aria-hidden unoptimized className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full object-cover object-bottom opacity-90 sm:h-36 lg:h-44 [mask-image:linear-gradient(to_top,#000_70%,transparent)]" />
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-[linear-gradient(to_right,#439fdb_0_11.11%,#f5c400_11.11%_22.22%,#c3dfc2_22.22%_33.33%,#e4e4e4_33.33%_55.56%,#35458c_55.56%_77.78%,#f5c400_77.78%)]" />
+        <div className="container-x relative grid items-center gap-10 pt-14 pb-40 sm:pt-20 sm:pb-48 lg:grid-cols-12 lg:pt-24 lg:pb-56">
           <div className="lg:col-span-7">
             <nav aria-label="Breadcrumb" className="mb-5 text-xs text-white/60">
               <ol className="flex items-center gap-2">
@@ -58,18 +60,38 @@ export default function CohortPage() {
             </div>
           </div>
 
-          <aside className="rounded-xl2 border border-white/15 bg-white/5 p-6 backdrop-blur sm:p-8 lg:col-span-5">
-            <p className="eyebrow text-mcd-cyan">The Cohort II offer</p>
-            <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl">90 days to build a workflow you can use.</h2>
-            <p className="mt-5 text-5xl font-extrabold leading-none sm:text-6xl">
-              $10 <span className="text-base font-semibold text-white/70">to get started</span>
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-white/70">
-              Every dollar goes into your SMS and email wallet. Use it to test your follow-up with real messages.
-            </p>
-            <p className="mt-5 border-t border-white/10 pt-4 text-sm text-white/80">
-              Then <strong className="font-bold text-white">$333/month</strong> at your cohort rate.
-            </p>
+          <aside className="rounded-xl2 bg-gradient-to-br from-mcd-blue via-mcd-sky to-mcd-cyan p-px shadow-2xl shadow-mcd-sky/20 lg:col-span-5">
+            <div className="rounded-[calc(var(--radius-xl2)-1px)] bg-mcd-navy p-6 sm:p-8">
+              <div className="flex items-center justify-between gap-3">
+                <p className="eyebrow text-mcd-cyan">The Cohort II offer</p>
+                <span className="shrink-0 rounded-full bg-gradient-to-r from-mcd-blue to-mcd-cyan px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-mcd-navy">90-day trial</span>
+              </div>
+              <h2 className="mt-4 text-2xl font-extrabold leading-tight sm:text-3xl">90 days to build a workflow you can use.</h2>
+
+              <div className="mt-6 flex items-end gap-3">
+                <span className="text-gradient text-6xl font-extrabold leading-none sm:text-7xl">$10</span>
+                <span className="pb-1 text-sm font-semibold text-white/70">to get started<br /><span className="font-normal text-white/50">credited to your wallet</span></span>
+              </div>
+
+              <ul className="mt-6 space-y-2.5 text-sm text-white/85">
+                {[
+                  "Full Agency access for 90 days",
+                  "Your $10 funds real SMS and email sends",
+                  "White-label workspaces for your clients",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-cyan" />{t}</li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
+                <p className="text-sm text-white/70">After the trial, your cohort rate</p>
+                <p className="text-right"><span className="text-2xl font-extrabold text-white">$333</span><span className="text-sm text-white/60">/mo</span></p>
+              </div>
+
+              <div className="mt-6">
+                <Button href={TRIAL_URL} size="lg" full>Start your 90-day trial</Button>
+              </div>
+            </div>
           </aside>
         </div>
       </section>
