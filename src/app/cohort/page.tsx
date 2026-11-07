@@ -5,14 +5,30 @@ import SectionHeading from "@/components/SectionHeading";
 import FeatureCard from "@/components/FeatureCard";
 import Button from "@/components/Button";
 import Icon, { type IconName } from "@/components/Icon";
+import styles from "./cohort.module.css";
 
 export const metadata: Metadata = {
   title: "MasterClass Executive Cohort | Agency CRM Trial",
   description:
-    "A Mercury Call Desk offer for MasterClass Executive Cohort II: 90 days of Agency access for $10 upfront, then $333/month at your cohort rate.",
+    "A Mercury Call Desk offer for MasterClass Executive Cohort II: 90 days of Agency access with $10 in usage credit for SMS, email, voice, and AI. Then choose $333/month or $3,333/year.",
 };
 
 const TRIAL_URL = "https://login.mercurycalldesk.com/checkout/2NgSx98BoGVLUVDgjPnh?cycle=monthly";
+const ANNUAL_URL = "https://login.mercurycalldesk.com/checkout/2NgSx98BoGVLUVDgjPnh?cycle=annual";
+
+function CohortBrands({ hero = false }: { hero?: boolean }) {
+  return (
+    <div className={`${styles.brands} ${hero ? styles.heroBrands : styles.footerBrands}`}>
+      <div className={styles.brandSlot}>
+        <Image src="/brand/cohort/masterclass-executive.png" alt="MasterClass Executive" width={440} height={150} unoptimized className={styles.masterclassLogo} />
+      </div>
+      <span aria-hidden="true" className={styles.cohortSquare}><span /></span>
+      <div className={styles.brandSlot}>
+        <Image src="/brand/cohort/chicago-booth.png" alt="Chicago Booth School of Business" width={810} height={205} unoptimized className={styles.boothLogo} />
+      </div>
+    </div>
+  );
+}
 
 const features: { title: string; body: string; icon: IconName }[] = [
   { title: "Contacts and sales pipelines", body: "Keep contact details and conversations together, track deals by stage, and assign tasks so every lead has a next step.", icon: "users" },
@@ -47,6 +63,7 @@ export default function CohortPage() {
                 <li className="text-white/90">MasterClass Executive Cohort II</li>
               </ol>
             </nav>
+            <CohortBrands hero />
             <p className="eyebrow text-mcd-cyan">A Mercury Call Desk offer for Cohort II</p>
             <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
               Build your agency <span className="text-gradient">with Mercury.</span>
@@ -55,8 +72,8 @@ export default function CohortPage() {
               Try AI Voice, automated follow-up, and a CRM you can put your own brand on. You have 90 days to run a real client workflow.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#trial" size="lg">Explore the 90-day offer</Button>
-              <Button href="#features" size="lg" variant="ghost">What&apos;s inside</Button>
+              <Button href="#trial" size="lg" className={styles.glassButton}>Explore the 90-day offer</Button>
+              <Button href="#features" size="lg" variant="ghost" className={`${styles.glassButton} ${styles.glassSecondary}`}>What&apos;s inside</Button>
             </div>
           </div>
 
@@ -70,26 +87,26 @@ export default function CohortPage() {
 
               <div className="mt-6 flex items-end gap-3">
                 <span className="text-gradient text-6xl font-extrabold leading-none sm:text-7xl">$10</span>
-                <span className="pb-1 text-sm font-semibold text-white/70">to get started<br /><span className="font-normal text-white/50">credited to your usage wallet</span></span>
+                <span className="pb-1 text-sm font-semibold text-white/90">in usage credit<br /><span className="font-normal text-white/70">added to your platform wallet</span></span>
               </div>
 
               <ul className="mt-6 space-y-2.5 text-sm text-white/85">
                 {[
-                  "Full Agency access for 90 days",
-                  "Your $10 covers real usage: SMS, email, voice, and AI",
+                  "90 days with no platform subscription fee",
+                  "Your $10 pays for SMS, email, voice, and AI as you use them",
                   "White-label workspaces for your clients",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-cyan" />{t}</li>
                 ))}
               </ul>
 
-              <div className="mt-6 flex items-baseline justify-between gap-3 border-t border-white/10 pt-5">
-                <p className="text-sm text-white/70">After the trial, your cohort rate</p>
-                <p className="text-right"><span className="text-2xl font-extrabold text-white">$333</span><span className="text-sm text-white/60">/mo</span></p>
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <p className="text-sm text-white/70">After the trial, choose your cohort rate</p>
+                <p className="mt-2 font-semibold text-white">$333/month <span className="font-normal text-white/60">or</span> $3,333/year</p>
               </div>
 
               <div className="mt-6">
-                <Button href={TRIAL_URL} size="lg" full>Start your 90-day trial</Button>
+                <Button href="#trial" size="lg" full className={styles.glassButton}>Choose your plan</Button>
               </div>
             </div>
           </aside>
@@ -142,58 +159,70 @@ export default function CohortPage() {
 
       {/* Trial offer */}
       <section id="trial" className="scroll-mt-24 py-14 sm:py-20">
-        <div className="container-x grid items-start gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <div className="container-x">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">The MasterClass Executive Cohort trial</p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl lg:text-5xl">
-              Try Agency access for 90 days with $10 upfront.
+              90 days of Agency access.<br />$10 in usage credit.
             </h2>
             <p className="mt-4 text-mcd-muted sm:text-lg">
-              Your $10 goes into your usage wallet and covers whatever you use first: SMS, email, voice minutes, or AI. After the 90-day trial, cohort membership continues at <strong className="font-semibold text-mcd-ink">$333/month</strong>.
+              Explore the Agency platform for 90 days with no subscription fee. Your $10 is added to your usage wallet to pay for SMS, email, voice minutes, and AI as you use them. Choose your membership billing for after the trial.
             </p>
-            <p className="mt-4 text-mcd-muted">
-              <strong className="font-semibold text-mcd-ink">A team of one?</strong> After the trial, you can request a move to the <Link href="/pricing" className="font-semibold text-mcd-blue underline">Starter plan at $99/month</Link> plus usage.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-mcd-ink">
-              {["90 days of Agency access", "$10 upfront, credited to your usage wallet (SMS, email, voice, AI)", "$333/month cohort rate after the trial"].map((t) => (
-                <li key={t} className="flex items-start gap-2"><Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-mcd-blue" />{t}</li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <Button href={TRIAL_URL} size="lg">Start your 90-day trial</Button>
-            </div>
           </div>
-
-          <div className="lg:col-span-5">
-            <div className="rounded-xl2 border border-mcd-line bg-mcd-surface p-6 sm:p-8">
+          <div className={styles.planGrid}>
+            {[
+              { name: "Monthly", price: "$333", cycle: "month", billing: "Billed monthly after your 90-day trial.", note: "Keep your commitment month to month.", href: TRIAL_URL, annual: false },
+              { name: "Yearly", price: "$3,333", cycle: "year", billing: "Billed annually after your 90-day trial.", note: "Save $663 a year compared with monthly billing.", href: ANNUAL_URL, annual: true },
+            ].map((plan) => (
+              <article key={plan.name} className={`${styles.planCard} ${plan.annual ? styles.annualCard : ""}`} aria-labelledby={`plan-${plan.name.toLowerCase()}`}>
+                <div className={styles.planHeading}>
+                  <h3 id={`plan-${plan.name.toLowerCase()}`}>{plan.name}</h3>
+                  {plan.annual && <span className={styles.savingBadge}>Save $663/year</span>}
+                </div>
+                <p className={styles.planIntro}>Start with $10 in usage credit</p>
+                <p className={styles.planPrice}>{plan.price}<span>/{plan.cycle}</span></p>
+                <p className={styles.billingNote}>{plan.billing}</p>
+                <p className={styles.planNote}>{plan.note}</p>
+                <ul className={styles.planFeatures}>
+                  {["Full Agency platform and client workspaces", "AI Voice, AI agents, and automations", "$10 credited to your usage wallet"].map((item) => (
+                    <li key={item}><Icon name="check" className="h-4 w-4 shrink-0 text-mcd-cyan" />{item}</li>
+                  ))}
+                </ul>
+                <Button href={plan.href} size="lg" full className={styles.glassButton}>Start trial · {plan.name}</Button>
+                <p className={styles.planTerms}>Then {plan.price}/{plan.cycle}. Usage charges apply.</p>
+              </article>
+            ))}
+          </div>
+          <p className="mx-auto mt-7 max-w-3xl text-center text-sm leading-relaxed text-mcd-muted">
+            <strong className="font-semibold text-mcd-ink">A team of one?</strong> After the trial, you can request a move to the <Link href="/pricing" className="font-semibold text-mcd-blue underline">Starter plan at $99/month</Link> plus usage.
+          </p>
+          <div className="mt-12">
+            <div className={`${styles.strategyCard} rounded-xl2 border border-mcd-line bg-mcd-surface p-6 sm:p-8`}>
+              <div>
               <p className="eyebrow">Agency strategy</p>
               <h3 className="mt-3 text-2xl font-extrabold leading-tight text-mcd-navy">Need help growing your agency?</h3>
               <p className="mt-3 text-sm leading-relaxed text-mcd-muted">
                 Talk through your offer, client onboarding, or which workflows to automate first.
               </p>
-              <div className="mt-6">
-                <Button href="/contact" variant="outline">Request a strategy call</Button>
               </div>
+              <Button href="/contact" className={`${styles.glassButton} ${styles.glassLight}`}>Request a strategy call</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Cohort brands band */}
-      <section className="border-t border-mcd-line bg-white py-12 sm:py-16">
+      <section className={`${styles.brandBand} py-12 sm:py-16`}>
         <div className="container-x text-center">
           <p className="eyebrow">MasterClass Executive Cohort II</p>
-          <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center justify-center gap-8 sm:flex-row sm:gap-12">
-            <Image src="/brand/cohort/masterclass-executive.png" alt="MasterClass Executive" width={440} height={150} unoptimized className="h-auto w-44 invert sm:w-52" />
-            <span aria-hidden className="grid h-10 w-10 shrink-0 place-items-center bg-[#ffcd00]">
-              <span className="block h-3.5 w-3.5 bg-[#ff7900]" />
-            </span>
-            <Image src="/brand/cohort/chicago-booth.png" alt="Chicago Booth School of Business" width={810} height={205} unoptimized className="h-auto w-60 invert sm:w-72" />
+          <CohortBrands />
+          <div aria-hidden="true" className={styles.colorRow}>
+            {["#439fdb", "#ffcd00", "#c3dfc2", "#e4e4e4", "#35458c", "#ff7900", "#ffcd00"].map((color, index) => <span key={index} style={{ backgroundColor: color }} />)}
           </div>
-          <div aria-hidden className="mx-auto mt-8 h-3 w-36 bg-[linear-gradient(to_right,#439fdb_0_11.11%,#f5c400_11.11%_22.22%,#c3dfc2_22.22%_33.33%,#e4e4e4_33.33%_55.56%,#35458c_55.56%_77.78%,#f5c400_77.78%)]" />
           <p className="mt-6 text-sm text-mcd-muted">Trial offered by Mercury Call Desk.</p>
         </div>
       </section>
     </>
   );
 }
+

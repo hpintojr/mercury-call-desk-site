@@ -1,0 +1,81 @@
+.brands {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+}
+.brandSlot { display: flex; align-items: center; justify-content: center; min-width: 0; }
+.masterclassLogo { display: block; width: 84%; height: auto; }
+.boothLogo { display: block; width: 100%; height: auto; }
+.cohortSquare { display: grid; place-items: center; width: 40px; aspect-ratio: 1; background: #ffcd00; }
+.cohortSquare span { width: 34%; aspect-ratio: 1; background: #ff7900; }
+.heroBrands { max-width: 520px; margin: 28px 0 36px; }
+.heroBrands .cohortSquare { width: 28px; }
+.brandBand { background: linear-gradient(180deg, #f6f9fc, #fff); border-top: 1px solid #e2e8f0; }
+.footerBrands { max-width: 880px; margin: 40px auto 32px; gap: clamp(20px, 4vw, 56px); }
+.footerBrands img { filter: invert(1); }
+.footerBrands .cohortSquare { width: 52px; }
+.colorRow { display: flex; justify-content: center; margin: 0 auto; }
+.colorRow span { width: 14px; height: 14px; }
+
+/* Page-scoped glass treatments retain the Mercury blue/cyan palette. */
+.glassButton.glassButton {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(147, 227, 255, .65);
+  color: #fff;
+  background: linear-gradient(110deg, rgba(37, 135, 255, .44), rgba(18, 195, 241, .22) 60%, rgba(22, 232, 222, .24));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .38), inset 0 -1px 0 rgba(255, 255, 255, .08), 0 8px 24px rgba(0, 13, 35, .18);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  transition: background .2s, box-shadow .2s, border-color .2s;
+  text-align: center;
+}
+.glassButton::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 50%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,.2), rgba(255,255,255,.025));
+  pointer-events: none;
+}
+.glassButton.glassButton:hover {
+  filter: none;
+  border-color: #b6f7ff;
+  background: linear-gradient(110deg, rgba(37,135,255,.6), rgba(18,195,241,.34), rgba(22,232,222,.34));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 8px 28px rgba(18,195,241,.22);
+}
+.glassButton.glassSecondary { background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.3); }
+.glassButton.glassLight { color: #071426; background: linear-gradient(110deg, rgba(37,135,255,.18), rgba(22,232,222,.15)); border-color: #83c8e8; }
+.glassButton:focus-visible { outline: 3px solid #12c3f1; outline-offset: 4px; }
+.planGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 960px; margin: 40px auto 0; }
+.planCard { display: flex; flex-direction: column; padding: clamp(24px, 3vw, 36px); border-radius: 24px; border: 1px solid #385570; background: radial-gradient(ellipse at top right, #143554, transparent 75%), #071426; color: white; box-shadow: 0 16px 40px #0714260d; }
+.annualCard { border-color: #31b7d0; background: radial-gradient(ellipse at top right, #144850, transparent 75%), #071426; }
+.planHeading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.planHeading h3 { font-size: 24px; font-weight: 700; }
+.savingBadge { color: #b1fff5; background: #16e8de16; border: 1px solid #16e8de50; padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.planIntro { margin-top: 24px; color: #bdd7e9; font-size: 13px; }
+.planPrice { margin-top: 12px; font-size: clamp(40px, 4.5vw, 56px); line-height: 1.2; font-weight: 800; letter-spacing: -.045em; }
+.planPrice span { font-size: 16px; color: #c2d1e0; font-weight: 500; letter-spacing: 0; }
+.billingNote { margin-top: 8px; font-size: 13px; color: #cad8e5; }
+.planNote { min-height: 44px; margin-top: 16px; font-size: 14px; color: #8ee9f0; }
+.planFeatures { display: grid; gap: 14px; margin: 24px 0 28px; padding-top: 24px; border-top: 1px solid #ffffff26; font-size: 13px; color: #e0e8f0; }
+.planFeatures li { display: flex; align-items: center; gap: 10px; }
+.planCard .glassButton { margin-top: auto; }
+.planTerms { margin-top: 14px; text-align: center; font-size: 12px; color: #bdccda; }
+.strategyCard { display: flex; align-items: center; justify-content: space-between; gap: 32px; max-width: 960px; margin: auto; }
+.strategyCard > div { max-width: 540px; }
+.strategyCard > a { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .planGrid { grid-template-columns: 1fr; }
+  .strategyCard { flex-direction: column; align-items: flex-start; }
+  .footerBrands { gap: 18px; }
+  .footerBrands .cohortSquare { width: 30px; }
+  .heroBrands { gap: 14px; }
+  .heroBrands .cohortSquare { width: 24px; }
+  .colorRow span { width: 12px; height: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .glassButton.glassButton { transition: none; } }
+
