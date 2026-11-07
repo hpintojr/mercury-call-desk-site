@@ -163,7 +163,7 @@ export default function CohortPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">The MasterClass Executive Cohort trial</p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-mcd-navy sm:text-4xl lg:text-5xl">
-              90 days of Agency access.<br />$10 in usage credit.
+              Start for just $10.
             </h2>
             <p className="mt-4 text-mcd-muted sm:text-lg">
               Explore the Agency platform for 90 days with no subscription fee. Your $10 is added to your usage wallet to pay for SMS, email, voice minutes, and AI as you use them. Choose your membership billing for after the trial.
