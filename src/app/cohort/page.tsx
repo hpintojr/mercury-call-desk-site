@@ -179,8 +179,10 @@ export default function CohortPage() {
                   <h3 id={`plan-${plan.name.toLowerCase()}`}>{plan.name}</h3>
                   {plan.annual && <span className={styles.savingBadge}>Save $663/year</span>}
                 </div>
-                <p className={styles.planIntro}>Start with $10 in usage credit</p>
-                <p className={styles.planPrice}>{plan.price}<span>/{plan.cycle}</span></p>
+                <div className="mt-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <p className="whitespace-nowrap text-xl font-semibold text-white/75 line-through decoration-2">{plan.price}/{plan.cycle}</p>
+                  <p className="text-xl font-bold text-mcd-cyan">Start for just $10</p>
+                </div>
                 <p className={styles.billingNote}>{plan.billing}</p>
                 <p className={styles.planNote}>{plan.note}</p>
                 <ul className={styles.planFeatures}>
@@ -188,7 +190,7 @@ export default function CohortPage() {
                     <li key={item}><Icon name="check" className="h-4 w-4 shrink-0 text-mcd-cyan" />{item}</li>
                   ))}
                 </ul>
-                <Button href={plan.href} size="lg" full className={styles.glassButton}>Start trial · {plan.name}</Button>
+                <Button href={plan.href} size="lg" full className={styles.glassButton}>Start Trial for $10 · {plan.name}</Button>
                 <p className={styles.planTerms}>Then {plan.price}/{plan.cycle}. Usage charges apply.</p>
               </article>
             ))}
