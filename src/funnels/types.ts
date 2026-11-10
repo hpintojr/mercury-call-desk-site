@@ -62,6 +62,9 @@ export type FunnelConfig = {
     tags: string[];
   };
 
+  /** Who runs the training. Shown under the hero and on the confirm page. */
+  host: { name: string; title: string };
+
   seo: { title: string; description: string };
 
   register: {

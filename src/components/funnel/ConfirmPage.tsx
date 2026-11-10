@@ -116,6 +116,7 @@ export default function ConfirmPage({ config }: { config: FunnelConfig }) {
           <div className="relative">
             <h2 className="text-2xl font-extrabold sm:text-3xl">{c.support.heading}</h2>
             <p className="mx-auto mt-3 max-w-xl text-white/65">{c.support.body}</p>
+            <p className="mt-2 text-sm text-white/50">{config.host.name} · {config.host.title}</p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href={`mailto:${b.supportEmail}`} className={btnGhost}><Icon name="mail" className="h-4 w-4" />{b.supportEmail}</a>
               <a href={b.supportPhoneHref} className={btnGhost}><Icon name="phone" className="h-4 w-4" />{c.support.dispatchLabel}: {b.supportPhone}</a>

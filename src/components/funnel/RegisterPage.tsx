@@ -59,7 +59,7 @@ export default function RegisterPage({ config }: { config: FunnelConfig }) {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-white/85">
               <span className="inline-flex items-center gap-2"><Icon name="calendar" className="h-4 w-4 text-[var(--f-primary)]" />{date}</span>
               <span className="inline-flex items-center gap-2"><Icon name="clock" className="h-4 w-4 text-[var(--f-primary)]" />{config.event.timeLabel}</span>
-              <span className="inline-flex items-center gap-2"><Icon name="globe" className="h-4 w-4 text-[var(--f-primary)]" />Free live training</span>
+              <span className="inline-flex items-center gap-2"><Icon name="users" className="h-4 w-4 text-[var(--f-primary)]" />Hosted by {config.host.name}</span>
             </div>
           </div>
         </section>
