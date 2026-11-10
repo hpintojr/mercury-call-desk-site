@@ -8,7 +8,9 @@ import { usePathname } from "next/navigation";
  */
 import { allLandingSlugs } from "@/content/landing";
 
-const BARE_PREFIXES = ["/dial-script", ...allLandingSlugs.map((s) => "/" + s)];
+import { funnelRoutes } from "@/funnels";
+
+const BARE_PREFIXES = ["/dial-script", ...funnelRoutes, ...allLandingSlugs.map((s) => "/" + s)];
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() ?? "";
