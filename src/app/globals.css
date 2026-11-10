@@ -80,3 +80,12 @@ details[open] .chev { transform: rotate(180deg); }
   html { scroll-behavior: auto; }
   .animate-marquee, .animate-float, .animate-word-in { animation: none !important; }
 }
+
+/* Funnel template: pulsing CTA ring (src/components/funnel/RegisterButton.tsx) */
+@keyframes funnel-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--f-primary) 55%, transparent); }
+  70% { box-shadow: 0 0 0 18px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.funnel-pulse { animation: funnel-pulse 2s cubic-bezier(0.66, 0, 0, 1) infinite; }
+@media (prefers-reduced-motion: reduce) { .funnel-pulse { animation: none; } }

@@ -50,12 +50,17 @@ export type DeliveryTarget = "contact" | "callback";
  * @param target "callback" routes to the dedicated ad-callback workflow (CRM_CALLBACK_WEBHOOK_URL /
  *   CRM_CALLBACK_WEBHOOK_SECRET) when configured, otherwise falls back to the main intake webhook.
  */
-export async function deliverLead(lead: Lead, target: DeliveryTarget = "contact"): Promise<DeliveryResult> {
+export async function deliverLead(
+  lead: Lead,
+  target: DeliveryTarget = "contact",
+  /** Optional per-funnel webhook (e.g. a client's own CRM). Falls back to the target's env webhook when unset. */
+  override?: { url?: string; secret?: string },
+): Promise<DeliveryResult> {
   const token = process.env.CRM_API_TOKEN;
   const locationId = process.env.CRM_LOCATION_ID;
   const useCallback = target === "callback" && !!process.env.CRM_CALLBACK_WEBHOOK_URL;
-  const webhook = useCallback ? process.env.CRM_CALLBACK_WEBHOOK_URL : process.env.CRM_WEBHOOK_URL;
-  const webhookSecret = useCallback ? process.env.CRM_CALLBACK_WEBHOOK_SECRET : process.env.CRM_WEBHOOK_SECRET;
+  const webhook = override?.url || (useCallback ? process.env.CRM_CALLBACK_WEBHOOK_URL : process.env.CRM_WEBHOOK_URL);
+  const webhookSecret = override?.url ? override.secret : useCallback ? process.env.CRM_CALLBACK_WEBHOOK_SECRET : process.env.CRM_WEBHOOK_SECRET;
   const phone = normalizePhone(lead.phone);
   const errors: string[] = [];
 
