@@ -46,7 +46,7 @@ export const mercuryWebinar: FunnelConfig = {
     timeLabel: "11:00 AM PT / 2:00 PM ET",
     joinUrl: "",
     calendarDescription:
-      "Free live strategy session for agency owners with Hamilton Pinto, Mercury Call Desk. How to run and resell your agency on Mercury CRM. The join link will be emailed before the session.",
+      "Free live strategy session for agency owners with Hamilton Pinto Jr., Mercury Call Desk. How to run and resell your agency on Mercury CRM. The join link will be emailed before the session.",
   },
 
   crm: {
@@ -55,7 +55,7 @@ export const mercuryWebinar: FunnelConfig = {
     tags: ["webinar-registrant", "webinar-2026-12-05", "agency-lead"],
   },
 
-  host: { name: "Hamilton Pinto", title: "Agency Growth Strategist, Mercury Call Desk" },
+  host: { name: "Hamilton Pinto Jr.", title: "Agency Growth Strategist, Mercury Call Desk" },
 
   seo: {
     title: "Mercury CRM for Agencies | Free Live Strategy Session",
