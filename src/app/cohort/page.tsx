@@ -16,20 +16,6 @@ export const metadata: Metadata = {
 const TRIAL_URL = "https://login.mercurycalldesk.com/checkout/2NgSx98BoGVLUVDgjPnh?cycle=monthly";
 const ANNUAL_URL = "https://login.mercurycalldesk.com/checkout/2NgSx98BoGVLUVDgjPnh?cycle=annual";
 
-function CohortBrands({ hero = false }: { hero?: boolean }) {
-  return (
-    <div className={`${styles.brands} ${hero ? styles.heroBrands : styles.footerBrands}`}>
-      <div className={styles.brandSlot}>
-        <Image src="/brand/cohort/masterclass-executive.png" alt="MasterClass Executive" width={440} height={150} unoptimized className={styles.masterclassLogo} />
-      </div>
-      <span aria-hidden="true" className={styles.cohortSquare}><span /></span>
-      <div className={styles.brandSlot}>
-        <Image src="/brand/cohort/chicago-booth.png" alt="Chicago Booth School of Business" width={810} height={205} unoptimized className={styles.boothLogo} />
-      </div>
-    </div>
-  );
-}
-
 const features: { title: string; body: string; icon: IconName }[] = [
   { title: "Contacts and sales pipelines", body: "Keep contact details and conversations together, track deals by stage, and assign tasks so every lead has a next step.", icon: "users" },
   { title: "Forms, websites, and booking", body: "Build a form or landing page to collect inquiries. Give prospects a booking link so they can schedule a conversation with your team.", icon: "calendar" },
@@ -63,7 +49,6 @@ export default function CohortPage() {
                 <li className="text-white/90">MasterClass Executive Cohort II</li>
               </ol>
             </nav>
-            <CohortBrands hero />
             <p className="eyebrow text-mcd-cyan">A Mercury Call Desk offer for Cohort II</p>
             <h1 className="mt-3 max-w-3xl text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
               Build your agency <span className="text-gradient">with Mercury.</span>
@@ -217,11 +202,10 @@ export default function CohortPage() {
       <section className={`${styles.brandBand} py-12 sm:py-16`}>
         <div className="container-x text-center">
           <p className="eyebrow">MasterClass Executive Cohort II</p>
-          <CohortBrands />
           <div aria-hidden="true" className={styles.colorRow}>
             {["#439fdb", "#ffcd00", "#c3dfc2", "#e4e4e4", "#35458c", "#ff7900", "#ffcd00"].map((color, index) => <span key={index} style={{ backgroundColor: color }} />)}
           </div>
-          <p className="mt-6 text-sm text-mcd-muted">Trial offered by Mercury Call Desk.</p>
+          <p className="mt-6 text-sm text-mcd-muted">Trial offered by Mercury Call Desk. Not affiliated with or endorsed by MasterClass Executive or Chicago Booth.</p>
         </div>
       </section>
     </>
