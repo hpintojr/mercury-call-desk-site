@@ -38,7 +38,6 @@ export default function CohortPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-hero text-white">
         {/* MasterClass-style block art, as on the original cohort page */}
-        <Image src="/brand/cohort/hero-blocks.svg" alt="" width={1200} height={200} aria-hidden unoptimized className="pointer-events-none absolute inset-x-0 bottom-0 h-28 w-full object-cover object-bottom opacity-90 sm:h-36 lg:h-44 [mask-image:linear-gradient(to_top,#000_70%,transparent)]" />
         <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-1.5 bg-[linear-gradient(to_right,#439fdb_0_11.11%,#f5c400_11.11%_22.22%,#c3dfc2_22.22%_33.33%,#e4e4e4_33.33%_55.56%,#35458c_55.56%_77.78%,#f5c400_77.78%)]" />
         <div className="container-x relative grid items-center gap-10 pt-14 pb-40 sm:pt-20 sm:pb-48 lg:grid-cols-12 lg:pt-24 lg:pb-56">
           <div className="lg:col-span-7">
